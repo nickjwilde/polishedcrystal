@@ -393,7 +393,25 @@ _ChooseWildEncounter:
 
 	; Get level
 	ld a, [hli]
-	ld b, a
+	; ld b, a
+    ;inc hl
+    /*
+
+WILD_MON_LVL_SCALE_FACTOR EQU 5 ; each badge ups wild mon lvls by 5
+WILD_MON_VARIANCE_MIN EQU 2
+WILD_MON_VARIANCE EQU 6 ; range of levels from varianve min + this value
+    */
+    ld a, [wBadges]
+    ld c, WILD_MON_LVL_SCALE_FACTOR
+    call SimpleMultiply ; 0*5 =0
+    add WILD_MON_VARIANCE_MIN ; + 2
+    ld b, a
+    ld a, WILD_MON_VARIANCE + 1 ; random number between 0-6
+    call RandomRange 
+    add b
+    ; return control to PC
+    ld b, a
+
 
 	; Mons encountered while surfing sometimes get a minor level boost.
 	push bc
@@ -457,7 +475,7 @@ _ChooseWildEncounter:
 	cp c
 	jr z, .loadwildmon
 	inc c
-	jr nz, .get_random_mon
+	jp nz, .get_random_mon
 
 .loadwildmon
 	ld a, [wCurForm]
