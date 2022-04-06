@@ -312,6 +312,14 @@ KeyItemEffects:
 	dw IsntTheTimeMessage ; SILPHSCOPE2
 	dw ApricornBox        ; APRICORN_BOX
 	dw TypeChart          ; TYPE_CHART
+    dw Katana             ; KATANA
+    dw PortalGun          ; PORTAL_GUN
+    dw Jetski             ; JETSKI 
+    dw PowerBrace         ; PWR_BRACE
+    dw Headlamp           ; HEADLAMP
+    dw GiantPlug          ; GIANT_PLUG
+    dw Jetpack            ; JETPACK
+    dw RockHammer         ; ROCK_HAMMER
 	assert_table_length NUM_KEY_ITEMS
 
 PokeBallEffect:
@@ -1901,6 +1909,30 @@ TypeChart:
 	farcall Pack_InitGFX
 	farcall WaitBGMap_DrawPackGFX
 	farjp Pack_InitColors
+Katana:
+    farcall CutFunction
+    ret
+PortalGun:
+    farcall FlyFunction
+    ret
+Jetski:
+    farcall SurfFunction
+    ret
+PowerBrace:
+    farcall StrengthFunction
+    ret
+Headlamp:
+    farcall OWFlash
+    ret
+GiantPlug:
+    farcall WhirlpoolFunction
+    ret
+Jetpack:
+    farcall WaterfallFunction
+    ret
+RockHammer:
+    farcall RockSmashFunction
+    ret
 
 OldRod:
 	ld e, $0

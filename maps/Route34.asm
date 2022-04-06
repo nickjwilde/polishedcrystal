@@ -475,7 +475,8 @@ Route34RichBoyIrvingScript:
 	opentext
 	writetext .AfterText1
 	promptbutton
-	verbosegiveitem BIG_NUGGET
+	giveitem HEADLAMP
+    writetext .GaveHeadlampText
 	iffalse_endtext
 	setevent EVENT_GOT_BIG_NUGGET_FROM_ROUTE_34_LEADER
 	jumpthisopenedtext
@@ -536,13 +537,18 @@ Route34RichBoyIrvingScript:
 	text "You've clearly"
 	line "earned this item."
 
-	para "Sell it and go on"
-	line "a shopping spree,"
-
-	para "or keep it as a"
-	line "memento of our"
-	cont "battle."
+	para "I bought it off"
+	line "the officer ahead."
 	done
+
+.GaveHeadlampText:
+    text "You can light"
+    line "your way hands"
+    cont "free"
+
+    para "Be careful not"
+    line "to blind anybody!"
+    done
 
 GenericTrainerPokefanmBrandon:
 	generictrainer POKEFANM, BRANDON, EVENT_BEAT_POKEFANM_BRANDON, PokefanmBrandonSeenText, PokefanmBrandonBeatenText

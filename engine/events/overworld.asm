@@ -163,11 +163,15 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
+    ld a, KATANA
+    call CheckHMItem
+    jr c, .can_cut
 	ld de, ENGINE_HIVEBADGE
 	call CheckBadge
 	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
+.can_cut
 	ld a, $1
 	ret
 
@@ -349,10 +353,15 @@ TryFlashOW::
 	ld a, [wTimeOfDayPalset]
 	cp DARKNESS_PALSET
 	jr nz, .quit
+    ld a, HEADLAMP
+    call CheckHMItem
+    jr c, .can_flash
 	ld d, FLASH
 	call CheckPartyMove
 	jr c, .quit
 	call GetPartyNickname
+    ; fallthrough
+.can_flash
 	ld a, BANK(AskFlashScript)
 	ld hl, AskFlashScript
 	call CallScript
@@ -588,6 +597,11 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
+
+; Check for jetski
+    ld a, JETSKI
+    call CheckHMItem
+    jr c, .can_surf
 	ld de, ENGINE_FOGBADGE
 	call CheckEngineFlag
 	jr c, .quit
@@ -603,7 +617,8 @@ TrySurfOW::
 	call GetSurfType
 	ld [wBuffer2], a
 	call GetPartyNickname
-
+    ;fallthrough
+.can_surf
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
 	call CallScript
@@ -672,9 +687,13 @@ FlyFunction:
 
 .TryFly:
 ; Fly
+    ld a, PORTAL_GUN
+    call CheckHMItem
+    jr c, .check_indoors
 	ld de, ENGINE_STORMBADGE
 	call CheckBadge
 	jr c, .nostormbadge
+.check_indoors
 	call CheckFlyAllowedOnMap
 	jr nz, .indoors
 
@@ -761,12 +780,16 @@ WaterfallFunction:
 
 .TryWaterfall:
 ; Waterfall
+    ld a, JETPACK
+    call CheckHMItem
+    jr c, .waterfall
 	ld de, ENGINE_RISINGBADGE
 	call CheckBadge
 	ld a, $80
 	ret c
 	call CheckMapCanWaterfall
 	jr c, .failed
+.waterfall
 	ld hl, Script_WaterfallFromMenu
 	call QueueScript
 	ld a, $81
@@ -829,6 +852,9 @@ Script_AutoWaterfall:
 	step_end
 
 TryWaterfallOW::
+    ld a, JETPACK
+    call CheckHMItem
+    jr c, .can_waterfall
 	ld d, WATERFALL
 	call CheckPartyMove
 	jr c, .failed
@@ -837,6 +863,8 @@ TryWaterfallOW::
 	jr c, .failed
 	call CheckMapCanWaterfall
 	jr c, .failed
+    ; fallthrough
+.can_waterfall
 	ld a, BANK(Script_AskWaterfall)
 	ld hl, Script_AskWaterfall
 	call CallScript
@@ -1067,6 +1095,9 @@ StrengthFunction:
 
 .TryStrength:
 ; Strength
+    ld a, PWR_BRACE
+    call CheckHMItem
+    jr c, .UseStrength
 	ld de, ENGINE_PLAINBADGE
 	call CheckBadge
 	jr nc, .UseStrength
@@ -1128,6 +1159,9 @@ AskStrengthScript:
 	endtext
 
 TryStrengthOW:
+    ld a, PWR_BRACE
+    call CheckHMItem
+    jr c, .can_strength
 	ld d, STRENGTH
 	call CheckPartyMove
 	jr c, .nope
@@ -1146,6 +1180,13 @@ TryStrengthOW:
 .nope
 	ld a, 1
 	jr .done
+
+.can_strength
+	ld hl, wOWState
+	bit OWSTATE_STRENGTH, [hl]
+	jr z, .already_using
+    ld a, 2
+    jr .done
 
 .already_using
 	xor a
@@ -1171,6 +1212,12 @@ Jumptable_cdae:
 	dw .FailWhirlpool
 
 .TryWhirlpool:
+    ld a, GIANT_PLUG
+    call CheckHMItem
+    jr nc, .check_badge
+    ld a, $1
+    ret
+.check_badge
 	ld de, ENGINE_GLACIERBADGE
 	call CheckBadge
 	jr c, .noglacierbadge
@@ -1278,6 +1325,9 @@ Script_AutoWhirlpool:
 	step_end
 
 TryWhirlpoolOW::
+    ld a, GIANT_PLUG
+    call CheckHMItem
+    jr c, .can_whirlpool
 	ld d, WHIRLPOOL
 	call CheckPartyMove
 	jr c, .failed
@@ -1286,6 +1336,7 @@ TryWhirlpoolOW::
 	jr c, .failed
 	call TryWhirlpoolMenu
 	jr c, .failed
+.can_whirlpool
 	ld a, BANK(Script_AskWhirlpoolOW)
 	ld hl, Script_AskWhirlpoolOW
 	call CallScript
@@ -1366,10 +1417,13 @@ AutoHeadbuttScript:
 	farjumptext _HeadbuttNothingText
 
 TryHeadbuttOW::
+    ld a, [wPlayerState]
+    cp PLAYER_BIKE
+    jr c, .can_headbutt
 	ld d, HEADBUTT
 	call CheckPartyMove
 	jr c, .no
-
+.can_headbutt
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript
 	call CallScript
@@ -1845,6 +1899,9 @@ Script_CantGetOffBike:
 	waitendtext
 
 HasCutAvailable::
+    ld a, KATANA
+    call CheckHMItem
+    jr c, .yes
 	ld d, CUT
 	call CheckPartyMove
 	jr c, .no
@@ -1877,3 +1934,10 @@ AskCutTreeScript:
 
 .no
 	farjumptext _CanCutText
+
+CheckHMItem:
+; Checks if HM Item at a was used for HM move
+    ld [wCurKeyItem], a
+    ld hl, wNumItems
+    call CheckTheItem
+    ret

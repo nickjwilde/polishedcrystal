@@ -140,6 +140,10 @@ Route36RockSmashGuyScript:
 	promptbutton
 	verbosegivetmhm TM_ROCK_SMASH
 	setevent EVENT_GOT_TM50_ROCK_SMASH
+    writetext RockSmashGuyText4
+    promptbutton
+    giveitem ROCK_HAMMER
+    writetext RockSmashGuyText5
 .AlreadyGotRockSmash:
 	jumpopenedtext RockSmashGuyText3
 
@@ -561,6 +565,21 @@ else
 	cont "break 'em up!"
 endc
 	done
+
+RockSmashGuyText4:
+    text "Here, take this"
+    line "as well!"
+    done
+
+RockSmashGuyText5:
+    text "That's my old"
+    line "rock hammer."
+
+    para "I can't use it"
+    line "now 'cause I"
+    cont "my arm punching"
+    cont "that tree"
+    done
 
 Route36LassText_OddTree:
 	text "An odd tree is"

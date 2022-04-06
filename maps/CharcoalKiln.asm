@@ -70,6 +70,9 @@ CharcoalKilnApprentice:
 	writetext .Text2
 	promptbutton
 	verbosegiveitem CHARCOAL
+    opentext  .Text4
+    promptbutton
+    giveitem KATANA
 	iffalse_endtext
 	setevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN
 	endtext
@@ -93,6 +96,17 @@ CharcoalKilnApprentice:
 	line "would be happy to"
 	cont "hold that."
 	done
+
+
+.Text4:
+    text "Wait! I want you"
+    line "to have this!"
+
+    para "It's an ancient wea-"
+    line "pon. Don't let it's"
+    cont "age fool you."
+    cont "It's very sharp!"
+    done
 
 .Text3:
 	text "The Slowpoke came"

@@ -31,4 +31,12 @@ KeyItemNames::
 	li "SilphScope2"
 	li "Apricorn Box"
 	li "Type Chart"
+    li "Katana"
+    li "Portal Gun"
+    li "Jetski"
+    li "Power Brace"
+    li "Headlamp"
+    li "Giant Plug"
+    li "Jetpack"
+    li "Rock Hammer"
 	assert_list_length NUM_KEY_ITEMS + 1
