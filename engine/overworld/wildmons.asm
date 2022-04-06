@@ -317,7 +317,6 @@ _ChooseWildEncounter:
 	push bc
 	call CheckOnWater
 	pop bc
-	ld de, WaterMonProbTable
 	ld b, NUM_WATERMON
 	jr z, .got_table
 	inc hl
@@ -327,7 +326,6 @@ _ChooseWildEncounter:
 	ld bc, NUM_GRASSMON * 3
 	rst AddNTimes
 	pop bc
-	ld de, GrassMonProbTable
 	ld b, NUM_GRASSMON
 
 .got_table
@@ -365,79 +363,32 @@ _ChooseWildEncounter:
 	pop de
 .get_random_mon
 	dec c
-	push hl ; wild mon data pointer
 	ld a, 100
 	call RandomRange
-	ld b, -1
-	ld h, d
-	ld l, e
+    ld de, 3
 ; This next loop chooses which mon to load up.
 .prob_bracket_loop
-	inc b
-	cp [hl]
-	inc hl
-	jr nc, .prob_bracket_loop
-
-	; At this point, b contains wildmon index to encounter.
-	; Since each entry is 3 bytes, add b*3 to hl.
-	ld a, b
-	add b
-	add b
-	pop hl
-	push hl
-	add l
-	ld l, a
-	adc h
-	sub l
-	ld h, a
-
-	; Get level
-	ld a, [hli]
-	; ld b, a
-    ;inc hl
-    /*
-
-WILD_MON_LVL_SCALE_FACTOR EQU 5 ; each badge ups wild mon lvls by 5
-WILD_MON_VARIANCE_MIN EQU 2
-WILD_MON_VARIANCE EQU 6 ; range of levels from varianve min + this value
-    */
+    sub [hl]
+    jr c, .ok
+    add hl, de
+	jr .prob_bracket_loop
+.ok
+    ; calc level
+    push bc
     ld a, [wBadges]
     ld c, WILD_MON_LVL_SCALE_FACTOR
-    call SimpleMultiply ; 0*5 =0
-    add WILD_MON_VARIANCE_MIN ; + 2
+    call SimpleMultiply
+    add WILD_MON_VARIANCE_MIN
     ld b, a
-    ld a, WILD_MON_VARIANCE + 1 ; random number between 0-6
+    ld a, WILD_MON_VARIANCE 
     call RandomRange 
     add b
-    ; return control to PC
-    ld b, a
-
-
-	; Mons encountered while surfing sometimes get a minor level boost.
-	push bc
-	call CheckOnWater
-	pop bc
-	jr nz, .ok
-	call Random
-	cp 35 percent
-	jr c, .ok
-	inc b
-	cp 65 percent
-	jr c, .ok
-	inc b
-	cp 85 percent
-	jr c, .ok
-	inc b
-	cp 95 percent
-	jr c, .ok
-	inc b
-; Store the level
-.ok
-	ld a, b
+    ;store level
 	ld [wCurPartyLevel], a
+    pop bc
+    inc hl
 	ld a, [hli]
 	ld b, [hl]
-	pop hl
 
 	push af
 	cp UNOWN
@@ -507,8 +458,6 @@ WILD_MON_VARIANCE EQU 6 ; range of levels from varianve min + this value
 	ld a, 1
 	and a
 	ret
-
-INCLUDE "data/wild/probabilities.asm"
 
 CheckRepelEffect::
 ; If there is no active Repel, there's no need to be here.
