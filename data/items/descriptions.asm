@@ -293,6 +293,14 @@ KeyItemDescriptions:
 	dw ShinyCharmDesc
 	dw OvalCharmDesc
 	dw CatchCharmDesc
+    dw KatanaDesc
+    dw JetskiDesc
+    dw PowerBraceDesc
+    dw HeadlampDesc
+    dw GiantPlugDesc
+    dw JetpackDesc
+    dw RockHammerDesc
+    dw TabletDesc
 	assert_table_length NUM_KEY_ITEMS
 
 PokeBallDesc:
@@ -1681,4 +1689,43 @@ TypeChartDesc:
 WingCaseDesc:
 	text "Holds up to 999 of"
 	next "each Wing."
+
+KatanaDesc:
+    text "Sharp sword"
+    next "used for cutting."
+	done
+
+JetskiDesc:
+    text "Small craft"
+    next "to surf with."
+	done
+
+PowerBraceDesc:
+    text "Enhances strength"
+    next "to move boulders."
+	done
+
+HeadlampDesc:
+    text "Hands free light"
+    next "for dark places."
+	done
+
+GiantPlugDesc:
+    text "Giant plug used"
+    next "to stop drains."
+	done
+
+JetpackDesc:
+    text "Climbs up a water-"
+    next "fall with a boost."
+	done
+
+RockHammerDesc:
+    text "Used to break"
+    next "rocks."
+	done
+
+TabletDesc:
+    text "A portable"
+    next "computer."
 	done

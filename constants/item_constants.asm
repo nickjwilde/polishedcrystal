@@ -661,6 +661,14 @@ DEF NUM_WINGS EQU const_value
 	const SHINY_CHARM  ; 21
 	const OVAL_CHARM   ; 22
 	const CATCH_CHARM  ; 23
+    const KATANA       ; 24 Cut
+    const JETSKI       ; 25 Surf
+    const PWR_BRACE    ; 26 Strength
+    const HEADLAMP     ; 27 Flash
+    const GIANT_PLUG   ; 28 Whirlpool
+    const JETPACK      ; 29 Waterfall
+    const ROCK_HAMMER  ; 2a Rock Smash
+    const TABLET       ; 2b Tablet
 DEF NUM_KEY_ITEMS EQU const_value - 1
 
 ; Alphabetical order (see data/items/name_order.asm)

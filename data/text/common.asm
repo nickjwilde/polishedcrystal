@@ -2026,8 +2026,8 @@ _CantUseItemText::
 
 SECTION "_UseCutText", ROMX
 _UseCutText::
-	text_ram wStringBuffer2
-	text " used"
+	;text_ram wStringBuffer2
+	text "You used"
 	line "Cut!"
 	prompt
 
@@ -2052,9 +2052,9 @@ _BlindingFlashText::
 
 SECTION "_UsedSurfText", ROMX
 _UsedSurfText::
-	text_ram wStringBuffer2
-	text " used"
-	line "Surf!"
+	;text_ram wStringBuffer2
+	text "You started"
+	line "Surfing!"
 	done
 
 SECTION "_CantSurfText", ROMX
@@ -2077,8 +2077,8 @@ _AskSurfText::
 
 SECTION "_UseWaterfallText", ROMX
 _UseWaterfallText::
-	text_ram wStringBuffer2
-	text " used"
+	;text_ram wStringBuffer2
+	text "You used"
 	line "Waterfall!"
 	done
 
@@ -2123,15 +2123,15 @@ _CantUseTeleportText::
 
 SECTION "_UseStrengthText", ROMX
 _UseStrengthText::
-	text_ram wStringBuffer2
-	text " used"
+	;text_ram wStringBuffer2
+	text "You used"
 	line "Strength!"
 	done
 
 SECTION "_MoveBoulderText", ROMX
 _MoveBoulderText::
-	text_ram wStringBuffer1
-	text " can"
+	;text_ram wStringBuffer1
+	text "You can"
 	line "move boulders."
 	prompt
 
@@ -2158,8 +2158,8 @@ _BouldersMayMoveText::
 
 SECTION "_UseWhirlpoolText", ROMX
 _UseWhirlpoolText::
-	text_ram wStringBuffer2
-	text " used"
+	;text_ram wStringBuffer2
+	text "You used"
 	line "Whirlpool!"
 	prompt
 
@@ -2183,9 +2183,9 @@ _AskWhirlpoolText::
 
 SECTION "_UseHeadbuttText", ROMX
 _UseHeadbuttText::
-	text_ram wStringBuffer2
-	text " did a"
-	line "Headbutt!"
+	;text_ram wStringBuffer2
+	text "The tree"
+	line "shook!"
 	prompt
 
 SECTION "_HeadbuttNothingText", ROMX
@@ -2204,12 +2204,12 @@ _AskHeadbuttText::
 
 SECTION "_UseRockSmashText", ROMX
 _UseRockSmashText::
-	text_ram wStringBuffer2
-	text " used"
+	;text_ram wStringBuffer2
+	text "You smashed"
 if DEF(FAITHFUL)
 	line "Rock Smash!"
 else
-	line "Brick Break!"
+	line "a rock"
 endc
 	prompt
 

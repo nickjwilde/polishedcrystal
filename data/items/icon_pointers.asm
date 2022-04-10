@@ -295,4 +295,12 @@ KeyItemIconPointers:
 	dba ShinyCharmIcon
 	dba OvalCharmIcon
 	dba CatchCharmIcon
+    dba KatanaIcon
+    dba JetskiIcon
+    dba PowerBraceIcon
+    dba HeadlampIcon
+    dba GiantPlugIcon
+    dba JetpackIcon
+    dba RockHammerIcon
+    dba TabletIcon
 	assert_table_length NUM_KEY_ITEMS + 1

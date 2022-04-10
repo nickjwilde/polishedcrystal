@@ -317,6 +317,14 @@ KeyItemEffects:
 	dw IsntTheTimeMessage ; SHINY_CHARM
 	dw IsntTheTimeMessage ; OVAL_CHARM
 	dw IsntTheTimeMessage ; CATCH_CHARM
+    dw Katana             ; KATANA
+    dw Jetski             ; JETSKI 
+    dw PowerBrace         ; PWR_BRACE
+    dw Headlamp           ; HEADLAMP
+    dw GiantPlug          ; GIANT_PLUG
+    dw Jetpack            ; JETPACK
+    dw RockHammer         ; ROCK_HAMMER
+    dw Tablet             ; TABLET
 	assert_table_length NUM_KEY_ITEMS
 
 PokeBallEffect:
@@ -2197,6 +2205,44 @@ TypeChart:
 	farcall Pack_InitGFX
 	farcall WaitBGMap_DrawPackGFX
 	farjp Pack_InitColors
+Katana:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall CutFunction
+    ret
+Jetski:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall SurfFunction
+    ret
+PowerBrace:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall StrengthFunction
+    ret
+Headlamp:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall OWFlash
+    ret
+GiantPlug:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall WhirlpoolFunction
+    ret
+Jetpack:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall WaterfallFunction
+    ret
+RockHammer:
+    ld a, 1
+    ld [wUsingHMItem], a
+    farcall RockSmashFunction
+    ret
+Tablet:
+    farcall TabletPCFunction
+    ret
 
 OldRod:
 	ld e, $0

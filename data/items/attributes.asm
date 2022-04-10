@@ -595,4 +595,20 @@ KeyItemAttributes:
 	key_item_attribute 0, ITEMMENU_CURRENT, ITEMMENU_NOUSE
 ; CATCH CHARM
 	key_item_attribute 0, ITEMMENU_CURRENT, ITEMMENU_NOUSE
+; KATANA
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; JETSKI
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; PWR_BRACE
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; HEADLAMP
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; GIANT_PLUG
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; JETPACK
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; ROCK_HAMMER
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; TABLET
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
 	assert_table_length NUM_KEY_ITEMS
