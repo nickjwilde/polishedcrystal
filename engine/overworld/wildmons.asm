@@ -365,6 +365,7 @@ _ChooseWildEncounter:
 	dec c
 	ld a, 100
 	call RandomRange
+    inc a
     ld de, 3
 ; This next loop chooses which mon to load up.
 .prob_bracket_loop
@@ -375,7 +376,7 @@ _ChooseWildEncounter:
 .ok
     ; calc level
     push bc
-    ld a, [wBadges]
+    call GetNumBadges
     ld c, WILD_MON_LVL_SCALE_FACTOR
     call SimpleMultiply
     add WILD_MON_VARIANCE_MIN
@@ -1206,6 +1207,74 @@ GetTimeOfDayNotEve:
 	ret c
 	inc a ; NITE
 	ret
+
+GetNumBadges:
+; adds number of badges to a.
+    push hl
+    xor a
+    ld hl, wJohtoBadges 
+    bit ZEPHYRBADGE, [hl]
+    jr z, .done
+    add 1 ; 1 badge
+    bit HIVEBADGE, [hl]
+    jr z, .done
+    add 1 ; 2 badges
+    bit PLAINBADGE, [hl]
+    jr z, .done
+    add 1 ; 3 badges
+    bit FOGBADGE, [hl]
+    jr z, .done
+    add 1 ; 4 badges
+    bit MINERALBADGE, [hl]
+    jr z, .done
+    add 1 ; 5 badges
+    bit STORMBADGE, [hl]
+    jr z, .done
+    add 1 ; 6 badges
+    bit GLACIERBADGE, [hl]
+    jr z, .done
+    add 1 ; 7 badges
+    bit RISINGBADGE, [hl]
+    jr nz, .done
+    add 1 ; 8 badges
+
+    ; kanto badges can be in any order
+    ; so we need to get creative
+    ld hl, wKantoBadges
+    bit BOULDERBADGE, [hl]
+	jr z, .cascade
+    add 1
+.cascade
+    bit CASCADEBADGE, [hl]
+    jr z, .thunderbadge
+    add 1
+.thunderbadge
+    bit THUNDERBADGE, [hl]
+    jr z, .rainbowbadge
+    add 1
+.rainbowbadge
+    bit RAINBOWBADGE, [hl]
+    jr z, .marshbadge
+    add 1
+.marshbadge
+    bit MARSHBADGE, [hl]
+    jr z, .soulbadge
+    add 1
+.soulbadge
+    bit SOULBADGE, [hl]
+    jr z, .volcanobadge
+    add 1
+.volcanobadge
+    bit VOLCANOBADGE, [hl]
+    jr z, .earthbadge
+    add 1
+.earthbadge
+    bit EARTHBADGE, [hl]
+    jr z, .done
+    add 1
+.done
+    pop hl
+    ret
 
 JohtoGrassWildMons:
 INCLUDE "data/wild/johto_grass.asm"

@@ -616,12 +616,12 @@ NUM_APRICORNS EQU const_value - 1
 	const APRICORN_BOX ; 1c
 	const TYPE_CHART   ; 1d
     const KATANA       ; 1e Cut
-    const PORTAL_GUN   ; 1f Fly/Teleport
-    const JETSKI       ; 20 Surf
-    const PWR_BRACE    ; 21 Strength
-    const HEADLAMP     ; 22 Flash
-    const GIANT_PLUG   ; 23 Whirlpool
-    const JETPACK      ; 24 Waterfall
-    const ROCK_HAMMER  ; 25 Rock Smash
+    const JETSKI       ; 1f Surf
+    const PWR_BRACE    ; 20 Strength
+    const HEADLAMP     ; 21 Flash
+    const GIANT_PLUG   ; 22 Whirlpool
+    const JETPACK      ; 23 Waterfall
+    const ROCK_HAMMER  ; 24 Rock Smash
+    const TABLET       ; 25 Tablet
 NUM_KEY_ITEMS EQU const_value
 

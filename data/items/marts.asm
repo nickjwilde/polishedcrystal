@@ -168,7 +168,7 @@ Goldenrod5FTMMart:
 	db -1
 
 GoldenrodHarborMart:
-	db 9 ; # items
+	db 10 ; # items
 	db ETHER
 	db ELIXIR
 	db DESTINY_KNOT
@@ -177,8 +177,6 @@ GoldenrodHarborMart:
 	db ZOOM_LENS
 	db BRIGHTPOWDER
 	db SURF_MAIL
-    db JETSKI, 130000
-    db JETPACK, 200000
 	db -1
 
 UndergroundMart:
@@ -255,7 +253,6 @@ MahoganyMart2:
 	db SUPER_REPEL
 	db REVIVE
 	db FLOWER_MAIL
-    db GIANT_PLUG, 100000
 	db -1
 
 BlackthornMart:

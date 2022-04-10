@@ -310,10 +310,18 @@ UseKeyItem:
 	predef DoKeyItemEffect
 	ld a, [wItemEffectSucceeded]
 	and a
-	jr z, .Oak
+    ld hl, wUsingHMItem
+    ld a, [hl]
+    ld [hl], 0
+	jr z, .tryOak
 	ld a, $e ; QuitRunScript
 	ld [wJumptableIndex], a
 	ret
+
+.tryOak
+    or a
+    jr z, .Oak
+    ret
 
 PackScrollingMenu:
 	ld [wMenuScrollPosition], a

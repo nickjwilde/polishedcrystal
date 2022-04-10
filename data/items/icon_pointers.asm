@@ -288,3 +288,11 @@ KeyItemIconPointers:
 	dba SilphScope2Icon
 	dba ApricornBoxIcon
 	dba TypeChartIcon
+    dba KatanaIcon
+    dba JetskiIcon
+    dba PowerBraceIcon
+    dba HeadlampIcon
+    dba GiantPlugIcon
+    dba JetpackIcon
+    dba RockHammerIcon
+    dba TabletIcon

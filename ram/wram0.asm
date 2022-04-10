@@ -1307,3 +1307,5 @@ wDaysSince:: db
 
 ; Temporary backup for options
 wOptionsBuffer:: db
+
+wUsingHMItem:: db

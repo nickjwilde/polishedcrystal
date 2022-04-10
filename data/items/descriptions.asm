@@ -288,13 +288,13 @@ KeyItemDescriptions:
 	dw ApricornBoxDesc
 	dw TypeChartDesc
     dw KatanaDesc
-    dw PortalGunDesc
     dw JetskiDesc
     dw PowerBraceDesc
     dw HeadlampDesc
     dw GiantPlugDesc
     dw JetpackDesc
     dw RockHammerDesc
+    dw TabletDesc
 
 PokeBallDesc:
 	db   "An item for catch-"
@@ -1388,11 +1388,8 @@ TypeChartDesc:
 KatanaDesc:
     db   "Sharp sword"
     next "used for cutting.@"
-PortalGunDesc:
-    db   "Open a portal to a"
-    next "place you've been.@"
 JetskiDesc:
-    db   "Small powerful craft"
+    db   "Small craft"
     next "to surf with.@"
 PowerBraceDesc:
     db   "Enhances strength"
@@ -1407,5 +1404,8 @@ JetpackDesc:
     db   "Climbs up a water-"
     next "fall with a boost.@"
 RockHammerDesc:
-    db   "Used to break rocks"
-    next "for collecting.@"
+    db   "Used to break "
+    next "rocks.@"
+TabletDesc:
+    db   "A portable"
+    next "computer.@"
