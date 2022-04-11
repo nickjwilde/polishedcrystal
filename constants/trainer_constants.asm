@@ -358,6 +358,7 @@ KRIS EQU __trainer_class__
 	const ALLAN
 
 	trainerclass POKEFANF ; 2a
+    const DONNA
 	const BEVERLY1
 	const BEVERLY2
 	const BEVERLY3
@@ -405,6 +406,7 @@ KRIS EQU __trainer_class__
 	const KUROKO
 
 	trainerclass SUPER_NERD ; 30
+    const JYM
 	const STAN
 	const ERIC
 	const SAM
@@ -609,7 +611,8 @@ KRIS EQU __trainer_class__
 	const MIKI
 
 	trainerclass ELDER ; 42
-	const LI
+	const LI1
+	const LI2
 	const GAKU
 	const MASA
 	const KOJI
@@ -639,6 +642,7 @@ KRIS EQU __trainer_class__
 	const JOEANDJO2
 
 	trainerclass GENTLEMAN ; 45
+    const LOXLEY
 	const PRESTON
 	const EDWARD
 	const GREGORY
@@ -809,6 +813,8 @@ KRIS EQU __trainer_class__
 	const KENJI1
 ;	const KENJI2
 ;	const KENJI3
+    const QI
+    const BRICK
 	const YOSHI
 	const LAO
 	const NOB

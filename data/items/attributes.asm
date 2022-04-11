@@ -591,7 +591,7 @@ KeyItemAttributes:
     key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
 ; PWR_BRACE
     key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
-; HEADLAMP
+; SACREDLAMP
     key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
 ; GIANT_PLUG
     key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE

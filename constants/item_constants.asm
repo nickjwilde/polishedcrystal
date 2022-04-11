@@ -618,7 +618,7 @@ NUM_APRICORNS EQU const_value - 1
     const KATANA       ; 1e Cut
     const JETSKI       ; 1f Surf
     const PWR_BRACE    ; 20 Strength
-    const HEADLAMP     ; 21 Flash
+    const SACREDLAMP   ; 21 Flash
     const GIANT_PLUG   ; 22 Whirlpool
     const JETPACK      ; 23 Waterfall
     const ROCK_HAMMER  ; 24 Rock Smash

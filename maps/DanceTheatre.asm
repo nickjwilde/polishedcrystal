@@ -77,10 +77,10 @@ GenericTrainerKimono_girlMiki:
 DanceTheaterSurfGuy:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_HM03_SURF
+    iftrue SurfGuyJetski
 	writetext SurfGuyNeverLeftAScratchText
 	promptbutton
-	checkevent EVENT_GOT_HM03_SURF
-	iftrue_jumpopenedtext SurfGuyElegantKimonoGirlsText
 	checkevent EVENT_BEAT_KIMONO_GIRL_NAOKO
 	iffalse .KimonoGirlsUndefeated
 	checkevent EVENT_BEAT_KIMONO_GIRL_SAYO
@@ -116,6 +116,124 @@ SurfGuyLadGiftText:
 	para "Kimono Girls, I'll"
 	line "give you a gift."
 	done
+
+SurfGuyJetski:
+    checkevent EVENT_GOT_JETSKI
+	iftrue_jumpopenedtext SurfGuyElegantKimonoGirlsText
+    checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
+    iffalse_jumpopenedtext SurfGuyAmphyHint
+    checkevent EVENT_JASMINE_RETURNED_TO_GYM
+    iftrue SurfGuyAmphyHealed
+    faceplayer
+    opentext
+    writetext SurfGuyIntroText
+    promptbutton
+    winlosstext BeatSurfGuy, 0
+    loadtrainer GENTLEMAN, LOXLEY
+    startbattle
+    reloadmapafterbattle
+    opentext 
+    writetext SurfGuyGiveJetskiText
+    promptbutton
+    verbosegivekeyitem JETSKI
+    setevent EVENT_GOT_JETSKI
+
+BeatSurfGuy:
+    text "Impressive!"
+    done
+
+SurfGuyAmphyHealed:
+    faceplayer
+    opentext
+    writetext SurfGuyAmphyHealedIntroText
+    promptbutton
+    winlosstext BeatSurfGuy, 0
+    loadtrainer GENTLEMAN, LOXLEY
+    startbattle
+    reloadmapafterbattle
+    opentext 
+    writetext SurfGuyGiveJetskiText
+    promptbutton
+    verbosegivekeyitem JETSKI
+    setevent EVENT_GOT_JETSKI
+
+SurfGuyAmphyHealedIntroText:
+    text "So, you saved"
+    line "the #mon"
+    
+    para "at the light-"
+    line "house?"
+
+    para "That must've been"
+    line "a tough journey"
+    
+    para "surfing on your"
+    line "#mon."
+
+    para "If you can beat"
+    line "me, I'll give"
+
+    para "you something to"
+    line "give them a rest."
+    done
+
+SurfGuyAmphyHint:
+    text "They say there's"
+    line "a #mon"
+
+    para "that lit the"
+    line "sea, dancing"
+    cont "in a circle."
+
+    para "Now that I think"
+    line "of it,"
+
+    para "I haven't seen"
+    line "the light shine"
+    
+    para "in the lighthouse"
+    line "for some time."
+
+    para "I do hope it's"
+    line "okay."
+
+    para "Without the"
+    line "guiding light,"
+
+    para "my Rhydon and me"
+    line "can't Surf at"
+    cont "night"
+
+    para "If I knew what"
+    line "was wrong,"
+
+    para "perhaps I could"
+    line "help it."
+    done
+
+SurfGuyIntroText:
+    text "I see. I don't"
+    line "have any meds."
+    
+    para "I have something"
+    line "else that may"
+    cont "help you."
+
+    para "Show me you are"
+    line "worthy of it."
+    done
+
+
+SurfGuyGiveJetskiText:
+    para "You have earned"
+    line "this. It will"
+
+    para "speed up your"
+    line "journey across"
+    cont "the waves."
+    done
+
+
 
 MapDanceTheatreSignpost1Script:
 	jumptext DanceTheatreFancyPanelText

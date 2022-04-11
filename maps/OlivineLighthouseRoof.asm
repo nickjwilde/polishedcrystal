@@ -62,9 +62,8 @@ OlivineLighthouseRoofSkylaScript:
 .Beaten:
 	writetext .AfterText
 	waitbutton
-    checkevent EVENT_BEAT_SKYLA
-    iffalse_jumpopenedtext .FirstWinGivePortalGun
 	closetext
+    setevent EVENT_BEAT_SKYLA
 	setevent EVENT_BEAT_SKYLA_AGAIN
 	end
 
@@ -75,14 +74,6 @@ OlivineLighthouseRoofSkylaScript:
 	waitbutton
 	setevent EVENT_INTRODUCED_SKYLA
 	jumpthisopenedtext
-
-.FirstWinGivePortalGun:
-    writetext .PortalGunPrepText
-    giveitem PORTAL_GUN
-    writetext .PortalGunGivenText
-    closetext
-	setevent EVENT_BEAT_SKYLA
-    end
 
 .WaitingText:
 	text "I saw a hurt #-"
@@ -189,28 +180,3 @@ OlivineLighthouseRoofSkylaScript:
 	para "could fight with"
 	line "our full strength."
 	done
-
-.PortalGunPrepText:
-    text "As part of the"
-    line "#mon Aviation"
-    cont "Community,"
-
-    para "I get new gadgets"
-    line "all the time."
-
-    para "You can have"
-    line "this as thanks"
-
-    para "for a rousing"
-    line "battle!"
-    done
-
-.PortalGunGivenText
-    text "Some man from"
-    line "a company called"
-    cont "Silph gave me it."
-
-    para "I'd much prefer"
-    line "the skies myself."
-    done
-

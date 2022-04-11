@@ -124,6 +124,7 @@ Route42LyraScript:
 	writetext Route42LyraPresentText
 	promptbutton
 	verbosegivetmhm HM_WHIRLPOOL
+    verbosegivekeyitem GIANT_PLUG
 	setevent EVENT_GOT_HM05_WHIRLPOOL
 	writetext Route42LyraWhirlpoolText
 	waitbutton

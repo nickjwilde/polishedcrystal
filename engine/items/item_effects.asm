@@ -315,7 +315,7 @@ KeyItemEffects:
     dw Katana             ; KATANA
     dw Jetski             ; JETSKI 
     dw PowerBrace         ; PWR_BRACE
-    dw Headlamp           ; HEADLAMP
+    dw SacredLamp         ; SACREDLAMP
     dw GiantPlug          ; GIANT_PLUG
     dw Jetpack            ; JETPACK
     dw RockHammer         ; ROCK_HAMMER
@@ -1924,7 +1924,7 @@ PowerBrace:
     ld [wUsingHMItem], a
     farcall StrengthFunction
     ret
-Headlamp:
+SacredLamp:
     ld a, 1
     ld [wUsingHMItem], a
     farcall OWFlash

@@ -291,7 +291,7 @@ KeyItemIconPointers:
     dba KatanaIcon
     dba JetskiIcon
     dba PowerBraceIcon
-    dba HeadlampIcon
+    dba SacredLampIcon
     dba GiantPlugIcon
     dba JetpackIcon
     dba RockHammerIcon
