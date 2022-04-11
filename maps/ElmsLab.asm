@@ -646,6 +646,7 @@ AideScript_GivePotions:
 	writetext AideText_GiveYouPotions
 	promptbutton
 	verbosegiveitem POTION
+    verbosegivekeyitem TABLET
 	setscene $2
 	jumpopenedtext AideText_AlwaysBusy
 

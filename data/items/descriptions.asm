@@ -296,7 +296,7 @@ KeyItemDescriptions:
     dw KatanaDesc
     dw JetskiDesc
     dw PowerBraceDesc
-    dw HeadlampDesc
+    dw SacredLampDesc
     dw GiantPlugDesc
     dw JetpackDesc
     dw RockHammerDesc
@@ -1704,9 +1704,8 @@ PowerBraceDesc:
     text "Enhances strength"
     next "to move boulders."
 	done
-
-HeadlampDesc:
-    text "Hands free light"
+SacredLampDesc:
+    text "Sacred flame"
     next "for dark places."
 	done
 

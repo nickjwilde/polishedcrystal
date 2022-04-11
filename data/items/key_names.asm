@@ -39,7 +39,7 @@ KeyItemNames::
     li "Katana"
     li "Jetski"
     li "Power Brace"
-    li "Headlamp"
+    li "Sacred Lamp"
     li "Giant Plug"
     li "Jetpack"
     li "Rock Hammer"

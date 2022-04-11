@@ -105,9 +105,106 @@ CianwoodCitySuicuneAndEusine:
 
 CianwoodCityChucksWife:
 	checkevent EVENT_BEAT_CHUCK
-	iftrue_jumptextfaceplayer ChucksWifeChubbyText
+    iftrue ChucksWifeBeatChuck
 	jumptextfaceplayer ChucksWifeEasierToFlyText
 
+ChucksWifeBeatChuck:
+    checkevent EVENT_GOT_JETPACK
+    iftrue_jumptextfaceplayer ChucksWifeRetireText
+    checkevent EVENT_CLEARED_YELLOW_FOREST
+    iffalse_jumptextfaceplayer ChucksWifeChubbyText
+    checkevent EVENT_JASMINE_RETURNED_TO_GYM
+    iffalse_jumptextfaceplayer .ChucksWifeAmphyText
+    checkevent EVENT_HEALED_MOOMOO
+    iffalse_jumptextfaceplayer .ChucksWifeMooMooText
+    faceplayer
+    opentext
+    writetext .ChucksWifeMatchIntroText
+    promptbutton
+    winlosstext .BeatChucksWifeText, 0
+    loadtrainer POKEFANF, DONNA
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext .ChucksWifeGiveJetpackText
+    promptbutton
+    verbosegivekeyitem JETPACK
+    setevent EVENT_GOT_JETPACK
+
+.ChucksWifeAmphyText:
+    text "I heard there's"
+    line "a sick #mon"
+
+    para "atop Olivine"
+    line "Lighthouse."
+
+    para "I do hope it will"
+    line "be ok."
+    done
+
+.ChucksWifeMooMooText:
+    text "I went to order"
+    line "my month supply"
+    cont "of moomoo milk"
+
+    para "but they were all"
+    line "out!"
+
+    para "This has never"
+    line "happened before!"
+    done
+
+.ChucksWifeMatchIntroText:
+    text "I got my MooMoo"
+    line "milk now!"
+
+    para "You did that?!"
+    
+    para "It takes a strong"
+    line "person to care for"
+    cont "the sick and needy."
+
+    para "You deserve high"
+    line "praise!"
+
+    para "My husband would"
+    line "sit under a"
+
+    para "waterfall for"
+    line "hours to train."
+
+    para "He thought that"
+    line "would make him"
+    cont "stronger."
+
+    para "Let me see if you"
+    line "still need to do"
+    cont "the same!"
+    done
+
+.BeatChucksWifeText:
+    text "You are strong!"
+    done
+
+.ChucksWifeGiveJetpackText:
+    text "You no longer"
+    line "need to train"
+    cont "under waterfalls."
+
+    para "This should help"
+    line "you get up them"
+    cont "with ease!"
+    done
+
+ChucksWifeRetireText:
+    text "Maybe my husband"
+    line "and I could"
+
+    para "get away from"
+    line "it all and relax."
+
+    para "That would be"
+    line "nice."
 CianwoodCitySuicuneApproachMovement:
 	fix_facing
 	fast_jump_step_down

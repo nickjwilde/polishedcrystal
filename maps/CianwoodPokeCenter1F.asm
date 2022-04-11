@@ -45,7 +45,7 @@ CianwoodGymGuyScript:
 	checkevent EVENT_GOT_HM04_STRENGTH
 	iffalsefwd .no_strength
 	checkevent EVENT_BEAT_CHUCK
-	iftrue_jumptextfaceplayer .WinText
+    iftrue GymGuyBeatChuck
 	jumptextfaceplayer .Text
 
 .no_strength
@@ -59,6 +59,19 @@ CianwoodGymGuyScript:
 	setevent EVENT_GOT_HM04_STRENGTH
 	writetext .StrengthText2
 	waitendtext
+
+.StrengthText1:
+	text "You can't move the"
+	line "boulders aside?"
+
+	para "Here, use this"
+	line "and teach your"
+	cont "#mon Strength!"
+	done
+
+.StrengthText2:
+	text "Good luck!"
+	done
 
 .Text:
 	text "The #mon Gym"
@@ -99,24 +112,61 @@ CianwoodGymGuyScript:
 	line "go outside."
 	done
 
-.StrengthText1:
-	text "You can't move the"
-	line "boulders aside?"
-
-	para "Here, use this"
-	line "and teach your"
-	cont "#mon Strength!"
-	done
-
-.StrengthText2:
-	text "Good luck!"
-	done
+GymGuyBeatChuck:
+    checkevent EVENT_GOT_PWR_BRACE
+    iftrue_jumptextfaceplayer .WinText
+    faceplayer
+    opentext
+    writetext .GymGuyIntroText
+    promptbutton
+    winlosstext .BeatGymGuyText, 0
+    loadtrainer SUPER_NERD, JYM
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext GymGuyGivePowerBraceText
+    promptbutton
+    verbosegivekeyitem PWR_BRACE
+    setevent EVENT_GOT_PWR_BRACE
+    jumpthisopenedtext
+        para "You truly are"
+        line "strong!"
+        done
 
 .WinText:
-	text "<PLAYER>! You won!"
-	line "I could tell by"
-	cont "looking at you!"
+	text "<PLAYER>! I knew"
+	line "you had potential!"
 	done
+
+.BeatGymGuyText:
+    text "Amazing!"
+    done
+
+.GymGuyIntroText:
+    text "I've been watch-"
+    line "ing you and"
+    cont "taking notes."
+
+    para "I think I know"
+    line "how to be a"
+    cont "trainer and win!"
+
+    para "Let me test these"
+    line "new strategies!"
+    done
+
+GymGuyGivePowerBraceText:
+    text "I see. I'll leave"
+    line "the battling up"
+    
+    para "to you from now"
+    line "on."
+
+    para "Here! Take this"
+    line "item I took from"
+    cont "the gym."
+    done
+
 
 CianwoodPokeCenter1FLassText:
 	text "Did you meet the"

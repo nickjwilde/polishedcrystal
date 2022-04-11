@@ -146,9 +146,45 @@ Route36RockSmashGuyScript:
 	promptbutton
 	verbosegivetmhm TM_ROCK_SMASH
 	setevent EVENT_GOT_TM50_ROCK_SMASH
-.AlreadyGotRockSmash:
 	jumpopenedtext RockSmashGuyText3
+    promptbutton
+    waitbutton
+.AlreadyGotRockSmash:
+    checkevent EVENT_GOT_ROCK_HAMMER
+	iftrue_jumpopenedtext RockSmashGuyText3
+    checkevent EVENT_GOT_SHUCKIE
+    iffalse_jumpopenedtext RockSmashGuyHint
+    writetext RockSmashGuyMatchIntro
+    promptbutton
+    winlosstext .BeatRockSmashGuy, 0
+    loadtrainer BLACKBELT_T, BRICK
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext RockSmashGuyGiveRockHammer
+    promptbutton
+    verbosegivekeyitem ROCK_HAMMER
+    setevent EVENT_GOT_ROCK_HAMMER
+    writetext RockSmashGuyGaveRockHammer
 
+.BeatRockSmashGuy:
+    text "Hard hit!"
+    done
+
+RockSmashGuyGiveRockHammer:
+    text "As promised, here"
+    line "you go!"
+    done
+
+RockSmashGuyGaveRockHammer:
+    text "That's my"
+    line "buddy's rock"
+    cont "hammer."
+
+    para "You can use that"
+    line "to break rocks."
+    done
+    
 Route36LassScript:
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue_jumptextfaceplayer Route36LassText_ClearedSudowoodo
@@ -582,6 +618,39 @@ else
 endc
 	done
 
+<<<<<<< HEAD
+=======
+RockSmashGuyHint:
+    text "I know a guy"
+    line "who tried to smash"
+    cont "a rock."
+
+    para "Turns out, it"
+    line "was a Shuckle"
+
+    para "He's always"
+    line "bragging about"
+    cont "it."
+
+    para "I worry it will"
+    line "get him in"
+    cont "trouble one day."
+    done
+
+RockSmashGuyMatchIntro:
+    text "Hey, my friend"
+    line "with the Shuckle"
+    
+    para "gave me something"
+    line "nice."
+
+    para "I'll give it to"
+    line "you if you can"
+    cont "best me."
+    done
+
+
+>>>>>>> 275f4f4dd (add hm overworld items and update events to get them)
 Route36LassText_OddTree:
 	text "An odd tree is"
 	line "blocking the way"

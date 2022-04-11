@@ -387,7 +387,7 @@ TryFlashOW::
 	ld a, [wTimeOfDayPalset]
 	cp DARKNESS_PALSET
 	jr nz, .quit
-    ld a, HEADLAMP
+    ld a, SACREDLAMP
     call CheckHMItem
     jr c, .canFlash
 	lb de, FLASH, TM_FLASH

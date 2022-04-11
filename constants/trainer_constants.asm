@@ -360,6 +360,7 @@ DEF CRYS EQU __trainer_class__
 	const ALLAN
 
 	trainerclass POKEFANF ; 2b
+    const DONNA
 	const BEVERLY1
 	const BEVERLY2
 	const BEVERLY3
@@ -410,6 +411,7 @@ DEF CRYS EQU __trainer_class__
 	const KUROKO
 
 	trainerclass SUPER_NERD ; 31
+    const JYM
 	const STAN
 	const ERIC
 	const SAM
@@ -623,7 +625,8 @@ DEF CRYS EQU __trainer_class__
 	const MINA
 
 	trainerclass ELDER ; 46
-	const LI
+	const LI1
+	const LI2
 	const GAKU
 	const MASA
 	const KOJI
@@ -653,6 +656,7 @@ DEF CRYS EQU __trainer_class__
 	const JOEANDJO2
 
 	trainerclass GENTLEMAN ; 49
+    const LOXLEY
 	const PRESTON
 	const EDWARD
 	const GREGORY
@@ -823,6 +827,8 @@ DEF CRYS EQU __trainer_class__
 	const KENJI1
 ;	const KENJI2
 ;	const KENJI3
+    const QI
+    const BRICK
 	const YOSHI
 	const LAO
 	const NOB

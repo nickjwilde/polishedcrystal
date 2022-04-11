@@ -64,11 +64,11 @@ SproutTower3FRivalScene:
 
 ElderLiScript:
 	checkevent EVENT_GOT_TM70_FLASH
-	iftrue_jumptextfaceplayer SageLiAfterBattleText
+    iftrue SageLiCheckSacredLamp
 	faceplayer
 	showtext SageLiSeenText
 	winlosstext SageLiBeatenText, 0
-	loadtrainer ELDER, LI
+	loadtrainer ELDER, LI1
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -96,7 +96,61 @@ ElderLiScript:
 	para "and if any of your"
 	line "#mon can use"
 	cont "Flash, they will."
+
+    para "Come see me when"
+    line "your bonds grow"
+    cont "stronger."
 	done
+
+SageLiCheckSacredLamp:
+    checkevent EVENT_GOT_SACREDLAMP
+	iftrue_jumptextfaceplayer SageLiAfterBattleText
+    faceplayer
+    opentext
+    special GetFirstPokemonHappiness 
+    writetext SageLiHappinessTestText
+    promptbutton
+    ifgreater $f9, .BattleSageLiAgain
+    jumpthisopenedtext
+
+    text "Your bond with"
+    line "your #mon"
+    
+    para "has not grown"
+    line "enough."
+
+    para "Come back when"
+    line "your bond is"
+    cont "even stronger."
+    done
+    
+.BattleSageLiAgain:
+    writetext SageLiRematchText
+    promptbutton
+	winlosstext SageLiBeatenAgainText, 0
+	loadtrainer ELDER, LI2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext SageLiTakeThisLamp
+	promptbutton
+	verbosegivekeyitem SACREDLAMP
+	setevent EVENT_GOT_SACREDLAMP
+	jumpthisopenedtext
+
+    text "That never-"
+    line "ending flame"
+    
+    para "will light your"
+    line "way."
+
+    para "It is a sym-"
+    line "bol of your love"
+
+    para "and bond with"
+    line "your #mon."
+    done
+    
 
 GenericTrainerSageJin:
 	generictrainer SAGE, JIN, EVENT_BEAT_SAGE_JIN, SageJinSeenText, SageJinBeatenText
@@ -233,6 +287,44 @@ SageLiAfterBattleText:
 	line "and grow from your"
 	cont "journey."
 	done
+
+SageLiHappinessTestText:
+    text "Let me check"
+    line "the bond you"
+
+    para "share with your"
+    line "#mon"
+    done
+
+SageLiRematchText:
+    text "Your bond is"
+    line "strong. Now you"
+
+    para "will test my"
+    line "ties with my"
+    cont "#mon"
+    done
+
+SageLiBeatenAgainText:
+    text "Remarkable!"
+    done
+
+SageLiTakeThisLamp:
+    text "Your bond is"
+    line "brilliant!"
+
+    para "In all my"
+    line "years I've never"
+
+    para "seen such love"
+    line "and devotion."
+
+    para "You and your"
+    line "#mon will"
+    cont "shine bright!"
+
+    para "Take this!"
+    done
 
 SageJinSeenText:
 	text "I train to find"
