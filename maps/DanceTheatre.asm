@@ -127,6 +127,9 @@ SurfGuyJetski:
     faceplayer
     opentext
     writetext SurfGuyIntroText
+    sjump SurfGuyBattle
+
+SurfGuyBattle:
     promptbutton
     winlosstext BeatSurfGuy, 0
     loadtrainer GENTLEMAN, LOXLEY
@@ -137,6 +140,7 @@ SurfGuyJetski:
     promptbutton
     verbosegivekeyitem JETSKI
     setevent EVENT_GOT_JETSKI
+    end
 
 BeatSurfGuy:
     text "Impressive!"
@@ -146,16 +150,7 @@ SurfGuyAmphyHealed:
     faceplayer
     opentext
     writetext SurfGuyAmphyHealedIntroText
-    promptbutton
-    winlosstext BeatSurfGuy, 0
-    loadtrainer GENTLEMAN, LOXLEY
-    startbattle
-    reloadmapafterbattle
-    opentext 
-    writetext SurfGuyGiveJetskiText
-    promptbutton
-    verbosegivekeyitem JETSKI
-    setevent EVENT_GOT_JETSKI
+    sjump SurfGuyBattle
 
 SurfGuyAmphyHealedIntroText:
     text "So, you saved"

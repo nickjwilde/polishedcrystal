@@ -96,6 +96,27 @@ Route29FinishTutorial:
 	writetext CatchingTutorialGoodbyeText
 	waitbutton
 	closetext
+    applymovement ROUTE29_LYRA, LyraMovementPretendForgotTablet
+    showemote EMOTE_SHOCK, ROUTE29_LYRA, 15
+    pause 15
+    turnobject ROUTE29_LYRA, RIGHT
+    applymovement ROUTE29_LYRA, LyraMovementRememberedTablet
+    checkevent EVENT_NEVER_LEARNED_TO_CATCH_POKEMON
+    iftrue LyraGiveTablet
+    turnobject ROUTE29_LYRA, UP
+    sjump LyraGiveTablet
+
+LyraGiveTablet:
+    opentext
+    writetext LyraGotYourTabletText
+    promptbutton
+    verbosegivekeyitem TABLET
+    writetext LyraCouldNotLiveWithoutTabletText
+    waitbutton
+    closetext
+    sjump LyraLeaveCatchingTutorial
+
+LyraLeaveCatchingTutorial:
 	applymovement ROUTE29_LYRA, LyraMovementData3
 	disappear ROUTE29_LYRA
 	setscene $0
@@ -171,6 +192,18 @@ LyraMovementData3:
 	step_left
 	step_end
 
+LyraMovementPretendForgotTablet:
+    step_left
+    step_left
+    step_left
+    step_end
+
+LyraMovementRememberedTablet:
+    step_right
+    step_right
+    step_right
+    step_end
+
 CatchingTutorialIntroText:
 	text "Lyra: <PLAYER>!"
 
@@ -207,6 +240,38 @@ CatchingTutorialRefusedText:
 CatchingTutorialGoodbyeText:
 	text "Lyra: See you!"
 	done
+
+LyraGotYourTabletText:
+    text "Oh! I almost"
+    line "forgot!"
+
+    para "I accidentally"
+    line "got your tablet"
+
+    para "back from the"
+    line "repair shop in"
+    cont "the mail."
+
+    para "Here you go!"
+    done
+
+LyraCouldNotLiveWithoutTabletText:
+    text "You can connect"
+    line "remotely to the"
+
+    para "nearest #mon-"
+    line "center's PC"
+    cont "with it."
+
+    para "I don't know"
+    line "what I'd do"
+    cont"without mine!"
+
+    para "Isn't tech-"
+    line "ology neat?!"
+
+    para "Bye!"
+    done
 
 Route29YoungsterText:
 	text "Yo. How are your"
