@@ -162,24 +162,18 @@ ChucksWifeBeatChuck:
     
     para "It takes a strong"
     line "person to care for"
-    cont "the sick and needy."
+    cont "the sick."
 
     para "You deserve high"
     line "praise!"
 
-    para "My husband would"
-    line "sit under a"
+    para "I know, I have"
+    line "something you"
+    cont "could use."
 
-    para "waterfall for"
-    line "hours to train."
-
-    para "He thought that"
-    line "would make him"
-    cont "stronger."
-
-    para "Let me see if you"
-    line "still need to do"
-    cont "the same!"
+    para "Show me how"
+    line "strong you really"
+    cont "are!"
     done
 
 .BeatChucksWifeText:
@@ -187,9 +181,13 @@ ChucksWifeBeatChuck:
     done
 
 .ChucksWifeGiveJetpackText:
-    text "You no longer"
-    line "need to train"
-    cont "under waterfalls."
+    text "My husband always"
+    line "trains under"
+    cont "waterfalls."
+
+    para "I feel it's more"
+    line "fun going over"
+    cont "them, Don't you?"
 
     para "This should help"
     line "you get up them"
@@ -197,8 +195,8 @@ ChucksWifeBeatChuck:
     done
 
 ChucksWifeRetireText:
-    text "Maybe my husband"
-    line "and I could"
+    text "Maybe now my hus-"
+    line "band and I could"
 
     para "get away from"
     line "it all and relax."

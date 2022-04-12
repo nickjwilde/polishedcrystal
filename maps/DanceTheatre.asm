@@ -173,31 +173,38 @@ SurfGuyAmphyHealedIntroText:
     done
 
 SurfGuyAmphyHint:
-    text "They say there's"
-    line "a #mon"
+    text "My Rhydon and I"
+    line "travel across"
 
-    para "that lit the"
-    line "sea, dancing"
-    cont "in a circle."
+    para "the oceans using"
+    line "Surf."
+    
+    para "We use the light"
+    line "from the light-"
+    cont "house"
+
+    para "to guide us at"
+    line "night."
 
     para "Now that I think"
     line "of it,"
 
     para "I haven't seen"
-    line "the light shine"
+    line "light shine"
     
-    para "in the lighthouse"
-    line "for some time."
+    para "from the light-"
+    line "house for some"
+    cont "time."
 
     para "I do hope it's"
     line "okay."
 
-    para "Without the"
+    para "Without its"
     line "guiding light,"
 
-    para "my Rhydon and me"
+    para "my Rhydon and I"
     line "can't Surf at"
-    cont "night"
+    cont "night."
 
     para "If I knew what"
     line "was wrong,"
@@ -207,12 +214,13 @@ SurfGuyAmphyHint:
     done
 
 SurfGuyIntroText:
-    text "I see. I don't"
-    line "have any meds."
+    text "A sick #mon?"
+    line "I don't have any"
+    cont "medicine."
     
-    para "I have something"
-    line "else that may"
-    cont "help you."
+    para "I do have some-"
+    line "thing else that"
+    cont "may help you."
 
     para "Show me you are"
     line "worthy of it."

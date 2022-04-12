@@ -160,6 +160,7 @@ Route36RockSmashGuyScript:
     verbosegivekeyitem ROCK_HAMMER
     setevent EVENT_GOT_ROCK_HAMMER
     writetext RockSmashGuyGaveRockHammer
+    promptbutton
     closetext
     end
 

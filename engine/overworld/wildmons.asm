@@ -92,7 +92,7 @@ FindNest:
 	inc hl
 	inc hl
 	inc hl
-	ld a, NUM_GRASSMON * 3
+	ld a, NUM_GRASSMON * 2 ; we removed levels
 	call .SearchMapForMon
 	jr nc, .next_grass
 	ld [de], a
@@ -142,7 +142,7 @@ FindNest:
 	jr z, .found
 
 .not_found
-	inc hl
+;	inc hl
 	inc hl
 	pop af
 	dec a
@@ -317,13 +317,15 @@ _ChooseWildEncounter:
 	push bc
 	call CheckOnWater
 	pop bc
+    ld de, WaterMonProbTable
 	ld b, NUM_WATERMON
 	jr z, .got_table
 	inc hl
 	inc hl
 	call GetTimeOfDayNotEve
 	push bc
-	ld bc, NUM_GRASSMON * 3
+    ld de, GrassMonProbTable
+	ld bc, NUM_GRASSMON * 2
 	rst AddNTimes
 	pop bc
 	ld b, NUM_GRASSMON
@@ -363,17 +365,32 @@ _ChooseWildEncounter:
 	pop de
 .get_random_mon
 	dec c
+    push hl ; wild mon data pointer
 	ld a, 100
 	call RandomRange
-    inc a
-    ld de, 3
+    ld b, -1
+    ld h, d
+    ld l, e
 ; This next loop chooses which mon to load up.
 .prob_bracket_loop
-    sub [hl]
-    jr c, .ok
-    add hl, de
-	jr .prob_bracket_loop
+    inc b
+    cp [hl]
+    inc hl
+    jr nc, .prob_bracket_loop
+
+    ; At this point, b contains wildmon index to encounter.
+    ; Since each entry is 2 bytes, add b*2 to hl.
+    ld a, b
+    add b
+    pop hl
+    push hl
+    add l
+    ld l, a
+    adc h
+    sub l
+    ld h, a
 .ok
+    
     ; calc level
     push bc
     call GetNumBadges
@@ -387,9 +404,9 @@ _ChooseWildEncounter:
     ;store level
 	ld [wCurPartyLevel], a
     pop bc
-    inc hl
 	ld a, [hli]
 	ld b, [hl]
+    pop hl
 
 	push af
 	cp UNOWN
@@ -459,6 +476,8 @@ _ChooseWildEncounter:
 	ld a, 1
 	and a
 	ret
+
+INCLUDE "data/wild/probabilities.asm"
 
 CheckRepelEffect::
 ; If there is no active Repel, there's no need to be here.
@@ -966,10 +985,10 @@ RandomPhoneRareWildMon:
 
 .GetGrassmon:
 	push hl
-	ld bc, 5 + 4 * 3 ; Location of the level of the 5th wild Pokemon in that map
+	ld bc, 5 + 4 * 2 ; Location of the level of the 5th wild Pokemon in that map
 	add hl, bc
 	call GetTimeOfDayNotEve
-	ld bc, NUM_GRASSMON * 3
+	ld bc, NUM_GRASSMON * 2
 	rst AddNTimes
 	ld a, 3
 	call RandomRange
@@ -986,7 +1005,7 @@ RandomPhoneRareWildMon:
 	ld b, a
 	ld [wCurForm], a
 	pop hl
-	ld de, 5 + 0 * 3
+	ld de, 5 + 0 * 2
 	add hl, de
 	inc hl ; Species index of the most common Pokemon on that route
 	ld d, 4
@@ -1046,7 +1065,7 @@ RandomPhoneWildMon:
 	ld bc, 5 + 0 * 3
 	add hl, bc
 	call GetTimeOfDayNotEve
-	ld bc, NUM_GRASSMON * 3
+	ld bc, NUM_GRASSMON * 2
 	rst AddNTimes
 
 	call Random

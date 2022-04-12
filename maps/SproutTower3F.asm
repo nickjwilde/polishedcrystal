@@ -96,7 +96,7 @@ SageLiCheckSacredLamp:
     special GetFirstPokemonHappiness 
     writetext SageLiHappinessTestText
     promptbutton
-    ifgreater $f9, .BattleSageLiAgain
+    ifgreater $db, .BattleSageLiAgain ; happiness at 220+
     jumpthisopenedtext
 
     text "Your bond with"
