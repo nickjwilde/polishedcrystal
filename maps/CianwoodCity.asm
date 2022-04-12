@@ -130,6 +130,7 @@ ChucksWifeBeatChuck:
     promptbutton
     verbosegivekeyitem JETPACK
     setevent EVENT_GOT_JETPACK
+    end
 
 .ChucksWifeAmphyText:
     text "I heard there's"
@@ -205,6 +206,8 @@ ChucksWifeRetireText:
 
     para "That would be"
     line "nice."
+    done
+
 CianwoodCitySuicuneApproachMovement:
 	fix_facing
 	fast_jump_step_down

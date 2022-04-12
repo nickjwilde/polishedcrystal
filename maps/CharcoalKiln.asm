@@ -54,6 +54,7 @@ CharcoalKilnBossKatana:
     checkevent EVENT_FOUGHT_SUDOWOODO
     iffalse_jumptextfaceplayer SudowoodoHint
     faceplayer
+    opentext
     writetext .MatchIntro
     promptbutton
     winlosstext .BeatKilnBossText, 0
@@ -71,7 +72,7 @@ CharcoalKilnBossKatana:
         line "cess makes that"
         cont "sword very sharp."
 
-        para "It may even cut"
+        para "It could even cut"
         line "solid rock!"
         done
 
@@ -88,7 +89,7 @@ CharcoalKilnBossKatana:
 	done
 
 .MatchIntro:
-    para "So, it was a"
+    text "So, it was a"
     line "#mon then?"
 
     para "Well, I've been"
