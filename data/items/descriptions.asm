@@ -295,6 +295,7 @@ KeyItemDescriptions:
     dw JetpackDesc
     dw RockHammerDesc
     dw TabletDesc
+    dw PokeWalkerDesc
 
 PokeBallDesc:
 	db   "An item for catch-"
@@ -1409,3 +1410,6 @@ RockHammerDesc:
 TabletDesc:
     db   "A portable"
     next "computer.@"
+PokeWalkerDesc:
+    db   "Sets the level"
+    next "of wild #mon.@"

@@ -108,6 +108,7 @@ INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/pokemon/breeding.asm"
+INCLUDE "engine/events/pokewalker.asm"
 
 
 SECTION "Clock Reset", ROMX
@@ -550,7 +551,6 @@ INCLUDE "engine/events/odd_egg.asm"
 SECTION "Type Chart", ROMX
 
 INCLUDE "engine/items/type_chart.asm"
-
 
 SECTION "VWF", ROMX
 

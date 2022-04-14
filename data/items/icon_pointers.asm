@@ -296,3 +296,4 @@ KeyItemIconPointers:
     dba JetpackIcon
     dba RockHammerIcon
     dba TabletIcon
+    dba PokewalkerIcon

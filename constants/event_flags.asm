@@ -2343,7 +2343,8 @@
     const EVENT_GOT_GIANT_PLUG
     const EVENT_GOT_JETPACK
     const EVENT_GOT_ROCK_HAMMER
+    const EVENT_GOT_POKEWALKER
 
 
-	const_next $906
+	const_next $907
 NUM_EVENTS EQU const_value ; 2304

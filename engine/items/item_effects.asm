@@ -320,6 +320,7 @@ KeyItemEffects:
     dw Jetpack            ; JETPACK
     dw RockHammer         ; ROCK_HAMMER
     dw Tablet             ; TABLET
+    dw PokeWalker         ; POKEWALKER
 	assert_table_length NUM_KEY_ITEMS
 
 PokeBallEffect:
@@ -1946,6 +1947,10 @@ RockHammer:
     ret
 Tablet:
     farcall TabletPCFunction
+    ret
+
+PokeWalker:
+    farcall PokewalkerFunction
     ret
 
 OldRod:

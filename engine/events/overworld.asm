@@ -455,13 +455,13 @@ SurfFunction:
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
 	jr nz, .cannotsurf
+    ;fallthrough
+.hasJetski
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .alreadyfail
 	cp PLAYER_SURF_PIKA
 	jr z, .alreadyfail
-    ;fallthrough
-.hasJetski
 	call GetFacingTileCoord
 	call GetTileCollision
 	dec a ; cp WATER_TILE
@@ -1819,7 +1819,7 @@ BikeFunction:
 	call PlayBikeMusic
 	ld hl, Script_GetOnBike
 	ld de, Script_GetOnBike_Register
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	jr .done
 
 .GetOffBike:
@@ -1828,7 +1828,7 @@ BikeFunction:
 	jr nz, .CantGetOffBike
 	ld hl, Script_GetOffBike
 	ld de, Script_GetOffBike_Register
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	jr .done
 
 .CantGetOffBike:
@@ -1842,14 +1842,6 @@ BikeFunction:
 .done
 	call QueueScript
 	ld a, $1
-	ret
-
-.CheckIfRegistered:
-	ld a, [wUsingItemWithSelect]
-	and a
-	ret z
-	ld h, d
-	ld l, e
 	ret
 
 .CheckEnvironment:
@@ -1957,26 +1949,18 @@ TabletPCFunction:
 	ld a, [wPlayerState]
 	ld hl, Script_LoadPocketPC
 	ld de, Script_LoadPocketPC_Register
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	call QueueScript
 	ld a, $1
 	ret
 	
-.CheckIfRegistered:
-	ld a, [wUsingItemWithSelect]
-	and a
-	ret z
-	ld h, d
-	ld l, e
-	ret
-
 Script_LoadPocketPC:
 	reloadmappart
     opentext
 	special UpdateTimePals
 	special PokemonCenterPC
-    endtext
 	reloadmappart
+    endtext
 	end
 
 Script_LoadPocketPC_Register:
@@ -1985,6 +1969,45 @@ Script_LoadPocketPC_Register:
     endtext
 	reloadmappart
 	end
+
+PokewalkerFunction:
+    call .Pokewalker
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.Pokewalker
+	ld hl, Script_Pokewalker
+	ld de, Script_Pokewalker_Register
+	call CheckIfRegistered
+	call QueueScript
+	ld a, $1
+	ret
+
+Script_Pokewalker:
+    reloadmappart
+    opentext
+    special UpdateTimePals
+    special Pokewalker
+    endtext
+    reloadmappart
+    end
+
+Script_Pokewalker_Register:
+    opentext
+    special UpdateTimePals
+    special Pokewalker
+    endtext
+    reloadmappart
+    end
+
+CheckIfRegistered:
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+	ld h, d
+	ld l, e
+	ret
 
 CheckHMItem:
 ; Checks if HM Item is available

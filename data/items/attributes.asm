@@ -601,4 +601,6 @@ KeyItemAttributes:
     key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
 ; TABLET
     key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
+; POKEWALKER
+    key_item_attribute 1, ITEMMENU_CLOSE, ITEMMENU_NOUSE
 	assert_table_length NUM_KEY_ITEMS

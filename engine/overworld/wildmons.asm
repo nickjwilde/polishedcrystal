@@ -393,7 +393,8 @@ _ChooseWildEncounter:
     
     ; calc level
     push bc
-    call GetNumBadges
+    ;call GetNumBadgesDel
+    ld a, [wPokewalker]
     ld c, WILD_MON_LVL_SCALE_FACTOR
     call SimpleMultiply
     add WILD_MON_VARIANCE_MIN
@@ -1227,7 +1228,7 @@ GetTimeOfDayNotEve:
 	inc a ; NITE
 	ret
 
-GetNumBadges:
+GetNumBadgesDel:
 ; adds number of badges to a.
     push hl
     xor a
@@ -1254,7 +1255,7 @@ GetNumBadges:
     jr z, .done
     add 1 ; 7 badges
     bit RISINGBADGE, [hl]
-    jr nz, .done
+    jr z, .done
     add 1 ; 8 badges
 
     ; kanto badges can be in any order

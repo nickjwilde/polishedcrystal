@@ -623,5 +623,6 @@ NUM_APRICORNS EQU const_value - 1
     const JETPACK      ; 23 Waterfall
     const ROCK_HAMMER  ; 24 Rock Smash
     const TABLET       ; 25 Tablet
+    const POKEWALKER   ; 26 PokeWalker
 NUM_KEY_ITEMS EQU const_value
 

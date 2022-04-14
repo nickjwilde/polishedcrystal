@@ -1309,3 +1309,6 @@ wDaysSince:: db
 wOptionsBuffer:: db
 
 wUsingHMItem:: db
+
+; used when updating pokewalker val
+wPokewalkerChangeBuffer:: db

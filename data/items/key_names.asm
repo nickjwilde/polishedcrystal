@@ -39,4 +39,5 @@ KeyItemNames::
     li "Jetpack"
     li "Rock Hammer"
     li "Tablet"
+    li "Poke Walker"
 	assert_list_length NUM_KEY_ITEMS + 1
