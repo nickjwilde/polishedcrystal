@@ -248,8 +248,8 @@ endr
 	ld d, 0
 	add hl, de
 	add hl, de
-	add hl, de
-	inc hl ; skip level
+	;add hl, de
+	;inc hl ; skip level
 	ld a, BANK(JohtoGrassWildMons)
 	call GetFarByte
 	ld [wNamedObjectIndex], a

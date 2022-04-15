@@ -92,8 +92,8 @@ FindNest:
 	inc hl
 	inc hl
 	inc hl
-	ld a, NUM_GRASSMON * 2 ; we removed levels
-	call .SearchMapForMon
+	ld a, NUM_GRASSMON * 3 ; we removed levels
+	call .ScanMapLoop
 	jr nc, .next_grass
 	ld [de], a
 	inc de
@@ -115,7 +115,7 @@ FindNest:
 	ld c, a
 	inc hl
 	ld a, 3
-	call .SearchMapForMon
+	call .ScanMapLoop
 	jr nc, .next_water
 	ld [de], a
 	inc de
@@ -126,8 +126,6 @@ FindNest:
 	add hl, bc
 	jr .FindWater
 
-.SearchMapForMon:
-	inc hl
 .ScanMapLoop:
 	push af
 	ld a, [wNamedObjectIndex]
@@ -142,7 +140,6 @@ FindNest:
 	jr z, .found
 
 .not_found
-;	inc hl
 	inc hl
 	pop af
 	dec a
