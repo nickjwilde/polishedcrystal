@@ -1,5 +1,5 @@
 BlueCardMartData:
-	db 9
+	db 10
 	db ULTRA_BALL,   2
 	db FULL_RESTORE, 2
 	db ELIXIR,       2
@@ -9,4 +9,5 @@ BlueCardMartData:
 	db EVIOLITE,     5
 	db PP_UP,        6
 	db ABILITY_CAP,  0
+	db ABILITYPATCH,  0
 	db -1

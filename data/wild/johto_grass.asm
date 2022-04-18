@@ -5,10 +5,10 @@
 	; morn
     ; probability, pokemon, form(optional), min, max(optional)
 	wildmon RATTATA
-	wildmon HOOTHOOT
+	wildmon RATTATA
+	wildmon RATTATA
 	wildmon BELLSPROUT
 	wildmon RATTATA
-	wildmon HOOTHOOT
 	wildmon BELLSPROUT
 	wildmon BELLSPROUT
 	; day
@@ -20,23 +20,23 @@
 	wildmon BELLSPROUT
 	wildmon BELLSPROUT
 	; nite
-	wildmon MISDREAVUS
-	wildmon GASTLY
-	wildmon GASTLY
+	wildmon RATTATA
 	wildmon RATTATA
 	wildmon GASTLY
-	wildmon RATTATA, ALOLAN_FORM
-	wildmon RATTATA, ALOLAN_FORM
+	wildmon BELLSPROUT
+	wildmon GASTLY
+	wildmon BELLSPROUT
+	wildmon BELLSPROUT
 	end_grass_wildmons
 
 	def_grass_wildmons SPROUT_TOWER_3F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon RATTATA
-	wildmon HOOTHOOT
+	wildmon RATTATA
+	wildmon RATTATA
 	wildmon BELLSPROUT
 	wildmon RATTATA
-	wildmon HOOTHOOT
 	wildmon BELLSPROUT
 	wildmon BELLSPROUT
 	; day
@@ -48,13 +48,13 @@
 	wildmon BELLSPROUT
 	wildmon BELLSPROUT
 	; nite
-	wildmon RATTATA, ALOLAN_FORM
-	wildmon RATTATA, ALOLAN_FORM
+	wildmon RATTATA
+	wildmon RATTATA
 	wildmon GASTLY
-	wildmon MISDREAVUS
+	wildmon BELLSPROUT
 	wildmon GASTLY
-	wildmon MISDREAVUS
-	wildmon MISDREAVUS
+	wildmon BELLSPROUT
+	wildmon BELLSPROUT
 	end_grass_wildmons
 
 	def_grass_wildmons TIN_TOWER_2F
@@ -374,7 +374,7 @@
 	wildmon PIDGEY
 	wildmon CATERPIE
 	wildmon WEEDLE
-	wildmon PINSIR
+	wildmon WEEDLE
 	; day
 	wildmon NIDORAN_F
 	wildmon NIDORAN_M
@@ -382,7 +382,7 @@
 	wildmon PIDGEY
 	wildmon CATERPIE
 	wildmon WEEDLE
-	wildmon SCYTHER
+	wildmon WEEDLE
 	; nite
 	wildmon PSYDUCK
 	wildmon HOOTHOOT
@@ -390,7 +390,7 @@
 	wildmon HOOTHOOT
 	wildmon VENONAT
 	wildmon VENONAT
-	wildmon HERACROSS
+	wildmon VENONAT
 	end_grass_wildmons
 
 	def_grass_wildmons RUINS_OF_ALPH_OUTSIDE
@@ -600,12 +600,12 @@
 	wildmon SLOWPOKE
 	; day
 	wildmon ZUBAT
-	wildmon SLOWPOKE
-	wildmon SLOWPOKE
+	wildmon ZUBAT
+	wildmon ZUBAT
 	wildmon POLIWAG
 	wildmon ZUBAT
 	wildmon SLOWPOKE
-	wildmon VAPOREON
+	wildmon SLOWPOKE
 	; nite
 	wildmon ZUBAT
 	wildmon ZUBAT
@@ -633,7 +633,7 @@
 	wildmon SLOWPOKE
 	wildmon ZUBAT
 	wildmon SLOWPOKE
-	wildmon VAPOREON
+	wildmon SLOWPOKE
 	; nite
 	wildmon ZUBAT
 	wildmon ZUBAT
@@ -652,7 +652,7 @@
 	wildmon SLOWPOKE
 	wildmon SLOWPOKE
 	wildmon GOLBAT
-	wildmon SLOWBRO
+	wildmon SLOWPOKE
 	wildmon SLOWPOKE
 	; day
 	wildmon ZUBAT
@@ -660,8 +660,8 @@
 	wildmon ZUBAT
 	wildmon SLOWPOKE
 	wildmon GOLBAT
-	wildmon SLOWBRO
-	wildmon VAPOREON
+	wildmon SLOWPOKE
+	wildmon SLOWPOKE
 	; nite
 	wildmon ZUBAT
 	wildmon ZUBAT
@@ -679,9 +679,9 @@
 	wildmon WEEDLE
 	wildmon METAPOD
 	wildmon KAKUNA
-	wildmon LEDYBA
-	wildmon EXEGGCUTE
-	wildmon PINECO
+	wildmon PIDGEY
+	wildmon PARAS
+	wildmon PARAS
 	; day
 	wildmon CATERPIE
 	wildmon WEEDLE
@@ -697,7 +697,7 @@
 	wildmon PSYDUCK
 	wildmon HOOTHOOT
 	wildmon PARAS
-	wildmon LEAFEON
+	wildmon PARAS
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
@@ -820,7 +820,7 @@
 	wildmon VULPIX, ALOLAN_FORM
 	wildmon SWINUB
 	wildmon GOLBAT
-	wildmon SANDSHREW, ALOLAN_FORM
+	wildmon GOLBAT
 	wildmon NINETALES, ALOLAN_FORM
 	; day
 	wildmon SWINUB
@@ -828,16 +828,16 @@
 	wildmon VULPIX, ALOLAN_FORM
 	wildmon SWINUB
 	wildmon GOLBAT
-	wildmon SANDSHREW, ALOLAN_FORM
+	wildmon GOLBAT
 	wildmon NINETALES, ALOLAN_FORM
 	; nite
 	wildmon ZUBAT
 	wildmon ZUBAT
-	wildmon VULPIX, ALOLAN_FORM
-	wildmon SNEASEL
 	wildmon GOLBAT
-	wildmon NINETALES, ALOLAN_FORM
-	wildmon GLACEON
+	wildmon GOLBAT
+	wildmon GOLBAT
+	wildmon GOLBAT
+	wildmon GOLBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B1F
@@ -862,9 +862,9 @@
 	wildmon ZUBAT
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon VULPIX, ALOLAN_FORM
-	wildmon SANDSLASH, ALOLAN_FORM
-	wildmon GLACEON
+	wildmon GOLBAT
+	wildmon GOLBAT
+	wildmon GOLBAT
 	wildmon SNEASEL
 	end_grass_wildmons
 
@@ -890,8 +890,8 @@
 	wildmon ZUBAT
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon SANDSHREW, ALOLAN_FORM
-	wildmon SANDSLASH, ALOLAN_FORM
+	wildmon GOLBAT
+	wildmon GOLBAT
 	wildmon SNEASEL
 	wildmon SNEASEL
 	end_grass_wildmons
@@ -918,8 +918,8 @@
 	wildmon ZUBAT
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon SANDSHREW, ALOLAN_FORM
-	wildmon SANDSLASH, ALOLAN_FORM
+	wildmon GOLBAT
+	wildmon GOLBAT
 	wildmon SNEASEL
 	wildmon SNEASEL
 	end_grass_wildmons
@@ -946,7 +946,7 @@
 	wildmon ZUBAT
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon SANDSHREW, ALOLAN_FORM
+	wildmon GOLBAT
 	wildmon SNEASEL
 	wildmon SNEASEL
 	wildmon SNEASEL
@@ -1313,7 +1313,7 @@
 	wildmon GEODUDE
 	wildmon ZUBAT
 	wildmon ZUBAT
-	wildmon LARVITAR
+	wildmon DUNSPARCE
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
@@ -1331,15 +1331,15 @@
 	wildmon ZUBAT
 	wildmon GRAVELER
 	wildmon URSARING
-	wildmon WOBBUFFET
-	wildmon WOBBUFFET
+	wildmon GOLBAT
+	wildmon GOLBAT
 	wildmon DUNSPARCE
 	; nite
 	wildmon GEODUDE
 	wildmon ZUBAT
 	wildmon GRAVELER
-	wildmon LARVITAR
-	wildmon PUPITAR
+	wildmon WOBBUFFET
+	wildmon WOBBUFFET
 	wildmon GOLBAT
 	wildmon DUNSPARCE
 	end_grass_wildmons
@@ -1366,8 +1366,8 @@
 	wildmon HOOTHOOT
 	wildmon RATTATA
 	wildmon HOOTHOOT
-	wildmon ABRA
-	wildmon ABRA
+	wildmon RATTATA
+	wildmon RATTATA
 	wildmon HOOTHOOT
 	wildmon SENTRET
 	end_grass_wildmons
@@ -1453,7 +1453,7 @@
 	wildmon HOOTHOOT
 	wildmon MAREEP
 	wildmon GASTLY
-	wildmon MAGNEMITE
+	wildmon GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_33
@@ -1481,7 +1481,7 @@
 	wildmon ZUBAT
 	wildmon RATTATA
 	wildmon ODDISH
-	wildmon SKARMORY
+	wildmon ODDISH
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34
@@ -1554,7 +1554,7 @@
 	wildmon PIDGEY
 	wildmon PIDGEY
 	wildmon BELLSPROUT
-	wildmon VULPIX
+	wildmon GROWLITHE
 	wildmon PIDGEY
 	wildmon PIDGEY
 	wildmon PIDGEY
@@ -1562,10 +1562,10 @@
 	wildmon SPINARAK
 	wildmon HOOTHOOT
 	wildmon BELLSPROUT
-	wildmon GASTLY
+	wildmon VULPIX
 	wildmon HOOTHOOT
-	wildmon HOUNDOUR
-	wildmon HOUNDOUR
+	wildmon GASTLY
+	wildmon GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_37
@@ -1591,9 +1591,9 @@
 	wildmon ARIADOS
 	wildmon HOOTHOOT
 	wildmon NOCTOWL
-	wildmon HOOTHOOT
-	wildmon ARIADOS
 	wildmon HOUNDOUR
+	wildmon HOUNDOUR
+	wildmon ARIADOS
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_38
@@ -1619,7 +1619,7 @@
 	wildmon RATICATE
 	wildmon MAGNEMITE
 	wildmon NOCTOWL
-	wildmon MEOWTH, ALOLAN_FORM
+	wildmon MEOWTH
 	wildmon MURKROW
 	wildmon MURKROW
 	end_grass_wildmons
@@ -1647,7 +1647,7 @@
 	wildmon RATICATE, ALOLAN_FORM
 	wildmon ELEKID
 	wildmon NOCTOWL
-	wildmon MEOWTH, ALOLAN_FORM
+	wildmon MEOWTH
 	wildmon MURKROW
 	wildmon MURKROW
 	end_grass_wildmons
@@ -1921,7 +1921,7 @@
 	wildmon PARAS
 	wildmon MARILL
 	wildmon MARILL
-	wildmon JOLTEON
+	wildmon PICHU
 	; nite
 	wildmon HOOTHOOT
 	wildmon MEOWTH
