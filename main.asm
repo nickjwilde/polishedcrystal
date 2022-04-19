@@ -108,7 +108,6 @@ INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/pokemon/breeding.asm"
-INCLUDE "engine/events/pokewalker.asm"
 
 
 SECTION "Clock Reset", ROMX

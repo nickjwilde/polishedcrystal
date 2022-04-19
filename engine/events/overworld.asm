@@ -1956,17 +1956,17 @@ TabletPCFunction:
 	
 Script_LoadPocketPC:
 	reloadmappart
-    opentext
+	opentext
 	special UpdateTimePals
 	special PokemonCenterPC
+	endtext
 	reloadmappart
-    endtext
 	end
 
 Script_LoadPocketPC_Register:
-    opentext
+	opentext
 	special PokemonCenterPC
-    endtext
+	endtext
 	reloadmappart
 	end
 
