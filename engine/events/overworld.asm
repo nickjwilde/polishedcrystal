@@ -1971,7 +1971,7 @@ Script_LoadPocketPC_Register:
 	end
 
 PokewalkerFunction:
-    call .Pokewalker
+	call .Pokewalker
 	and $7f
 	ld [wFieldMoveSucceeded], a
 	ret
@@ -1994,12 +1994,12 @@ Script_Pokewalker:
     end
 
 Script_Pokewalker_Register:
-    opentext
-    special UpdateTimePals
-    special Pokewalker
-    endtext
-    reloadmappart
-    end
+	opentext
+	special UpdateTimePals
+	special Pokewalker
+	endtext
+	reloadmappart
+	end
 
 CheckIfRegistered:
 	ld a, [wUsingItemWithSelect]

@@ -2637,10 +2637,10 @@ Script_keyitemnotify:
 	jmp MapTextbox
 
 ; increments pokewalker while setting
-;badge flag
+; badge flag
 Script_givebadge:
-    ld hl, wPokewalker
-    inc [hl]
+	ld hl, wPokewalker
+	inc [hl]
 	call GetScriptByte
 	ld e, a
 	call GetScriptByte

@@ -312,6 +312,7 @@ KeyItemEffects:
 	dw IsntTheTimeMessage ; SILPHSCOPE2
 	dw ApricornBox        ; APRICORN_BOX
 	dw TypeChart          ; TYPE_CHART
+    dw PokeWalker         ; POKEWALKER
     dw Katana             ; KATANA
     dw Jetski             ; JETSKI 
     dw PowerBrace         ; PWR_BRACE
@@ -320,7 +321,6 @@ KeyItemEffects:
     dw Jetpack            ; JETPACK
     dw RockHammer         ; ROCK_HAMMER
     dw Tablet             ; TABLET
-    dw PokeWalker         ; POKEWALKER
 	assert_table_length NUM_KEY_ITEMS
 
 PokeBallEffect:
@@ -1949,8 +1949,8 @@ Tablet:
     ret
 
 PokeWalker:
-    farcall PokewalkerFunction
-    ret
+	farcall PokewalkerFunction
+	ret
 
 OldRod:
 	ld e, $0

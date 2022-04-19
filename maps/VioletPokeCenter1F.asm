@@ -43,18 +43,18 @@ PokemonJournalFalknerScript:
 VioletPokeCenter1FElmsAideScript:
 	faceplayer
 	opentext
-    checkevent EVENT_GOT_POKEWALKER
-    iffalse .GivePokeWalker
-    sjump GiveTogepi
+	checkevent EVENT_GOT_POKEWALKER
+	iffalse .GivePokeWalker
+	sjump GiveTogepi
 
 .GivePokeWalker:
-    writetext .StrongerPokemonText
-    promptbutton
-    verbosegivekeyitem POKEWALKER
-    setevent EVENT_GOT_POKEWALKER
-    writetext .GavePokeWalkerText
-    promptbutton
-    sjump GiveTogepi
+	writetext .StrongerPokemonText
+	promptbutton
+	verbosegivekeyitem POKEWALKER
+	setevent EVENT_GOT_POKEWALKER
+	writetext .GavePokeWalkerText
+	promptbutton
+	sjump GiveTogepi
 
 .StrongerPokemonText:
 	text "<PLAYER>, long"
@@ -67,61 +67,61 @@ VioletPokeCenter1FElmsAideScript:
 	para "Its gossip is a"
 	line "good pastime…"
 
-    para "You got your first"
-    line "gym badge!"
+	para "You got your first"
+	line "gym badge!"
 
-    para "When you look at"
-    line "your trainer card"
+	para "When you look at"
+	line "your trainer card"
 
-    para "you can see the"
-    line "badges vibrate."
+	para "you can see the"
+	line "badges vibrate."
 
-    para "We've been doing"
-    line "some research on"
+	para "We've been doing"
+	line "some research on"
 
-    para "the effects of gym"
-    line "badges on wild"
-    cont "#mon"
+	para "the effects of gym"
+	line "badges on wild"
+	cont "#mon"
 
-    para "We found that when"
-    line "badges vibrate the"
+	para "We found that when"
+	line "badges vibrate the"
 
-    para "vibrations emit"
-    line "a frequency that"
+	para "vibrations emit"
+	line "a frequency that"
 
-    para "caused #mon"
-    line "levels to rise."
+	para "caused #mon"
+	line "levels to rise."
 
-    para "The more badges"
-    line "you collect, the"
+	para "The more badges"
+	line "you collect, the"
 
-    para "stronger the #-"
-    line "mon will appear."
+	para "stronger the #-"
+	line "mon will appear."
 
-    para "Here! Take this!"
-    done
+	para "Here! Take this!"
+	done
 
 .GavePokeWalkerText:
-    text "That device mimics"
-    line "the frequency of"
+	text "That device mimics"
+	line "the frequency of"
 
-    para "a certain number"
-    line "of badges."
+	para "a certain number"
+	line "of badges."
 
-    para "As you collect"
-    line "badges the device"
+	para "As you collect"
+	line "badges the device"
 
-    para "will learn new"
-    line "badge frequencies"
-    cont "for you."
+	para "will learn new"
+	line "badge frequencies"
+	cont "for you."
 
-    para "Set it to a lower"
-    line "number to override"
-    
-    para "the current badge"
-    line "frequency on your"
-    cont "trainer card."
-    done
+	para "Set it to a lower"
+	line "number to override"
+
+	para "the current badge"
+	line "frequency on your"
+	cont "trainer card."
+	done
 
 GiveTogepi:
 	checkevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE

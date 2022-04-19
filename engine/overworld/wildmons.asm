@@ -92,7 +92,7 @@ FindNest:
 	inc hl
 	inc hl
 	inc hl
-	ld a, NUM_GRASSMON * 3 ; we removed levels
+	ld a, NUM_GRASSMON * 3
 	call .ScanMapLoop
 	jr nc, .next_grass
 	ld [de], a
@@ -321,7 +321,7 @@ _ChooseWildEncounter:
 	inc hl
 	call GetTimeOfDayNotEve
 	push bc
-    ld de, GrassMonProbTable
+	ld de, GrassMonProbTable
 	ld bc, NUM_GRASSMON * 2
 	rst AddNTimes
 	pop bc
@@ -375,32 +375,31 @@ _ChooseWildEncounter:
     inc hl
     jr nc, .prob_bracket_loop
 
-    ; At this point, b contains wildmon index to encounter.
-    ; Since each entry is 2 bytes, add b*2 to hl.
-    ld a, b
-    add b
-    pop hl
-    push hl
-    add l
-    ld l, a
-    adc h
-    sub l
-    ld h, a
+	; At this point, b contains wildmon index to encounter.
+	; Since each entry is 2 bytes, add b*2 to hl.
+	ld a, b
+	add b
+	pop hl
+	push hl
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
 .ok
-    
-    ; calc level
-    push bc
-    ld a, [wPokewalker]
-    ld c, WILD_MON_LVL_SCALE_FACTOR
-    call SimpleMultiply
-    add WILD_MON_VARIANCE_MIN
-    ld b, a
-    ld a, WILD_MON_VARIANCE 
-    call RandomRange 
-    add b
-    ;store level
+	; calc level
+	push bc
+	ld a, [wPokewalker]
+	ld c, WILD_MON_LVL_SCALE_FACTOR
+	call SimpleMultiply
+	add WILD_MON_VARIANCE_MIN
+	ld b, a
+	ld a, WILD_MON_VARIANCE
+	call RandomRange
+	add b
+	; store level
 	ld [wCurPartyLevel], a
-    pop bc
+	pop bc
 	ld a, [hli]
 	ld b, [hl]
     pop hl
