@@ -5,8 +5,8 @@ GrassMonProbTable:
 	db 80  ; 20% chance
 	db 90  ; 10% chance
 	db 95  ;  5% chance
-	db 99  ;  4% chance
-	db 100 ;  1% chance
+	db 98  ;  3% chance
+	db 100 ;  2% chance
 	assert_table_length NUM_GRASSMON
 
 WaterMonProbTable:

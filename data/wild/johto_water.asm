@@ -378,4 +378,11 @@
 	wildmon QUAGSIRE
 	end_water_wildmons
 
+	def_water_wildmons MAGNET_TUNNEL_INSIDE
+	db 15 percent
+	wildmon CHINCHOU
+	wildmon CHINCHOU
+	wildmon LANTURN
+	end_water_wildmons
+
 	db -1 ; end

@@ -342,19 +342,19 @@
 	; morn
 	wildmon KOFFING
 	wildmon RATTATA
-	wildmon KOFFING
 	wildmon ZUBAT
 	wildmon SLUGMA
-	wildmon SLUGMA
 	wildmon MAGBY
+	wildmon CHARMANDER
+	wildmon CHARMANDER
 	; day
 	wildmon KOFFING
 	wildmon RATTATA
-	wildmon KOFFING
 	wildmon ZUBAT
 	wildmon SLUGMA
-	wildmon SLUGMA
 	wildmon MAGBY
+	wildmon FLAREON
+	wildmon FLAREON
 	; nite
 	wildmon KOFFING
 	wildmon GASTLY
@@ -679,9 +679,9 @@
 	wildmon WEEDLE
 	wildmon METAPOD
 	wildmon KAKUNA
-	wildmon PIDGEY
 	wildmon PARAS
-	wildmon PARAS
+	wildmon LEAFEON
+	wildmon LEAFEON
 	; day
 	wildmon CATERPIE
 	wildmon WEEDLE
@@ -819,8 +819,8 @@
 	wildmon ZUBAT
 	wildmon VULPIX, ALOLAN_FORM
 	wildmon SWINUB
-	wildmon GOLBAT
-	wildmon GOLBAT
+	wildmon SANDSHREW, ALOLAN_FORM
+	wildmon SANDSLASH, ALOLAN_FORM
 	wildmon NINETALES, ALOLAN_FORM
 	; day
 	wildmon SWINUB
@@ -910,10 +910,10 @@
 	wildmon SWINUB
 	wildmon ZUBAT
 	wildmon VULPIX, ALOLAN_FORM
-	wildmon SWINUB
 	wildmon NINETALES, ALOLAN_FORM
 	wildmon JYNX
-	wildmon JYNX
+	wildmon GLACEON
+	wildmon GLACEON
 	; nite
 	wildmon ZUBAT
 	wildmon ZUBAT
@@ -1827,9 +1827,9 @@
 	wildmon TAUROS
 	wildmon SUNFLORA
 	wildmon GROWLITHE
-	wildmon FARFETCH_D
 	wildmon GIRAFARIG
-	wildmon GIRAFARIG
+	wildmon BULBASAUR
+	wildmon BULBASAUR
 	; day
 	wildmon FARFETCH_D
 	wildmon TAUROS
@@ -1920,8 +1920,8 @@
 	wildmon PIKACHU
 	wildmon PARAS
 	wildmon MARILL
-	wildmon MARILL
-	wildmon PICHU
+	wildmon JOLTEON
+	wildmon JOLTEON
 	; nite
 	wildmon HOOTHOOT
 	wildmon MEOWTH
@@ -1939,9 +1939,9 @@
 	wildmon ZUBAT
 	wildmon MACHOP
 	wildmon MUNCHLAX
-	wildmon GOLBAT
 	wildmon NATU
-	wildmon GOLBAT
+	wildmon ESPEON
+	wildmon ESPEON
 	; day
 	wildmon CUBONE
 	wildmon ZUBAT
@@ -2050,26 +2050,138 @@
 	wildmon WOOPER
 	wildmon QUAGSIRE
 	wildmon YANMA
-	wildmon YANMA
 	wildmon GRIMER, ALOLAN_FORM
 	wildmon GRIMER, ALOLAN_FORM
+	wildmon YANMEGA
 	wildmon YANMEGA
 	; day
 	wildmon WOOPER
 	wildmon QUAGSIRE
 	wildmon YANMA
-	wildmon YANMA
 	wildmon GRIMER, ALOLAN_FORM
 	wildmon GRIMER, ALOLAN_FORM
 	wildmon YANMEGA
+	wildmon YANMEGA
 	; nite
 	wildmon QUAGSIRE
-	wildmon ZUBAT
 	wildmon VENONAT
 	wildmon GASTLY
 	wildmon HAUNTER
 	wildmon MISDREAVUS
 	wildmon VENOMOTH
+	wildmon VENOMOTH
+	end_grass_wildmons
+
+	def_grass_wildmons STORMY_BEACH
+	db 5 percent, 5 percent, 10 percent ; encounter rates: morn, day, nite
+    ; morn
+	wildmon PSYDUCK
+	wildmon KRABBY
+	wildmon MARILL
+	wildmon KINGLER
+	wildmon AZUMARILL
+	wildmon SQUIRTLE
+	wildmon SQUIRTLE
+    ; day
+	wildmon KRABBY
+	wildmon MARILL
+	wildmon POLIWHIRL
+	wildmon KINGLER
+	wildmon PSYDUCK
+	wildmon VAPOREON
+	wildmon VAPOREON
+    ; nite
+	wildmon WOOPER
+	wildmon POLIWAG
+	wildmon PSYDUCK
+	wildmon PSYDUCK
+	wildmon POLIWHIRL
+	wildmon QUAGSIRE
+	wildmon GOLDUCK
+    end_grass_wildmons
+
+	def_grass_wildmons MAGNET_TUNNEL_INSIDE
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn, day, nite
+	; morn
+	wildmon MAGNEMITE
+	wildmon MAGNEMITE
+	wildmon GEODUDE, ALOLAN_FORM
+	wildmon ZUBAT
+	wildmon VOLTORB
+	wildmon DIGLETT, ALOLAN_FORM 
+	wildmon DIGLETT, ALOLAN_FORM 
+	; day
+	wildmon MAGNEMITE
+	wildmon MAGNEMITE
+	wildmon GEODUDE, ALOLAN_FORM
+	wildmon ZUBAT
+	wildmon VOLTORB
+	wildmon DIGLETT, ALOLAN_FORM
+	wildmon DIGLETT, ALOLAN_FORM
+	; nite
+	wildmon MAGNEMITE
+	wildmon MAGNEMITE
+	wildmon ZUBAT
+	wildmon GEODUDE, ALOLAN_FORM
+	wildmon GOLBAT
+	wildmon MAGNETON
+	wildmon MAGNETON
+	end_grass_wildmons
+
+	def_grass_wildmons VIOLET_OUTSKIRTS
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn, day, nite
+	; morn
+	wildmon BELLSPROUT
+	wildmon PIDGEY
+	wildmon GROWLITHE
+	wildmon WEEPINBELL
+	wildmon PIDGEOTTO
+	wildmon PONYTA, GALARIAN_FORM
+	wildmon PONYTA, GALARIAN_FORM
+	; day
+	wildmon BELLSPROUT
+	wildmon PIDGEY
+	wildmon VULPIX
+	wildmon WEEPINBELL
+	wildmon PIDGEOTTO
+	wildmon PONYTA, GALARIAN_FORM
+	wildmon PONYTA, GALARIAN_FORM
+	; nite
+	wildmon HOOTHOOT
+	wildmon GASTLY
+	wildmon NOCTOWL
+	wildmon HOUNDOUR
+	wildmon HAUNTER
+	wildmon UMBREON
+	wildmon UMBREON
+	end_grass_wildmons
+	
+	def_grass_wildmons ROUTE_32_COAST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	wildmon ARBOK, ARBOK_JOHTO_FORM
+	wildmon RATICATE
+	wildmon WEEPINBELL
+	wildmon FLAAFFY
+	wildmon FLAAFFY
+	wildmon SUNFLORA
+	wildmon SUNFLORA
+	; day
+	wildmon ARBOK, ARBOK_JOHTO_FORM
+	wildmon RATICATE
+	wildmon WEEPINBELL
+	wildmon FLAAFFY
+	wildmon FLAAFFY
+	wildmon SUNFLORA
+	wildmon SUNFLORA
+	; nite
+	wildmon QUAGSIRE
+	wildmon RATICATE
+	wildmon WEEPINBELL
+	wildmon NOCTOWL
+	wildmon FLAAFFY
+	wildmon HAUNTER
+	wildmon HAUNTER
 	end_grass_wildmons
 
 	db -1 ; end

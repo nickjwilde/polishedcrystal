@@ -453,7 +453,7 @@ Continue_LoadMenuHeader:
 	jmp PlaceVerticalMenuItems
 
 .MenuDataHeader_Dex:
-	db MENU_BACKUP_TILE
+	db MENU_BACKUP_TILES
 	menu_coords 0, 0, 15, 9
 	dw .MenuData2_Dex
 	db 1 ; default option

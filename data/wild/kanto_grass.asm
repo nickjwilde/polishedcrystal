@@ -399,9 +399,9 @@
 	wildmon BEEDRILL
 	wildmon KAKUNA
 	wildmon METAPOD
-	wildmon METAPOD
 	wildmon PIKACHU
-	wildmon PIKACHU
+	wildmon CHIKORITA
+	wildmon CHIKORITA
 	; day
 	wildmon BUTTERFREE
 	wildmon BEEDRILL
@@ -1127,9 +1127,9 @@
 	wildmon BEEDRILL
 	wildmon PIDGEOTTO
 	wildmon WEEPINBELL
-	wildmon PIDGEOTTO
 	wildmon KINGLER
-	wildmon KINGLER
+	wildmon TOTODILE 
+	wildmon TOTODILE 
 	; day
 	wildmon BUTTERFREE
 	wildmon BEEDRILL
@@ -1584,8 +1584,8 @@
 	wildmon MUK
 	wildmon ARCANINE
 	wildmon RAPIDASH
-	wildmon RAPIDASH
-	wildmon RAPIDASH
+	wildmon CYNDAQUIL
+	wildmon CYNDAQUIL
 	; nite
 	wildmon HAUNTER
 	wildmon WEEZING
