@@ -187,29 +187,17 @@ TrainerSchoolboyAlan1:
 .ChooseRematch:
 	callstd rematchm
 	winlosstext SchoolboyAlan1BeatenText, 0
-	readmem wAlanFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_OLIVINE
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer SCHOOLBOY, ALAN1
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 1
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
@@ -217,7 +205,6 @@ TrainerSchoolboyAlan1:
 	loadtrainer SCHOOLBOY, ALAN2
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 2
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
@@ -225,7 +212,6 @@ TrainerSchoolboyAlan1:
 	loadtrainer SCHOOLBOY, ALAN3
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 3
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
@@ -233,7 +219,6 @@ TrainerSchoolboyAlan1:
 	loadtrainer SCHOOLBOY, ALAN4
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 4
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 

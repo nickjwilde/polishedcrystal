@@ -60,29 +60,17 @@ TrainerHikerAnthony:
 .Rematch:
 	callstd rematchm
 	winlosstext HikerAnthony1BeatenText, 0
-	readmem wAnthonyFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_OLIVINE
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer HIKER, ANTHONY1
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 1
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
@@ -90,7 +78,6 @@ TrainerHikerAnthony:
 	loadtrainer HIKER, ANTHONY2
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 2
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
@@ -98,7 +85,6 @@ TrainerHikerAnthony:
 	loadtrainer HIKER, ANTHONY3
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 3
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
@@ -106,7 +92,6 @@ TrainerHikerAnthony:
 	loadtrainer HIKER, ANTHONY4
 	startbattle
 	reloadmapafterbattle
-	loadmem wAnthonyFightCount, 4
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 

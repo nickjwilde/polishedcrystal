@@ -159,29 +159,17 @@ TrainerBug_catcherArnie1:
 .WantsBattle:
 	scall Route35RematchM
 	winlosstext Bug_catcherArnie1BeatenText, 0
-	readmem wArnieFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer BUG_CATCHER, ARNIE1
 	startbattle
 	reloadmapafterbattle
-	loadmem wArnieFightCount, 1
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 
@@ -189,7 +177,6 @@ TrainerBug_catcherArnie1:
 	loadtrainer BUG_CATCHER, ARNIE2
 	startbattle
 	reloadmapafterbattle
-	loadmem wArnieFightCount, 2
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 
@@ -197,7 +184,6 @@ TrainerBug_catcherArnie1:
 	loadtrainer BUG_CATCHER, ARNIE3
 	startbattle
 	reloadmapafterbattle
-	loadmem wArnieFightCount, 3
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 
@@ -205,7 +191,6 @@ TrainerBug_catcherArnie1:
 	loadtrainer BUG_CATCHER, ARNIE4
 	startbattle
 	reloadmapafterbattle
-	loadmem wArnieFightCount, 4
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 

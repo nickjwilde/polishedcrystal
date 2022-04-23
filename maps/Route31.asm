@@ -192,29 +192,17 @@ TrainerBug_catcherWade1:
 .WadeRematch:
 	callstd rematchm
 	winlosstext Bug_catcherWade1BeatenText, 0
-	readmem wWadeFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_MAHOGANY
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_GOLDENROD
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer BUG_CATCHER, WADE1
 	startbattle
 	reloadmapafterbattle
-	loadmem wWadeFightCount, 1
 	clearflag ENGINE_WADE_READY_FOR_REMATCH
 	end
 
@@ -222,7 +210,6 @@ TrainerBug_catcherWade1:
 	loadtrainer BUG_CATCHER, WADE2
 	startbattle
 	reloadmapafterbattle
-	loadmem wWadeFightCount, 2
 	clearflag ENGINE_WADE_READY_FOR_REMATCH
 	end
 
@@ -230,7 +217,6 @@ TrainerBug_catcherWade1:
 	loadtrainer BUG_CATCHER, WADE3
 	startbattle
 	reloadmapafterbattle
-	loadmem wWadeFightCount, 3
 	clearflag ENGINE_WADE_READY_FOR_REMATCH
 	end
 
@@ -238,7 +224,6 @@ TrainerBug_catcherWade1:
 	loadtrainer BUG_CATCHER, WADE4
 	startbattle
 	reloadmapafterbattle
-	loadmem wWadeFightCount, 4
 	clearflag ENGINE_WADE_READY_FOR_REMATCH
 	end
 

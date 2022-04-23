@@ -187,25 +187,15 @@ UnknownScript_0x1a926b:
 UnknownScript_0x1a927f:
 	scall UnknownScript_0x1a9309
 	winlosstext FisherTully1BeatenText, 0
-	readmem wTullyFightCount
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight3:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer FISHER, TULLY1
 	startbattle
 	reloadmapafterbattle
-	loadmem wTullyFightCount, 1
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
 	end
 
@@ -213,7 +203,6 @@ UnknownScript_0x1a927f:
 	loadtrainer FISHER, TULLY2
 	startbattle
 	reloadmapafterbattle
-	loadmem wTullyFightCount, 2
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
 	end
 
@@ -221,7 +210,6 @@ UnknownScript_0x1a927f:
 	loadtrainer FISHER, TULLY3
 	startbattle
 	reloadmapafterbattle
-	loadmem wTullyFightCount, 3
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
 	end
 

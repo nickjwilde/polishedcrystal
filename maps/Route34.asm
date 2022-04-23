@@ -226,29 +226,17 @@ TrainerCamperTodd1:
 .Rematch:
 	callstd rematchm
 	winlosstext CamperTodd1BeatenText, 0
-	readmem wToddFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_CIANWOOD
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer CAMPER, TODD1
 	startbattle
 	reloadmapafterbattle
-	loadmem wToddFightCount, 1
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
 	end
 
@@ -256,7 +244,6 @@ TrainerCamperTodd1:
 	loadtrainer CAMPER, TODD2
 	startbattle
 	reloadmapafterbattle
-	loadmem wToddFightCount, 2
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
 	end
 
@@ -264,7 +251,6 @@ TrainerCamperTodd1:
 	loadtrainer CAMPER, TODD3
 	startbattle
 	reloadmapafterbattle
-	loadmem wToddFightCount, 3
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
 	end
 
@@ -272,7 +258,6 @@ TrainerCamperTodd1:
 	loadtrainer CAMPER, TODD4
 	startbattle
 	reloadmapafterbattle
-	loadmem wToddFightCount, 4
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
 	end
 
@@ -325,29 +310,17 @@ TrainerPicnickerGina1:
 .Rematch:
 	callstd rematchf
 	winlosstext PicnickerGina1BeatenText, 0
-	readmem wGinaFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_MAHOGANY
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer PICNICKER, GINA1
 	startbattle
 	reloadmapafterbattle
-	loadmem wGinaFightCount, 1
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
 	end
 
@@ -355,7 +328,6 @@ TrainerPicnickerGina1:
 	loadtrainer PICNICKER, GINA2
 	startbattle
 	reloadmapafterbattle
-	loadmem wGinaFightCount, 2
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
 	end
 
@@ -363,7 +335,6 @@ TrainerPicnickerGina1:
 	loadtrainer PICNICKER, GINA3
 	startbattle
 	reloadmapafterbattle
-	loadmem wGinaFightCount, 3
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
 	end
 
@@ -371,7 +342,6 @@ TrainerPicnickerGina1:
 	loadtrainer PICNICKER, GINA4
 	startbattle
 	reloadmapafterbattle
-	loadmem wGinaFightCount, 4
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
 	end
 

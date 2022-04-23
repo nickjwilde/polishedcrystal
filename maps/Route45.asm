@@ -294,21 +294,13 @@ UnknownScript_0x19e1a4:
 UnknownScript_0x19e1b8:
 	scall Route45RematchM
 	winlosstext HikerParry1BeatenText, 0
-	readmem wParryFightCount
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight2:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer HIKER, PARRY1
 	startbattle
 	reloadmapafterbattle
-	loadmem wParryFightCount, 1
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH
 	end
 
@@ -316,7 +308,6 @@ UnknownScript_0x19e1b8:
 	loadtrainer HIKER, PARRY2
 	startbattle
 	reloadmapafterbattle
-	loadmem wParryFightCount, 2
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH
 	end
 

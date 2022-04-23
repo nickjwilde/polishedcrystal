@@ -96,21 +96,13 @@ UnknownScript_0x1a96c6:
 UnknownScript_0x1a96da:
 	scall Route46RematchF
 	winlosstext PicnickerErin1BeatenText, 0
-	readmem wErinFightCount
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight2:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer PICNICKER, ERIN1
 	startbattle
 	reloadmapafterbattle
-	loadmem wErinFightCount, 1
 	clearflag ENGINE_ERIN_READY_FOR_REMATCH
 	end
 
@@ -118,7 +110,6 @@ UnknownScript_0x1a96da:
 	loadtrainer PICNICKER, ERIN2
 	startbattle
 	reloadmapafterbattle
-	loadmem wErinFightCount, 2
 	clearflag ENGINE_ERIN_READY_FOR_REMATCH
 	end
 

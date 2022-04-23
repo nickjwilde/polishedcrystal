@@ -76,29 +76,17 @@ TrainerLassDana1:
 .DanaRematch:
 	callstd rematchf
 	winlosstext LassDana1BeatenText, 0
-	readmem wDanaFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_CIANWOOD
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer LASS, DANA1
 	startbattle
 	reloadmapafterbattle
-	loadmem wDanaFightCount, 1
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
 	end
 
@@ -106,7 +94,6 @@ TrainerLassDana1:
 	loadtrainer LASS, DANA2
 	startbattle
 	reloadmapafterbattle
-	loadmem wDanaFightCount, 2
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
 	end
 
@@ -114,7 +101,6 @@ TrainerLassDana1:
 	loadtrainer LASS, DANA3
 	startbattle
 	reloadmapafterbattle
-	loadmem wDanaFightCount, 3
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
 	end
 
@@ -122,7 +108,6 @@ TrainerLassDana1:
 	loadtrainer LASS, DANA4
 	startbattle
 	reloadmapafterbattle
-	loadmem wDanaFightCount, 4
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
 	end
 
@@ -184,29 +169,17 @@ TrainerSchoolboyChad1:
 .ChadRematch:
 	callstd rematchm
 	winlosstext SchoolboyChad1BeatenText, 0
-	readmem wChadFightCount
-	ifequalfwd 4, .Fight4
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight4
-.Fight3:
+	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight3
-.Fight2:
+	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkflag ENGINE_FLYPOINT_MAHOGANY
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer SCHOOLBOY, CHAD1
 	startbattle
 	reloadmapafterbattle
-	loadmem wChadFightCount, 1
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 
@@ -214,7 +187,6 @@ TrainerSchoolboyChad1:
 	loadtrainer SCHOOLBOY, CHAD2
 	startbattle
 	reloadmapafterbattle
-	loadmem wChadFightCount, 2
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 
@@ -222,7 +194,6 @@ TrainerSchoolboyChad1:
 	loadtrainer SCHOOLBOY, CHAD3
 	startbattle
 	reloadmapafterbattle
-	loadmem wChadFightCount, 3
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 
@@ -230,7 +201,6 @@ TrainerSchoolboyChad1:
 	loadtrainer SCHOOLBOY, CHAD4
 	startbattle
 	reloadmapafterbattle
-	loadmem wChadFightCount, 4
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 

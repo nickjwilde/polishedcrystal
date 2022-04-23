@@ -219,6 +219,7 @@ UnknownScript_0x1a08eb:
 UnknownScript_0x1a08ff:
 	scall UnknownScript_0x1a096f
 	winlosstext Bird_keeperJose1BeatenText, 0
+<<<<<<< HEAD
 	readmem wJoseFightCount
 	ifequalfwd 2, .Fight2
 	ifequalfwd 1, .Fight1
@@ -230,10 +231,15 @@ UnknownScript_0x1a08ff:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftruefwd .LoadFight1
 .LoadFight0:
+=======
+	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	iftrue .LoadFight2
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .LoadFight1
+>>>>>>> abbaac319 (Enhance rematch systwm and free up space for follower pokemon)
 	loadtrainer BIRD_KEEPER, JOSE1
 	startbattle
 	reloadmapafterbattle
-	loadmem wJoseFightCount, 1
 	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
@@ -241,7 +247,6 @@ UnknownScript_0x1a08ff:
 	loadtrainer BIRD_KEEPER, JOSE2
 	startbattle
 	reloadmapafterbattle
-	loadmem wJoseFightCount, 2
 	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
@@ -354,6 +359,7 @@ UnknownScript_0x1a09d5:
 UnknownScript_0x1a09e9:
 	scall UnknownScript_0x1a0a47
 	winlosstext CooltrainerfReena1BeatenText, 0
+<<<<<<< HEAD
 	readmem wReenaFightCount
 	ifequalfwd 2, .Fight2
 	ifequalfwd 1, .Fight1
@@ -365,10 +371,15 @@ UnknownScript_0x1a09e9:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftruefwd .LoadFight1
 .LoadFight0:
+=======
+	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	iftrue .LoadFight2
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .LoadFight1
+>>>>>>> abbaac319 (Enhance rematch systwm and free up space for follower pokemon)
 	loadtrainer COOLTRAINERF, REENA1
 	startbattle
 	reloadmapafterbattle
-	loadmem wReenaFightCount, 1
 	clearflag ENGINE_REENA_READY_FOR_REMATCH
 	end
 
@@ -376,7 +387,6 @@ UnknownScript_0x1a09e9:
 	loadtrainer COOLTRAINERF, REENA2
 	startbattle
 	reloadmapafterbattle
-	loadmem wReenaFightCount, 2
 	clearflag ENGINE_REENA_READY_FOR_REMATCH
 	end
 
