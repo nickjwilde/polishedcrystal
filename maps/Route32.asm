@@ -488,29 +488,17 @@ TrainerFisherRalph1:
 .Rematch:
 	callstd rematchm
 	winlosstext FisherRalph1BeatenText, 0
-	readmem wRalphFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight4
-.Fight3:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
-.Fight2:
 	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
 	iftrue .LoadFight2
-.Fight1:
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .LoadFight1
-.LoadFight0:
 	loadtrainer FISHER, RALPH1
 	startbattle
 	reloadmapafterbattle
-	loadmem wRalphFightCount, 1
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
@@ -518,7 +506,6 @@ TrainerFisherRalph1:
 	loadtrainer FISHER, RALPH2
 	startbattle
 	reloadmapafterbattle
-	loadmem wRalphFightCount, 2
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
@@ -526,7 +513,6 @@ TrainerFisherRalph1:
 	loadtrainer FISHER, RALPH3
 	startbattle
 	reloadmapafterbattle
-	loadmem wRalphFightCount, 3
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
@@ -534,7 +520,6 @@ TrainerFisherRalph1:
 	loadtrainer FISHER, RALPH4
 	startbattle
 	reloadmapafterbattle
-	loadmem wRalphFightCount, 4
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
@@ -598,29 +583,17 @@ TrainerPicnickerLiz1:
 .Rematch:
 	callstd rematchf
 	winlosstext PicnickerLiz1BeatenText, 0
-	readmem wLizFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight4
-.Fight3:
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .LoadFight3
-.Fight2:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .LoadFight2
-.Fight1:
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .LoadFight1
-.LoadFight0:
 	loadtrainer PICNICKER, LIZ1
 	startbattle
 	reloadmapafterbattle
-	loadmem wLizFightCount, 1
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
@@ -628,7 +601,6 @@ TrainerPicnickerLiz1:
 	loadtrainer PICNICKER, LIZ2
 	startbattle
 	reloadmapafterbattle
-	loadmem wLizFightCount, 2
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
@@ -636,7 +608,6 @@ TrainerPicnickerLiz1:
 	loadtrainer PICNICKER, LIZ3
 	startbattle
 	reloadmapafterbattle
-	loadmem wLizFightCount, 3
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
@@ -644,7 +615,6 @@ TrainerPicnickerLiz1:
 	loadtrainer PICNICKER, LIZ4
 	startbattle
 	reloadmapafterbattle
-	loadmem wLizFightCount, 4
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
