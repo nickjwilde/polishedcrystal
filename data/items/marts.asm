@@ -168,7 +168,7 @@ Goldenrod5FTMMart:
 	db -1
 
 GoldenrodHarborMart:
-	db 10 ; # items
+	db 8 ; # items
 	db ETHER
 	db ELIXIR
 	db DESTINY_KNOT
@@ -242,7 +242,7 @@ MahoganyMart1:
 	db -1
 
 MahoganyMart2:
-	db 11 ; # items
+	db 10 ; # items
 	db RAGECANDYBAR
 	db AIR_BALLOON
 	db QUICK_CLAW

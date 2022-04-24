@@ -17,7 +17,7 @@ endc
 	db SITRUS_BERRY ; item 2
 	dn GENDER_F50, 2 ; gender ratio, step cycles to hatch
 	INCBIN "gfx/pokemon/furret/front.dimensions"
-	abilities_for FURRET, RUN_AWAY, KEEN_EYE, FRISK
+	abilities_for FURRET, FRISK, KEEN_EYE, RUN_AWAY
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

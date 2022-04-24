@@ -9,5 +9,5 @@ BlueCardMartData:
 	db EVIOLITE,     5
 	db PP_UP,        6
 	db ABILITY_CAP,  0
-	db ABILITYPATCH,  0
+	db ABILITYPATCH, 0
 	db -1
