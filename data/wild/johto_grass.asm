@@ -1366,7 +1366,7 @@
 	wildmon HOOTHOOT
 	wildmon RATTATA
 	wildmon HOOTHOOT
-	wildmon RATTATA
+	wildmon ABRA
 	wildmon RATTATA
 	wildmon HOOTHOOT
 	wildmon SENTRET
