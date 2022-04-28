@@ -1066,7 +1066,15 @@ Intro_PlacePlayerSprite:
 	ld a, [de]
 	inc de
 	ld [hli], a
-	ld a, [wPlayerGender] ; 0=male, 1=female, or 2=enby
+
+	ld b, PAL_OW_BLUE
+	ld a, [wPlayerGender]
+	bit 0, a
+	jr z, .male
+	ld b, PAL_OW_BLUE
+.male
+	ld a, b
+
 	ld [hli], a
 	dec c
 	jr nz, .loop

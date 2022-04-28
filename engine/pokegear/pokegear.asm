@@ -2009,7 +2009,7 @@ TownMapPlayerIcon:
 InitializePokegearPlayerIcon:
 	depixel 0, 0
 	ld a, [wPlayerGender]
-	ld b, SPRITE_ANIM_INDEX_RED_WALK
+	ld b, SPRITE_ANIM_INDEX_BLUE_WALK ; Male
 	and a ; PLAYER_MALE
 	jr z, .got_gender
 	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
