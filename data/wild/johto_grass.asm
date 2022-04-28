@@ -1366,7 +1366,7 @@
 	wildmon HOOTHOOT
 	wildmon RATTATA
 	wildmon HOOTHOOT
-	wildmon ABRA
+	wildmon RATTATA
 	wildmon RATTATA
 	wildmon HOOTHOOT
 	wildmon SENTRET
@@ -1406,7 +1406,7 @@
 	wildmon LEDYBA
 	wildmon CATERPIE
 	wildmon BELLSPROUT
-	wildmon PIDGEY
+	wildmon ABRA
 	wildmon WEEDLE
 	wildmon SUNKERN
 	wildmon SUNKERN
