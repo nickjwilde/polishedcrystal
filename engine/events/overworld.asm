@@ -1060,15 +1060,25 @@ TeleportFunction:
 .TryTeleport:
 	call CheckFlyAllowedOnMap
 	jr nz, .nope
-	ld a, [wLastSpawnMapGroup]
-	ld d, a
-	ld a, [wLastSpawnMapNumber]
-	ld e, a
-	farcall IsSpawnPoint
-	jr nc, .nope
-	ld a, c
+	xor a
+	ldh [hMapAnims], a
+	call LoadStandardMenuHeader
+	call ClearSprites
+	farcall _FlyMap
+	ld a, e
+	cp -1
+	jr z, .illegal
+	cp NUM_SPAWNS
+	jr nc, .illegal
+
 	ld [wDefaultSpawnpoint], a
 	ld a, $1
+	ret
+
+.illegal
+	call CloseWindow
+	call ApplyTilemapInVBlank
+	ld a, $80
 	ret
 
 .nope
