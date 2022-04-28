@@ -64,6 +64,8 @@ VermilionGymSurgeScript:
 	opentext
 	checkflag ENGINE_THUNDERBADGE
 	iftrue .FightDone
+	checkflag ENGINE_CASCADEBADGE
+	iffalse .NotStrongEnough
 	writetext LtSurgeIntroText
 	waitbutton
 	closetext
@@ -104,6 +106,11 @@ VermilionGymSurgeScript:
 	verbosegivetmhm TM_WILD_CHARGE
 	setevent EVENT_GOT_TM43_WILD_CHARGE
 	jumpopenedtext SurgeOutroText
+.NotStrongEnough
+	writetext LtSurgeFightMistyText
+	promptbutton
+	closetext
+	end
 
 GenericTrainerGentlemanGregory:
 	generictrainer GENTLEMAN, GREGORY, EVENT_BEAT_GENTLEMAN_GREGORY, GentlemanGregorySeenText, GentlemanGregoryBeatenText
@@ -260,6 +267,18 @@ SurgeOutroText:
 
 	para "it to go like"
 	line "lightning!"
+	done
+
+LtSurgeFightMistyText:
+	text "You are not strong"
+	line "enough yet to face"
+	cont "me."
+
+	para "You should beat"
+	line "Misty first."
+
+	para "Then I will know"
+	line "you are strong."
 	done
 
 LtSurgeFightDoneText:

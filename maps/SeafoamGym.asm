@@ -74,6 +74,8 @@ SeafoamGymBlaineScript:
 	opentext
 	checkflag ENGINE_VOLCANOBADGE
 	iftrue .FightDone
+	checkflag ENGINE_SOULBADGE
+	iffalse .NotStrongEnough
 	writetext BlaineIntroText
 	waitbutton
 	closetext
@@ -137,6 +139,12 @@ SeafoamGymBlaineScript:
 	para "we'll have to have"
 	line "a rematch."
 	done
+
+.NotStrongEnough
+	writetext BlaineFightSabrinaText
+	promptbutton
+	closetext
+	end
 
 SeafoamGymGuyScript:
 	checkevent EVENT_TALKED_TO_SEAFOAM_GYM_GUY_ONCE
@@ -278,6 +286,18 @@ ReceivedVolcanoBadgeText:
 BlaineAfterBattleText:
 	text "Here, I'll give you"
 	line "this, too."
+	done
+
+BlaineFightSabrinaText:
+	text "You are not strong"
+	line "enough yet to face"
+	cont "me."
+
+	para "You should beat"
+	line "Sabrina first."
+
+	para "Then I will know"
+	line "you are strong."
 	done
 
 BlaineFightDoneText:

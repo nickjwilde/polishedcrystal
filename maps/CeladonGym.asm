@@ -27,6 +27,8 @@ CeladonGymErikaScript:
 	opentext
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .FightDone
+	checkflag ENGINE_THUNDERBADGE
+	iffalse .NotStrongEnough
 	writetext ErikaBeforeBattleText
 	waitbutton
 	closetext
@@ -68,6 +70,11 @@ CeladonGymErikaScript:
 	verbosegivetmhm TM_GIGA_DRAIN
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 	jumpopenedtext ErikaOutroText
+.NotStrongEnough
+	writetext ErikaFightLtSurgeText
+	promptbutton
+	closetext
+	end
 
 GenericTrainerLassMichelle:
 	generictrainer LASS, MICHELLE, EVENT_BEAT_LASS_MICHELLE, LassMichelleSeenText, LassMichelleBeatenText
@@ -194,6 +201,18 @@ ErikaOutroText:
 
 	para "Please use it if"
 	line "it pleases you…"
+	done
+
+ErikaFightLtSurgeText:
+	text "You are not strong"
+	line "enough yet to face"
+	cont "me."
+
+	para "You should beat"
+	line "Lt. Surge first."
+
+	para "Then I will know"
+	line "you are strong."
 	done
 
 ErikaAfterBattleText:
