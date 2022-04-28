@@ -259,7 +259,7 @@ PokeCenter2F_CheckGender:
 	showtext Text_ChangeTheLook
 	playsound SFX_TINGLE
 	applymovement PLAYER, PokeCenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_RED) << 4
+	setval (PAL_NPC_BLUE) << 4
 	special Special_SetPlayerPalette
 	applymovement PLAYER, PokeCenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
 	setflag ENGINE_KRIS_IN_CABLE_CLUB

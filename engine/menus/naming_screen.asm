@@ -99,7 +99,7 @@ NamingScreen:
 	farcall _GetPlayerIcon
 	ld a, [wPlayerGender]
 	bit 0, a
-	ld c, SPRITE_ANIM_INDEX_RED_WALK
+	ld c, SPRITE_ANIM_INDEX_BLUE_WALK
 	jr z, .got_player_walk
 	ld c, SPRITE_ANIM_INDEX_BLUE_WALK
 .got_player_walk
@@ -114,7 +114,7 @@ NamingScreen:
 
 .Rival:
 	ld hl, SilverSpriteGFX
-	lb bc, BANK(SilverSpriteGFX), SPRITE_ANIM_INDEX_RED_WALK
+	lb bc, BANK(SilverSpriteGFX), SPRITE_ANIM_INDEX_BLUE_WALK
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .RivalNameString
@@ -146,7 +146,7 @@ NamingScreen:
 	ld [hli], a
 	ld [hl], a
 	depixel 4, 4, 4, 0
-	ld a, SPRITE_ANIM_INDEX_RED_WALK
+	ld a, SPRITE_ANIM_INDEX_BLUE_WALK
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc

@@ -306,7 +306,7 @@ MagnetTrain_Jumptable:
 	ld d, 10 * 8 + 5
 	ld a, [wMagnetTrainPlayerSpriteInitX]
 	ld e, a
-	ld b, SPRITE_ANIM_INDEX_MAGNET_TRAIN_RED
+	ld b, SPRITE_ANIM_INDEX_MAGNET_TRAIN_BLUE
 	ldh a, [rSVBK]
 	push af
 	ld a, $1
