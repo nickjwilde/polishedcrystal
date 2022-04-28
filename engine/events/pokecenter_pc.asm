@@ -11,6 +11,7 @@ PokemonCenterPC:
 .loop
 	xor a
 	ldh [hBGMapMode], a
+    ldh [hMapAnims], a
 	call .ChooseWhichPCListToUse
 	ld [wWhichIndexSet], a
 	call DoNthMenu
@@ -21,6 +22,9 @@ PokemonCenterPC:
 	jr nc, .loop
 
 .shutdown
+    ld a, $1
+    ld [hMapAnims], a
+    ld [hBGMapMode], a
 	call PC_PlayShutdownSound
 	call ExitMenu
 	jmp CloseWindow
