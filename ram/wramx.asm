@@ -907,7 +907,7 @@ wBattleFactoryCurStreak:: dw
 wBattleFactoryTopStreak:: dw
 wBattleFactorySwapCount:: db ; Amount of swaps performed.
 
-	ds 13 ; unused
+	ds 12 ; unused
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer

@@ -33,7 +33,7 @@ GetPlayerSprite:
 ; Any player state not in the array defaults to Chris's sprite.
 	xor a ; ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
-	ld a, SPRITE_CHRIS
+	ld a, SPRITE_PIKACHU
 	jr .finish
 
 .good
@@ -45,14 +45,14 @@ GetPlayerSprite:
 	ret
 
 .Chris:
-	db PLAYER_NORMAL,    SPRITE_CHRIS
+	db PLAYER_NORMAL,    SPRITE_PLAYER
 	db PLAYER_BIKE,      SPRITE_CHRIS_BIKE
 	db PLAYER_SURF,      SPRITE_CHRIS_SURF
 	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
 	db $ff
 
 .Kris:
-	db PLAYER_NORMAL,    SPRITE_KRIS
+	db PLAYER_NORMAL,    SPRITE_PLAYER
 	db PLAYER_BIKE,      SPRITE_KRIS_BIKE
 	db PLAYER_SURF,      SPRITE_KRIS_SURF
 	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU

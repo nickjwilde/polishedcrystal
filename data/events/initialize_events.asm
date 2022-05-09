@@ -188,6 +188,7 @@ InitialEngineFlags:
 
 InitialVariableSpritesAndMapScenes:
 varspriteaddr EQUS "wVariableSprites - SPRITE_VARS +"
+	dwb varspriteaddr SPRITE_PLAYER, SPRITE_PIKACHU
 	dwb varspriteaddr SPRITE_FUCHSIA_GYM_1, SPRITE_JANINE
 	dwb varspriteaddr SPRITE_FUCHSIA_GYM_2, SPRITE_JANINE
 	dwb varspriteaddr SPRITE_FUCHSIA_GYM_3, SPRITE_JANINE
