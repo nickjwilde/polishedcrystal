@@ -63,7 +63,7 @@ OlivineLighthouseRoofSkylaScript:
 	writetext .AfterText
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_SKYLA
+    setevent EVENT_BEAT_SKYLA
 	setevent EVENT_BEAT_SKYLA_AGAIN
 	end
 
@@ -180,4 +180,3 @@ OlivineLighthouseRoofSkylaScript:
 	para "could fight with"
 	line "our full strength."
 	done
-

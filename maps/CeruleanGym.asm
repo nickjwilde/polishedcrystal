@@ -65,6 +65,8 @@ CeruleanGymMistyScript:
 	opentext
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
+	checkflag ENGINE_BOULDERBADGE
+	iffalse .NotStrongEnough
 	writetext MistyIntroText
 	waitbutton
 	closetext
@@ -82,7 +84,7 @@ CeruleanGymMistyScript:
 	writetext ReceivedCascadeBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_CASCADEBADGE
+	givebadge ENGINE_CASCADEBADGE
 	readvar VAR_BADGES
 	ifequal 9, .FirstBadge
 	ifequal 10, .SecondBadge
@@ -106,6 +108,12 @@ CeruleanGymMistyScript:
 	verbosegivetmhm TM_WATER_PULSE
 	setevent EVENT_GOT_TM63_WATER_PULSE
 	jumpopenedtext MistyOutroText
+
+.NotStrongEnough
+	writetext MistyFightBrockText
+	promptbutton
+	closetext
+	end
 
 GenericTrainerSwimmerfDiana:
 	generictrainer SWIMMERF, DIANA, EVENT_BEAT_SWIMMERF_DIANA, SwimmerfDianaSeenText, SwimmerfDianaBeatenText
@@ -314,6 +322,18 @@ MistyOutroText:
 
 	para "It can sometimes"
 	line "confuse your foe."
+	done
+
+MistyFightBrockText:
+	text "You are not strong"
+	line "enough yet to face"
+	cont "me."
+
+	para "You should beat"
+	line "Brock first."
+
+	para "Then I will know"
+	line "you are strong."
 	done
 
 MistyFightDoneText:

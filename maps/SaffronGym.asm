@@ -59,6 +59,8 @@ SaffronGymSabrinaScript:
 	opentext
 	checkflag ENGINE_SOULBADGE
 	iftrue .FightDone
+	checkflag ENGINE_MARSHBADGE
+	iffalse .NotStrongEnough
 	writetext SabrinaIntroText
 	waitbutton
 	closetext
@@ -78,7 +80,7 @@ SaffronGymSabrinaScript:
 	writetext ReceivedMarshBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_SOULBADGE
+	givebadge ENGINE_SOULBADGE
 	readvar VAR_BADGES
 	ifequal 9, .FirstBadge
 	ifequal 10, .SecondBadge
@@ -113,6 +115,12 @@ SaffronGymSabrinaScript:
 
 	para "beloved Champion!"
 	done
+
+.NotStrongEnough
+	writetext SabrinaFightJanineText
+	promptbutton
+	closetext
+	end
 
 GenericTrainerMediumDoris:
 	generictrainer MEDIUM, DORIS, EVENT_BEAT_MEDIUM_DORIS, MediumDorisSeenText, MediumDorisBeatenText
@@ -242,6 +250,18 @@ if DEF(FAITHFUL)
 else
 	line "the Soul Badge."
 endc
+	done
+
+SabrinaFightJanineText:
+	text "You are not strong"
+	line "enough yet to face"
+	cont "me."
+
+	para "You should beat"
+	line "Janine first."
+
+	para "Then I will know"
+	line "you are strong."
 	done
 
 SabrinaMarshBadgeText:

@@ -8,7 +8,7 @@
 	db ORAN_BERRY ; item 2
 	dn GENDER_F50, 2 ; gender ratio, step cycles to hatch
 	INCBIN "gfx/pokemon/sentret/front.dimensions"
-	abilities_for SENTRET, RUN_AWAY, KEEN_EYE, FRISK
+	abilities_for SENTRET, FRISK, KEEN_EYE, RUN_AWAY
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

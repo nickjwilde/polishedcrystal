@@ -31,6 +31,8 @@ FuchsiaGym_MapScriptHeader:
 FuchsiaGymJanineScript:
 	checkflag ENGINE_MARSHBADGE
 	iftrue .FightDone
+	checkflag ENGINE_RAINBOWBADGE
+	iffalse .NotStrongEnough
 	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
 	showtextfaceplayer JanineText_DisappointYou
 	winlosstext JanineText_ToughOne, 0
@@ -51,7 +53,7 @@ FuchsiaGymJanineScript:
 	writetext Text_ReceivedSoulBadge
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_MARSHBADGE
+	givebadge ENGINE_MARSHBADGE
 	readvar VAR_BADGES
 	ifequal 9, .FirstBadge
 	ifequal 10, .SecondBadge
@@ -68,6 +70,13 @@ FuchsiaGymJanineScript:
 .LyrasEgg:
 	specialphonecall SPECIALCALL_LYRASEGG
 	sjump UnknownScript_0x195e02
+.NotStrongEnough:
+	faceplayer
+    opentext
+    writetext JanineFightErikaText
+	promptbutton
+	closetext
+	end
 .FightDone:
 	faceplayer
 	opentext
@@ -257,6 +266,18 @@ JanineText_ToxicSpeech:
 	text "Janine: You're so"
 	line "tough! I have a"
 	cont "special gift!"
+	done
+
+JanineFightErikaText:
+	text "You are not strong"
+	line "enough yet to face"
+	cont "me."
+
+	para "You should beat"
+	line "Erika first."
+
+	para "Then I will know"
+	line "you are strong."
 	done
 
 JanineText_ApplyMyself:

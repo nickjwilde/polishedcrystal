@@ -287,6 +287,15 @@ KeyItemDescriptions:
 	dw SilphScope2Desc
 	dw ApricornBoxDesc
 	dw TypeChartDesc
+	dw PokeWalkerDesc
+	dw KatanaDesc
+	dw JetskiDesc
+	dw PowerBraceDesc
+	dw SacredLampDesc
+	dw GiantPlugDesc
+	dw JetpackDesc
+	dw RockHammerDesc
+	dw TabletDesc
 
 PokeBallDesc:
 	db   "An item for catch-"
@@ -1377,3 +1386,30 @@ ApricornBoxDesc:
 TypeChartDesc:
 	db   "Summarizes all"
 	next "type advantages.@"
+PokeWalkerDesc:
+	db   "Sets the level"
+	next "of wild #mon.@"
+KatanaDesc:
+	db   "Sharp sword"
+	next "used for cutting.@"
+JetskiDesc:
+	db   "Small craft"
+	next "to surf with.@"
+PowerBraceDesc:
+	db   "Enhances strength"
+	next "to move boulders.@"
+SacredLampDesc:
+	db   "Sacred flame"
+	next "for dark places.@"
+GiantPlugDesc:
+	db   "Giant plug used"
+	next "to stop drains.@"
+JetpackDesc:
+	db   "Climbs up a water-"
+	next "fall with a boost.@"
+RockHammerDesc:
+	db   "Used to break "
+	next "rocks.@"
+TabletDesc:
+	db   "A portable"
+	next "computer.@"

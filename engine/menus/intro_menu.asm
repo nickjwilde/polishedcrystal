@@ -194,6 +194,7 @@ endr
 
 	ld [wJohtoBadges], a
 	ld [wKantoBadges], a
+    ld [wPokewalker], a
 
 	ld [wCoins], a
 	ld [wCoins + 1], a
@@ -452,9 +453,8 @@ Continue_LoadMenuHeader:
 	jmp PlaceVerticalMenuItems
 
 .MenuDataHeader_Dex:
-	db $40 ; flags
-	db 00, 00 ; start coords
-	db 09, 15 ; end coords
+	db MENU_BACKUP_TILES
+	menu_coords 0, 0, 15, 9
 	dw .MenuData2_Dex
 	db 1 ; default option
 
@@ -467,9 +467,8 @@ Continue_LoadMenuHeader:
 	db "Time@"
 
 .MenuDataHeader_NoDex:
-	db $40 ; flags
-	db 00, 00 ; start coords
-	db 09, 15 ; end coords
+	db MENU_BACKUP_TILES
+	menu_coords 0, 0, 15, 9
 	dw .MenuData2_NoDex
 	db 1 ; default option
 
@@ -743,8 +742,7 @@ endc
 
 .MenuDataHeader:
 	db $40 ; flags
-	db 7, 13 ; start coords
-	db 11, 19 ; end coords
+	menu_coords 13, 7, 19, 11
 	dw .MenuData2
 	db 1 ; default option
 
@@ -897,11 +895,11 @@ Intro_PlacePlayerSprite:
 	inc de
 	ld [hli], a
 
-	ld b, 0
+	ld b, PAL_OW_BLUE
 	ld a, [wPlayerGender]
 	bit 0, a
 	jr z, .male
-	ld b, 1
+	ld b, PAL_OW_BLUE
 .male
 	ld a, b
 

@@ -3580,6 +3580,7 @@ SentretEvosAttacks:
 	db 1, TACKLE
 	db 1, FORESIGHT
 	db 4, DEFENSE_CURL
+    db 6, THIEF
 	db 7, QUICK_ATTACK
 	db 13, FURY_STRIKES ; Fury Swipes → similar move
 	db 16, DIZZY_PUNCH ; Helping Hand → event move

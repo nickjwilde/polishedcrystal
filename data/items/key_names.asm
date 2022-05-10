@@ -31,4 +31,13 @@ KeyItemNames::
 	li "SilphScope2"
 	li "Apricorn Box"
 	li "Type Chart"
+	li "Poke Walker"
+	li "Katana"
+	li "Jetski"
+	li "Power Brace"
+	li "Sacred Lamp"
+	li "Giant Plug"
+	li "Jetpack"
+	li "Rock Hammer"
+	li "Tablet"
 	assert_list_length NUM_KEY_ITEMS + 1

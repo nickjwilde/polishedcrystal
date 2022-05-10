@@ -627,7 +627,7 @@ CheckSkipFarawayIsland:
 PokegearMap_InitPlayerIcon:
 	push af
 	depixel 0, 0
-	ld b, SPRITE_ANIM_INDEX_RED_WALK
+	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
 	ld a, [wPlayerGender]
 	bit 0, a
 	jr z, .got_gender
@@ -2703,7 +2703,7 @@ TownMapPlayerIcon:
 	call Request2bppInWRA6
 ; Animation/palette
 	depixel 0, 0
-	ld b, SPRITE_ANIM_INDEX_RED_WALK ; Male
+	ld b, SPRITE_ANIM_INDEX_BLUE_WALK ; Male
 	ld a, [wPlayerGender]
 	bit 0, a
 	jr z, .got_gender

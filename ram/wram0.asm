@@ -1307,3 +1307,7 @@ wDaysSince:: db
 
 ; Temporary backup for options
 wOptionsBuffer:: db
+wUsingHMItem:: db
+
+; used when updating pokewalker val
+wPokewalkerChangeBuffer:: db

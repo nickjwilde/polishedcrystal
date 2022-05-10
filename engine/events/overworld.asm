@@ -163,13 +163,18 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
+    ld a, KATANA
+    call CheckHMItem
+    jr c, .hasKatana
 	ld de, ENGINE_HIVEBADGE
 	call CheckBadge
 	jr c, .nohivebadge
+    ;fallthrough
+.hasKatana
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
-	ld a, $1
-	ret
+    ld a, $1
+    ret
 
 .nohivebadge
 	ld a, $80
@@ -248,10 +253,10 @@ Script_CutFromMenu:
 	callasm GetBuffer6
 	ifequal $0, Script_CutTree
 ;Script_CutGrass:
-	callasm PrepareOverworldMove
+	;callasm PrepareOverworldMove
 	farwritetext _UseCutText
 	closetext
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 	callasm CutDownGrass
 	endtext
 
@@ -315,11 +320,11 @@ CheckOverworldTileArrays:
 INCLUDE "data/collision/field_move_blocks.asm"
 
 Script_CutTree:
-	callasm PrepareOverworldMove
+	;callasm PrepareOverworldMove
 	farwritetext _UseCutText
 	closetext
 	waitsfx
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 	setflag ENGINE_AUTOCUT_ACTIVE
 	disappear -2
 	callasm CutDownTree
@@ -349,10 +354,15 @@ TryFlashOW::
 	ld a, [wTimeOfDayPalset]
 	cp DARKNESS_PALSET
 	jr nz, .quit
+    ld a, SACREDLAMP
+    call CheckHMItem
+    jr c, .canFlash
 	ld d, FLASH
 	call CheckPartyMove
 	jr c, .quit
-	call GetPartyNickname
+    ; fallthrough
+.canFlash
+	;call GetPartyNickname
 	ld a, BANK(AskFlashScript)
 	ld hl, AskFlashScript
 	call CallScript
@@ -402,8 +412,8 @@ UseFlash:
 Script_UseFlash:
 	reloadmappart
 	special UpdateTimePals
-	callasm PrepareOverworldMove
-	scall FieldMovePokepicScript
+	;callasm PrepareOverworldMove
+	;scall FieldMovePokepicScript
 	opentext
 	writetext UseFlashTextScript
 	callasm BlindingFlash
@@ -436,12 +446,17 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
+    ld a, JETSKI
+    call CheckHMItem
+    jr c, .hasJetski
 	ld de, ENGINE_FOGBADGE
 	call CheckBadge
 	jr c, .asm_c956
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
 	jr nz, .cannotsurf
+    ;fallthrough
+.hasJetski
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .alreadyfail
@@ -470,7 +485,7 @@ SurfFunction:
 .DoSurf:
 	call GetSurfType
 	ld [wBuffer2], a
-	call GetPartyNickname
+	;call GetPartyNickname
 	ld hl, SurfFromMenuScript
 	call QueueScript
 	ld a, $81
@@ -481,7 +496,6 @@ SurfFunction:
 	call MenuTextboxBackup
 	ld a, $80
 	ret
-
 .AlreadySurfing:
 	ld hl, AlreadySurfingText
 	call MenuTextboxBackup
@@ -492,13 +506,13 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
-	callasm PrepareOverworldMove
+	;callasm PrepareOverworldMove
 	farwritetext _UsedSurfText
 	waitbutton
 	closetext
 
 	setflag ENGINE_AUTOSURF_ACTIVE
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 
 AutoSurfScript:
 	readmem wBuffer2
@@ -588,6 +602,11 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
+
+; Check for jetski
+    ld a, JETSKI
+    call CheckHMItem
+    jr c, .hasJetski
 	ld de, ENGINE_FOGBADGE
 	call CheckEngineFlag
 	jr c, .quit
@@ -600,10 +619,11 @@ TrySurfOW::
 	bit OWSTATE_BIKING_FORCED, [hl]
 	jr nz, .quit
 
+    ;fallthrough can surf
+.hasJetski
 	call GetSurfType
 	ld [wBuffer2], a
-	call GetPartyNickname
-
+	;call GetPartyNickname
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
 	call CallScript
@@ -761,10 +781,15 @@ WaterfallFunction:
 
 .TryWaterfall:
 ; Waterfall
+    ld a, JETPACK
+    call CheckHMItem
+    jr c, .waterfall
 	ld de, ENGINE_RISINGBADGE
 	call CheckBadge
 	ld a, $80
 	ret c
+    ; fallthrough
+.waterfall
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld hl, Script_WaterfallFromMenu
@@ -800,11 +825,11 @@ Script_WaterfallFromMenu:
 	special UpdateTimePals
 
 Script_UsedWaterfall:
-	callasm PrepareOverworldMove
+	;callasm PrepareOverworldMove
 	farwritetext _UseWaterfallText
 	waitbutton
 	closetext
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 	setflag ENGINE_AUTOWATERFALL_ACTIVE
 Script_AutoWaterfall:
 	playsound SFX_BUBBLE_BEAM
@@ -829,12 +854,17 @@ Script_AutoWaterfall:
 	step_end
 
 TryWaterfallOW::
+    ld a, JETPACK
+    call CheckHMItem
+    jr c, .hasJetpack
 	ld d, WATERFALL
 	call CheckPartyMove
 	jr c, .failed
 	ld de, ENGINE_RISINGBADGE
 	call CheckEngineFlag
 	jr c, .failed
+    ; fallthrough
+.hasJetpack
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld a, BANK(Script_AskWaterfall)
@@ -1005,15 +1035,25 @@ TeleportFunction:
 .TryTeleport:
 	call CheckFlyAllowedOnMap
 	jr nz, .nope
-	ld a, [wLastSpawnMapGroup]
-	ld d, a
-	ld a, [wLastSpawnMapNumber]
-	ld e, a
-	farcall IsSpawnPoint
-	jr nc, .nope
-	ld a, c
+	xor a
+	ldh [hMapAnims], a
+	call LoadStandardMenuHeader
+	call ClearSprites
+	farcall _FlyMap
+	ld a, e
+	cp -1
+	jr z, .illegal
+	cp NUM_SPAWNS
+	jr nc, .illegal
+
 	ld [wDefaultSpawnpoint], a
 	ld a, $1
+	ret
+
+.illegal
+	call CloseWindow
+	call ApplyTilemapInVBlank
+	ld a, $80
 	ret
 
 .nope
@@ -1067,6 +1107,9 @@ StrengthFunction:
 
 .TryStrength:
 ; Strength
+    ld a, PWR_BRACE
+    call CheckHMItem
+    jr c, .UseStrength
 	ld de, ENGINE_PLAINBADGE
 	call CheckBadge
 	jr nc, .UseStrength
@@ -1103,7 +1146,7 @@ Script_UsedStrength:
 	farwritetext _UseStrengthText
 	waitbutton
 	closetext
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 	opentext
 	farwritetext _MoveBoulderText
 	endtext
@@ -1128,6 +1171,9 @@ AskStrengthScript:
 	endtext
 
 TryStrengthOW:
+    ld a, PWR_BRACE
+    call CheckHMItem
+    jr c, .hasPwrBrace
 	ld d, STRENGTH
 	call CheckPartyMove
 	jr c, .nope
@@ -1146,6 +1192,13 @@ TryStrengthOW:
 .nope
 	ld a, 1
 	jr .done
+
+.hasPwrBrace
+	ld hl, wOWState
+	bit OWSTATE_STRENGTH, [hl]
+	jr z, .already_using
+    ld a, 2
+    jr .done
 
 .already_using
 	xor a
@@ -1171,9 +1224,14 @@ Jumptable_cdae:
 	dw .FailWhirlpool
 
 .TryWhirlpool:
+    ld a, GIANT_PLUG
+    call CheckHMItem
+    jr c, .hasGiantPlug
 	ld de, ENGINE_GLACIERBADGE
 	call CheckBadge
 	jr c, .noglacierbadge
+    ; fallthrough
+.hasGiantPlug
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, $1
@@ -1229,10 +1287,10 @@ Script_WhirlpoolFromMenu:
 	special UpdateTimePals
 
 Script_UsedWhirlpool:
-	callasm PrepareOverworldMove
+	;callasm PrepareOverworldMove
 	farwritetext _UseWhirlpoolText
 	closetext
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 	setflag ENGINE_AUTOWHIRLPOOL_ACTIVE
 	waitsfx
 
@@ -1278,12 +1336,17 @@ Script_AutoWhirlpool:
 	step_end
 
 TryWhirlpoolOW::
+    ld a, GIANT_PLUG
+    call CheckHMItem
+    jr c, .hasGiantPlug
 	ld d, WHIRLPOOL
 	call CheckPartyMove
 	jr c, .failed
 	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
 	jr c, .failed
+    ; fallthrough
+.hasGiantPlug
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, BANK(Script_AskWhirlpoolOW)
@@ -1337,11 +1400,11 @@ HeadbuttFromMenuScript:
 	special UpdateTimePals
 
 HeadbuttScript:
-	callasm PrepareOverworldMove
+	;callasm PrepareOverworldMove
 	farwritetext _UseHeadbuttText
 	closetext
 
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 	setflag ENGINE_HEADBUTT_ACTIVE
 
 AutoHeadbuttScript:
@@ -1366,10 +1429,14 @@ AutoHeadbuttScript:
 	farjumptext _HeadbuttNothingText
 
 TryHeadbuttOW::
+    ld a, [wPlayerState]
+    cp PLAYER_BIKE
+    jr nc, .can_headbutt
 	ld d, HEADBUTT
 	call CheckPartyMove
 	jr c, .no
-
+    ;fallthrough
+.can_headbutt
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript
 	call CallScript
@@ -1439,11 +1506,11 @@ RockSmashFromMenuScript:
 	special UpdateTimePals
 
 RockSmashScript:
-	callasm PrepareOverworldMove
+	;callasm PrepareOverworldMove
 	farwritetext _UseRockSmashText
 	closetext
 	waitsfx
-	scall FieldMovePokepicScript
+	;scall FieldMovePokepicScript
 	setflag ENGINE_ROCK_SMASH_ACTIVE
 AutoRockSmashScript:
 	playsound SFX_STRENGTH
@@ -1488,6 +1555,14 @@ AskRockSmashScript:
 	farjumptext _MaySmashText
 
 HasRockSmash:
+    ld a, ROCK_HAMMER
+    call CheckHMItem
+    jr nc, .noRockHammer
+    ld a, 0
+    ldh [hScriptVar], a
+    ret
+
+.noRockHammer
 	ld d, ROCK_SMASH
 	call CheckPartyMove
 	; a = carry ? 1 : 0
@@ -1754,7 +1829,7 @@ BikeFunction:
 	call PlayBikeMusic
 	ld hl, Script_GetOnBike
 	ld de, Script_GetOnBike_Register
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	jr .done
 
 .GetOffBike:
@@ -1763,7 +1838,7 @@ BikeFunction:
 	jr nz, .CantGetOffBike
 	ld hl, Script_GetOffBike
 	ld de, Script_GetOffBike_Register
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	jr .done
 
 .CantGetOffBike:
@@ -1777,14 +1852,6 @@ BikeFunction:
 .done
 	call QueueScript
 	ld a, $1
-	ret
-
-.CheckIfRegistered:
-	ld a, [wUsingItemWithSelect]
-	and a
-	ret z
-	ld h, d
-	ld l, e
 	ret
 
 .CheckEnvironment:
@@ -1845,6 +1912,9 @@ Script_CantGetOffBike:
 	waitendtext
 
 HasCutAvailable::
+    ld a, KATANA
+    call CheckHMItem
+    jr c, .yes
 	ld d, CUT
 	call CheckPartyMove
 	jr c, .no
@@ -1877,3 +1947,80 @@ AskCutTreeScript:
 
 .no
 	farjumptext _CanCutText
+
+; Tablet PoketPC
+TabletPCFunction:
+    call .LoadPocketPC
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+	
+.LoadPocketPC:
+	ld a, [wPlayerState]
+	ld hl, Script_LoadPocketPC
+	ld de, Script_LoadPocketPC_Register
+	call CheckIfRegistered
+	call QueueScript
+	ld a, $1
+	ret
+	
+Script_LoadPocketPC:
+	reloadmappart
+	opentext
+	special UpdateTimePals
+	special PokemonCenterPC
+	endtext
+	reloadmappart
+	end
+
+Script_LoadPocketPC_Register:
+	opentext
+	special PokemonCenterPC
+	endtext
+	reloadmappart
+	end
+
+PokewalkerFunction:
+	call .Pokewalker
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.Pokewalker
+	ld hl, Script_Pokewalker
+	ld de, Script_Pokewalker_Register
+	call CheckIfRegistered
+	call QueueScript
+	ld a, $1
+	ret
+
+Script_Pokewalker:
+    reloadmappart
+    opentext
+    special UpdateTimePals
+    special Pokewalker
+    endtext
+    reloadmappart
+    end
+
+Script_Pokewalker_Register:
+	opentext
+	special UpdateTimePals
+	special Pokewalker
+	endtext
+	reloadmappart
+	end
+
+CheckIfRegistered:
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+	ld h, d
+	ld l, e
+	ret
+
+CheckHMItem:
+; Checks if HM Item is available
+    ld [wCurKeyItem], a
+    call CheckKeyItem
+    ret

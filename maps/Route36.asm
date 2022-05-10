@@ -140,9 +140,48 @@ Route36RockSmashGuyScript:
 	promptbutton
 	verbosegivetmhm TM_ROCK_SMASH
 	setevent EVENT_GOT_TM50_ROCK_SMASH
-.AlreadyGotRockSmash:
 	jumpopenedtext RockSmashGuyText3
+    promptbutton
+    waitbutton
+.AlreadyGotRockSmash:
+    checkevent EVENT_GOT_ROCK_HAMMER
+	iftrue_jumpopenedtext RockSmashGuyText3
+    checkevent EVENT_GOT_SHUCKIE
+    iffalse_jumpopenedtext RockSmashGuyHint
+    writetext RockSmashGuyMatchIntro
+    promptbutton
+    winlosstext .BeatRockSmashGuy, 0
+    loadtrainer BLACKBELT_T, BRICK
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext RockSmashGuyGiveRockHammer
+    promptbutton
+    verbosegivekeyitem ROCK_HAMMER
+    setevent EVENT_GOT_ROCK_HAMMER
+    writetext RockSmashGuyGaveRockHammer
+    promptbutton
+    closetext
+    end
 
+.BeatRockSmashGuy:
+    text "Hard hit!"
+    done
+
+RockSmashGuyGiveRockHammer:
+    text "As promised, here"
+    line "you go!"
+    done
+
+RockSmashGuyGaveRockHammer:
+    text "That's my"
+    line "buddy's rock"
+    cont "hammer."
+
+    para "You can use that"
+    line "to break rocks."
+    done
+    
 Route36LassScript:
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue_jumptextfaceplayer Route36LassText_ClearedSudowoodo
@@ -181,29 +220,17 @@ TrainerSchoolboyAlan1:
 .ChooseRematch:
 	callstd rematchm
 	winlosstext SchoolboyAlan1BeatenText, 0
-	readmem wAlanFightCount
-	ifequal 4, .Fight4
-	ifequal 3, .Fight3
-	ifequal 2, .Fight2
-	ifequal 1, .Fight1
-	ifequal 0, .LoadFight0
-.Fight4:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight4
-.Fight3:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
-.Fight2:
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
 	iftrue .LoadFight2
-.Fight1:
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .LoadFight1
-.LoadFight0:
 	loadtrainer SCHOOLBOY, ALAN1
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 1
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
@@ -211,7 +238,6 @@ TrainerSchoolboyAlan1:
 	loadtrainer SCHOOLBOY, ALAN2
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 2
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
@@ -219,7 +245,6 @@ TrainerSchoolboyAlan1:
 	loadtrainer SCHOOLBOY, ALAN3
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 3
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
@@ -227,7 +252,6 @@ TrainerSchoolboyAlan1:
 	loadtrainer SCHOOLBOY, ALAN4
 	startbattle
 	reloadmapafterbattle
-	loadmem wAlanFightCount, 4
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
@@ -561,6 +585,36 @@ else
 	cont "break 'em up!"
 endc
 	done
+
+RockSmashGuyHint:
+    text "I know a guy"
+    line "who tried to smash"
+    cont "a rock."
+
+    para "Turns out, it"
+    line "was a Shuckle"
+
+    para "He's always"
+    line "bragging about"
+    cont "it."
+
+    para "I worry it will"
+    line "get him in"
+    cont "trouble one day."
+    done
+
+RockSmashGuyMatchIntro:
+    text "Hey, my friend"
+    line "with the Shuckle"
+    
+    para "gave me something"
+    line "nice."
+
+    para "I'll give it to"
+    line "you if you can"
+    cont "best me."
+    done
+
 
 Route36LassText_OddTree:
 	text "An odd tree is"

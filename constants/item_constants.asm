@@ -615,4 +615,14 @@ NUM_APRICORNS EQU const_value - 1
 	const SILPHSCOPE2  ; 1b
 	const APRICORN_BOX ; 1c
 	const TYPE_CHART   ; 1d
+    const POKEWALKER   ; 1e PokeWalker
+    const KATANA       ; 1e Cut
+    const JETSKI       ; 1f Surf
+    const PWR_BRACE    ; 20 Strength
+    const SACREDLAMP   ; 21 Flash
+    const GIANT_PLUG   ; 22 Whirlpool
+    const JETPACK      ; 23 Waterfall
+    const ROCK_HAMMER  ; 24 Rock Smash
+    const TABLET       ; 25 Tablet
 NUM_KEY_ITEMS EQU const_value
+
