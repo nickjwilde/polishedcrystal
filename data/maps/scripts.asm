@@ -1057,3 +1057,8 @@ SECTION "Routes 48-49 Scripts", ROMX
 
 INCLUDE "maps/Route48.asm"
 INCLUDE "maps/Route49.asm"
+
+SECTION "Detective Pikachu Scripts", ROMX
+
+INCLUDE "maps/DetectivePikachusOffice.asm"
+INCLUDE "maps/DetectivePikachusRoom.asm"

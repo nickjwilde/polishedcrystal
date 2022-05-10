@@ -1881,3 +1881,9 @@ BattleFactoryHallway_BlockData:
 SECTION "BattleFactoryBattleRoom_BlockData", ROMX
 BattleFactoryBattleRoom_BlockData:
 	INCBIN "maps/BattleFactoryBattleRoom.ablk.lz"
+
+SECTION "Detective Pikachu Block Data", ROMX
+DetectivePikachusOffice_BlockData:
+	INCBIN "maps/DetectivePikachusOffice.ablk.lz"
+DetectivePikachusRoom_BlockData:
+	INCBIN "maps/DetectivePikachusRoom.ablk.lz"

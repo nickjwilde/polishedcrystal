@@ -28,6 +28,7 @@ GoldenrodCity_MapScriptHeader:
 	warp_event 37, 19, GOLDENROD_NET_BALL_HOUSE, 1
 	warp_event 33, 23, GOLDENROD_BAND_HOUSE, 1
 	warp_event 13, 21, GOLDENROD_HP_UP_HOUSE, 1
+	warp_event  7, 29, DETECTIVE_PIKACHUS_OFFICE, 1
 
 	def_coord_events
 	coord_event  9, 15, 1, GoldenrodCityPanUpScript
@@ -46,6 +47,7 @@ GoldenrodCity_MapScriptHeader:
 	bg_event 20, 27, BGEVENT_JUMPTEXT, PokeComCenterSignText
 	bg_event 34,  6, BGEVENT_JUMPTEXT, GoldenrodCityFlowerShopSignText
 	bg_event 27, 15, BGEVENT_JUMPTEXT, GoldenrodMuseumSignText
+	bg_event  6, 30, BGEVENT_JUMPTEXT, GoldenrodDetectivePikachusOfficeSignText
 
 	def_object_events
 	object_event 16, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoveTutor, EVENT_GOLDENROD_CITY_MOVE_TUTOR
@@ -555,4 +557,12 @@ GoldenrodCityMoveTutorBButText:
 GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText:
 	text "…You don't have"
 	line "enough coins here…"
+	done
+
+GoldenrodDetectivePikachusOfficeSignText:
+	text "Detective"
+	line "Pikachu"
+
+	para "For hire:"
+	line "¥200 per day"
 	done

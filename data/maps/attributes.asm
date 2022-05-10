@@ -551,6 +551,8 @@ ENDM
 	map_attributes IlexForest, ILEX_FOREST, $35, 0
 	map_attributes MurkySwamp, MURKY_SWAMP, $35, 0
 	map_attributes MagnetTunnelInside, MAGNET_TUNNEL_INSIDE, $9, 0
+	map_attributes DetectivePikachusOffice, DETECTIVE_PIKACHUS_OFFICE, $0, 0
+	map_attributes DetectivePikachusRoom, DETECTIVE_PIKACHUS_ROOM, $0, 0
 	map_attributes WarehouseEntrance, WAREHOUSE_ENTRANCE, $0, 0
 	map_attributes UndergroundPathSwitchRoomEntrances, UNDERGROUND_PATH_SWITCH_ROOM_ENTRANCES, $0, 0
 	map_attributes GoldenrodDeptStoreB1F, GOLDENROD_DEPT_STORE_B1F, $0, 0
