@@ -198,4 +198,5 @@ varspriteaddr EQUS "wVariableSprites - SPRITE_VARS +"
 	dwb wGoldenrodCitySceneID, $1
 	dwb wBattleTowerOutsideSceneID, $1
 	dwb wBellchimeTrailSceneID, $1
+	dwb wDetectivePikachusRoomSceneID, $1
 	dw -1

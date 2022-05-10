@@ -10,6 +10,8 @@ DetectivePikachusRoom_MapScriptHeader:
 	warp_event 13,  9, DETECTIVE_PIKACHUS_OFFICE, 3
 
 	def_coord_events
+	coord_event 12, 9, 1, GiveStarterPikachuScript
+	coord_event 13, 9, 1, GiveStarterPikachuScript
 
 	def_bg_events
 	bg_event 14,  1, BGEVENT_UP, DetectivePikachusPC
@@ -21,6 +23,27 @@ DetectivePikachusRoom_MapScriptHeader:
 	object_event 10,  6, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TempDoll1, EVENT_PLAYERS_HOUSE_2F_DOLL_1
 	object_event 11,  6, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TempDoll2, EVENT_PLAYERS_HOUSE_2F_DOLL_2
 	object_event  4,  8, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TempBigDoll, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+
+GiveStarterPikachuScript:
+	checkevent EVENT_GOT_SELF
+	iftrue .done
+	opentext
+	writetext SaveBeforeStarterText
+	yesorno
+	iffalse .getStarter
+	special Special_TryQuickSave
+	iftrue .getStarter
+	applyonemovement PLAYER, step_up 
+	sjump .done
+
+.getStarter
+	givepoke PIKACHU, PLAIN_FORM, 5, LIGHT_BALL, FRIEND_BALL, SURF
+	setevent EVENT_GOT_SELF
+	setscene $2
+.done
+	closetext
+	end
+	
 
 DetectivePikachusRoomInitializeRoom:
 	special ToggleDecorationsVisibility
@@ -355,4 +378,12 @@ DetectivePikachusRadioText3:
 DetectivePikachusRadioText4:
 	text "#mon!"
 	line "#mon Channel…"
+	done
+
+SaveBeforeStarterText:
+	text "Would you like"
+	line "to save before"
+	
+	para "getting your"
+	line "stats?"
 	done

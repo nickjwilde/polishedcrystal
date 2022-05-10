@@ -210,7 +210,7 @@ SPRITE_POKEMON EQU const_value
 
 ; wVariableSprites indexes (see ram/wramx.asm)
 SPRITE_VARS EQU const_value
-	const SPRITE_PLAYER
+	const SPRITE_PLAYER ; f5
 	const SPRITE_CONSOLE ; f6
 	const SPRITE_DOLL_1 ; f7
 	const SPRITE_DOLL_2 ; f8

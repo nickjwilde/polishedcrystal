@@ -108,4 +108,5 @@ MapScenes::
 	scene_var WILLS_ROOM,                             wWillsRoomSceneID
 	scene_var WISE_TRIOS_ROOM,                        wWiseTriosRoomSceneID
 	scene_var YELLOW_FOREST,                          wYellowForestSceneID
+	scene_var DETECTIVE_PIKACHUS_ROOM, 				  wDetectivePikachusRoomSceneID
 	db -1

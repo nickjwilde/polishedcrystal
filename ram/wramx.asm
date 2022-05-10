@@ -1115,12 +1115,13 @@ wVioletGymSceneID:: db
 wWillsRoomSceneID:: db
 wWiseTriosRoomSceneID:: db
 wYellowForestSceneID:: db
+wDetectivePikachusRoomSceneID:: db
 
 wEventFlags:: flag_array NUM_EVENTS
 
 wCurBox:: db
 
-	ds 126 ; unused
+	ds 125 ; unused
 
 wCelebiEvent:: db
 
