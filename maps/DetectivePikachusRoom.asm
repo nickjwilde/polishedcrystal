@@ -27,13 +27,13 @@ DetectivePikachusRoom_MapScriptHeader:
 GiveStarterPikachuScript:
 	checkevent EVENT_GOT_SELF
 	iftrue .done
+	applyonemovement PLAYER, step_up 
 	opentext
 	writetext SaveBeforeStarterText
 	yesorno
 	iffalse .getStarter
 	special Special_TryQuickSave
 	iftrue .getStarter
-	applyonemovement PLAYER, step_up 
 	sjump .done
 
 .getStarter

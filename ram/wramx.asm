@@ -7,7 +7,7 @@ wDefaultSpawnpoint:: db
 
 UNION
 ; mon buffer
-	ds 78
+	;ds 78
 wMonOrItemNameBuffer:: ds NAME_LENGTH
 
 NEXTU
@@ -122,6 +122,11 @@ wNumOwnedDecoCategories:: db
 wOwnedDecoCategories:: ds 16
 ENDU
 
+NEXTU
+; Disguises
+wUnlockedDisguises:: db
+wUnlockedDisguisesBuffer:: ds 14
+wDisguiseNameBuffer:: ds NUM_DISGUISE_NAMES + 1
 
 NEXTU
 ; link battle record data
@@ -149,7 +154,7 @@ wKeepSevenBiasChance::
 wTempDayOfWeek::
 	db
 
-	ds 59
+	;ds 19
 
 UNION
 ; trainer data
@@ -484,7 +489,7 @@ ENDU
 wTempMonBox:: db
 wTempMonSlot:: db
 
-	ds 39 ; unused
+	ds 23 ; unused
 
 wOverworldMapAnchor:: dw
 wMetatileStandingY:: db
@@ -1121,7 +1126,7 @@ wEventFlags:: flag_array NUM_EVENTS
 
 wCurBox:: db
 
-	ds 125 ; unused
+	ds 102 ; unused
 
 wCelebiEvent:: db
 

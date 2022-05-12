@@ -555,6 +555,10 @@ SECTION "PokeWalker", ROMX
 
 INCLUDE "engine/events/pokewalker.asm"
 
+SECTION "Disguises", ROMX
+
+INCLUDE "engine/overworld/disguises.asm"
+
 SECTION "VWF", ROMX
 
 INCLUDE "engine/gfx/vwf.asm"
