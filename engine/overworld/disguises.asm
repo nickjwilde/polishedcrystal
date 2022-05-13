@@ -49,7 +49,6 @@ ChangeDisguiseMenu:
 	db SCROLLINGMENU_DISPLAY_ARROWS
 	db 8, 0 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL
-	;dbw 0, wDisguiseNameBuffer
 	dbw 0, wDisguiseNameBuffer
 	dba DisguiseMenuItemFunction
 	dba NULL 
@@ -65,9 +64,19 @@ DisguiseMenuItemFunction:
 	ret 
 
 GetDisguiseData:
+	push bc
 	ld hl, DisguiseAttributes
 	ld bc, DISGUISEATTR_STRUCT_LENGTH
 	rst AddNTimes
+	pop bc
+	ret
+
+GetDisguiseSprite:
+	push bc
+	ld bc, DISGUISEATTR_SPRITE
+	add hl, bc
+	ld a, [hl]
+	pop bc
 	ret
 
 GetDisguiseName:
