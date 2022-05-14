@@ -486,6 +486,7 @@ BillBoxSwitchCheck:
 	ret
 
 DisguiseMenu:
+	call ClearSprites
 	ld a, [wCurDisguise]
 	ldh [hScriptVar], a
 	farcall ChangeDisguiseMenu
