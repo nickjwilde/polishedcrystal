@@ -264,6 +264,7 @@ ScriptCommandTable:
 	dw Script_takebp                     ; cd
 	dw Script_checkbp                    ; ce
 	dw Script_givebadge                  ; cf
+	dw Script_switchdisguise             ; d0
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2647,3 +2648,16 @@ Script_givebadge:
 	ld d, a
 	ld b, SET_FLAG
 	farjp EngineFlagAction
+
+Script_switchdisguise:
+	ld a, SPRITE_PLAYER - SPRITE_VARS
+	ld e, a
+	ld d, $0
+	ldh [hUsedSpriteIndex], a
+	ld hl, wVariableSprites
+	add hl, de
+	ldh a, [hScriptVar]
+	ld [hl], a
+	ld [wCurDisguise], a
+	farjp ReloadSpriteIndex
+	

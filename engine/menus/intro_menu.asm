@@ -189,6 +189,9 @@ endr
 	call LoadOrRegenerateLuckyIDNumber
 	call InitializeMagikarpHouse
 
+	ld a, SPRITE_PIKACHU
+	ld [wCurDisguise], a
+
 	xor a
 	ld [wMonType], a
 

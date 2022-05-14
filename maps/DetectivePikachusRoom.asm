@@ -353,6 +353,15 @@ endc
 
 DetectivePikachusPC:
 	opentext
+	special DisguiseMenu
+	switchdisguise
+	endtext
+	special MapCallbackSprites_LoadUsedSpritesGFX
+.end
+	end
+
+DetectivePikachusPC2:
+	opentext
 	special Special_PlayersHousePC
 	iftrue .Warp
 	endtext

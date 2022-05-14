@@ -1,10 +1,11 @@
 ChangeDisguiseMenu:
 	call .GetMenuItems
 	ld hl, wDisguiseNameBuffer
+	; add cancel
 	ld e, [hl]
-	;dec [hl]
 	ld d, 0
 	add hl, de
+	inc hl
 	ld [hl], -1
 	call LoadStandardMenuHeader
 	ld hl, .DisguisesMenuHeader
@@ -17,13 +18,17 @@ ChangeDisguiseMenu:
 	call ScrollingMenu
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
+	ld a, [wMenuSelection]
 	jr z, .cancel
-	xor a
-	ld a, [wScrollingMenuCursorPosition]
-	; save selection here
+	cp -1
+	jr z, .cancel
+	call GetDisguiseData
+	call GetDisguiseSprite
+	ret
+
 .cancel
-	; handle cancel
-	call ExitMenu
+	scf
+	ret
 
 .GetMenuItems:
 	call .ClearDisguiseBuffer
@@ -72,11 +77,11 @@ GetDisguiseData:
 	ret
 
 GetDisguiseSprite:
-	push bc
-	ld bc, DISGUISEATTR_SPRITE
-	add hl, bc
+	push de
+	ld de, DISGUISEATTR_SPRITE
+	add hl, de 
 	ld a, [hl]
-	pop bc
+	pop de
 	ret
 
 GetDisguiseName:

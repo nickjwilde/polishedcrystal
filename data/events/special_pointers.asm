@@ -167,3 +167,4 @@ SpecialsPointers::
 	add_special Special_CurBoxFullCheck
 	add_special GetCurBoxName
     add_special Pokewalker
+	add_special DisguiseMenu

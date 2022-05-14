@@ -12,8 +12,8 @@ DISGUISEATTR_STRUCT_LENGTH EQU _RS
 	const DISGUISE_HUMAN
 NUM_DISGUISE_TYPES EQU const_value - 1
 
-; DecorationNames indexes (see data/decorations/names.asm)
-	const_def 
+; DisguiseNames indexes (see data/disguises/names.asm)
+	const_def
 	const DETECTIVE_PIKACHU
 	const FAKE_CHRIS
 	const FAKE_KRIS

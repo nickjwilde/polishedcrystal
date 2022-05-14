@@ -484,3 +484,12 @@ BillBoxSwitchCheck:
 	ld a, b
 	ldh [hScriptVar], a
 	ret
+
+DisguiseMenu:
+	ld a, [wCurDisguise]
+	ldh [hScriptVar], a
+	farcall ChangeDisguiseMenu
+	jr c, .cancelled
+	ldh [hScriptVar], a
+.cancelled
+	ret

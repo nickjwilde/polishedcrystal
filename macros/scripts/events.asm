@@ -1318,4 +1318,9 @@ givebadge: MACRO
 	dw \1 ; engine_badge_flag
 ENDM
 
+	const switchdisguise_command
+switchdisguise: MACRO
+	db switchdisguise_command
+ENDM
+
 NUM_EVENT_COMMANDS EQU const_value

@@ -125,8 +125,11 @@ ENDU
 NEXTU
 ; Disguises
 wUnlockedDisguises:: db
-wUnlockedDisguisesBuffer:: ds 14
+
+ds 13 ;unused
+
 wDisguiseNameBuffer:: ds NUM_DISGUISE_NAMES + 1
+wCurDisguise:: db
 
 NEXTU
 ; link battle record data
