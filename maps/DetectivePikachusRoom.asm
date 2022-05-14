@@ -17,6 +17,7 @@ DetectivePikachusRoom_MapScriptHeader:
 	bg_event 14,  1, BGEVENT_UP, DetectivePikachusPC
 	bg_event 15,  1, BGEVENT_READ, DetectivePikachusRadio
 	bg_event  9,  0, BGEVENT_IFSET, DetectivePikachusRoomPoster
+	bg_event 12,  6, BGEVENT_UP, ChangeDisguiseDesk
 
 	def_object_events
 	object_event  5,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TempGameConsole, EVENT_PLAYERS_HOUSE_2F_CONSOLE
@@ -37,7 +38,7 @@ GiveStarterPikachuScript:
 	sjump .done
 
 .getStarter
-	givepoke PIKACHU, PLAIN_FORM, 5, LIGHT_BALL, FRIEND_BALL, SURF
+	givepoke PIKACHU, PLAIN_FORM, 5, LIGHT_BALL
 	setevent EVENT_GOT_SELF
 	setscene $2
 .done
@@ -351,7 +352,7 @@ else
 
 endc
 
-DetectivePikachusPC:
+ChangeDisguiseDesk:
 	opentext
 	special DisguiseMenu
 	switchdisguise
@@ -360,7 +361,7 @@ DetectivePikachusPC:
 .end
 	end
 
-DetectivePikachusPC2:
+DetectivePikachusPC:
 	opentext
 	special Special_PlayersHousePC
 	iftrue .Warp

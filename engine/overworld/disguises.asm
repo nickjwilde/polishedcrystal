@@ -62,36 +62,10 @@ ChangeDisguiseMenu:
 DisguiseMenuItemFunction:
 	ld a, [wMenuSelection]
 	push de
-	;call GetDisguiseData
 	call GetDisguiseName
 	pop hl
 	rst PlaceString
 	ret 
-
-GetDisguiseData:
-	push bc
-	ld hl, DisguiseAttributes
-	ld bc, DISGUISEATTR_STRUCT_LENGTH
-	rst AddNTimes
-	pop bc
-	ret
-
-GetDisguiseSprite:
-	push de
-	ld de, DISGUISEATTR_SPRITE
-	add hl, de 
-	ld a, [hl]
-	pop de
-	ret
-
-GetDisguiseName:
-	push bc
-	ld hl, DisguiseNames
-	call GetNthString
-	ld d, h
-	ld e, l
-	pop bc
-	ret
 
 AppendUnlockedDisguise:
 	ld hl, wDisguiseNameBuffer
@@ -135,17 +109,65 @@ CheckAllDisguisesFlags:
 	ret z
 
 	push hl
-	;push af
-	;ld b, CHECK_FLAG
-	;call DisguiseFlagAction
-	;ld a, c
-	;and a
-	;pop bc
-	;ld a, b
-	;call nz, AppendDecoIndex
-	call AppendUnlockedDisguise
+	push af
+	ld b, CHECK_FLAG
+	call DisguiseFlagAction
+	ld a, c
+	and a
+	pop af
+	call nz, AppendUnlockedDisguise
 	pop hl
 	jr .loop
+
+DisguiseFlagAction:
+	call GetDisguiseData
+	call GetDisguiseUnlockedFlag
+	ld h, d
+	ld l, e
+	ld a, [hl]
+	cp -1
+	jr z, .unlocked
+	jmp EventFlagAction
+
+.unlocked
+	ld a, 1
+	ld c, a
+	ret
+
+
+
+GetDisguiseData:
+	push bc
+	ld hl, DisguiseAttributes
+	ld bc, DISGUISEATTR_STRUCT_LENGTH
+	rst AddNTimes
+	pop bc
+	ret
+
+GetDisguiseSprite:
+	push de
+	ld de, DISGUISEATTR_SPRITE
+	add hl, de 
+	ld a, [hl]
+	pop de
+	ret
+
+GetDisguiseName:
+	push bc
+	ld hl, DisguiseNames
+	call GetNthString
+	ld d, h
+	ld e, l
+	pop bc
+	ret
+
+GetDisguiseUnlockedFlag:
+	ld de, DISGUISEATTR_UNLOCKED ; flag
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ret
 
 Disguises:
 	db DETECTIVE_PIKACHU

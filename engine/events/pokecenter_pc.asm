@@ -237,7 +237,6 @@ PlayersPCMenuData:
 	dw PlayerTossItemMenu,     .TossItem
 	dw PlayerMailBoxMenu,      .MailBox
 	dw PlayerDecorationMenu,   .Decoration
-	dw PlayerDisguiseMenu, 	   .Disguise
 	dw PlayerLogOffMenu,       .LogOff
 	dw PlayerLogOffMenu,       .TurnOff
 
@@ -246,7 +245,6 @@ PlayersPCMenuData:
 .TossItem:     db "Toss Item@"
 .MailBox:      db "Mail Box@"
 .Decoration:   db "Decoration@"
-.Disguise: 	   db "Disguise@"
 .TurnOff:      db "Turn Off@"
 .LogOff:       db "Log Off@"
 
@@ -255,9 +253,8 @@ DEPOSIT_ITEM  EQU 1
 TOSS_ITEM     EQU 2
 MAIL_BOX      EQU 3
 DECORATION    EQU 4
-DISGUISE      EQU 5
-TURN_OFF      EQU 6
-LOG_OFF       EQU 7
+TURN_OFF      EQU 5
+LOG_OFF       EQU 6
 
 .PlayersPCMenuList1:
 	db 5
@@ -268,13 +265,12 @@ LOG_OFF       EQU 7
 	db TURN_OFF
 	db -1
 ;.PlayersPCMenuList2:
-	db 7
+	db 6
 	db WITHDRAW_ITEM
 	db DEPOSIT_ITEM
 	db TOSS_ITEM
 	db MAIL_BOX
 	db DECORATION
-	db DISGUISE
 	db LOG_OFF
 	db -1
 
@@ -383,14 +379,6 @@ PlayerTossItemMenu:
 .quit
 	call CloseSubmenu
 	xor a
-	ret
-
-PlayerDisguiseMenu:
-	farcall ChangeDisguiseMenu
-	ld a, c
-	and a
-	ret z
-	scf
 	ret
 
 PlayerDecorationMenu:
