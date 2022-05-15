@@ -31,10 +31,6 @@ NavelRockRoofDailyLeafRematchCallback:
 .Disappear
 	endcallback
 
-.Appear:
-	appear NAVELROCKROOF_GREEN
-	endcallback
-
 Leaf:
 	special Special_FadeOutMusic
 	showtextfaceplayer LeafText
@@ -97,16 +93,16 @@ Leaf:
 	credits
 	end
 
-LeafText:
+LeafText: ; text > text
 	text "…………"
 	line "…………!"
 	done
 
-LeafWinLossText:
+LeafWinLossText: ; text > text
 	text "…!"
 	done
 
-LeafAfterText:
+LeafAfterText: ; text > text
 	text "…………"
 	line "…………"
 	done

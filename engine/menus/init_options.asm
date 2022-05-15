@@ -18,7 +18,7 @@ SetInitialOptions:
 	xor a
 	rst ByteFill
 
-	hlcoord 0, 0, wAttrMap
+	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	xor a
 	rst ByteFill
@@ -139,24 +139,25 @@ endc
 INCBIN "gfx/new_game/init_bg.2bpp"
 
 .InitialOptionsString:
-	db "Natures<LNBRK>"
-	db "            :<LNBRK>"
-	db "Abilities<LNBRK>"
-	db "            :<LNBRK>"
-	db "Phys/Spcl split<LNBRK>"
-	db "            :<LNBRK>"
-	db "Exp. scaling<LNBRK>"
-	db "            :<LNBRK>"
-	db "IVs vary colors<LNBRK>"
-	db "            :<LNBRK>"
-	db "Perfect stats<LNBRK>"
-	db "            :<LNBRK>"
-	db "Traded #mon<LNBRK>"
-	db "treat you as OT<LNBRK>"
-	db "            :<LNBRK>"
-	db "Nuzlocke mode<LNBRK>"
-	db "            :<LNBRK>"
-	db "Done@"
+	text  "Natures"
+	next1 "            :"
+	next1 "Abilities"
+	next1 "            :"
+	next1 "Phys/Spcl split"
+	next1 "            :"
+	next1 "Exp. scaling"
+	next1 "            :"
+	next1 "IVs vary colors"
+	next1 "            :"
+	next1 "Perfect stats"
+	next1 "            :"
+	next1 "Traded #mon"
+	next1 "treat you as OT"
+	next1 "            :"
+	next1 "Nuzlocke mode"
+	next1 "            :"
+	next1 "Done"
+	done
 
 GetInitialOptionPointer:
 	call StandardStackJumpTable
@@ -428,7 +429,7 @@ InitialOptions_UpdateCursorPosition:
 	add hl, bc
 	ld a, [hl]
 	; hlcoord 1, a
-	ld hl, wTileMap
+	ld hl, wTilemap
 	ld bc, SCREEN_WIDTH
 	rst AddNTimes
 	inc hl

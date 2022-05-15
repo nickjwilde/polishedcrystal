@@ -137,6 +137,17 @@ setval: MACRO
 	db \1 ; value
 ENDM
 
+	const setval16_command
+setval16: MACRO
+	db setval16_command
+	dw \1 ; value
+ENDM
+
+setmonval: MACRO ; pseudo-command for loading mons into hScriptVar
+	db setval16_command
+	dp \1 ; mon value
+ENDM
+
 	const addval_command
 addval: MACRO
 	db addval_command
@@ -149,10 +160,26 @@ random: MACRO
 	db \1 ; input
 ENDM
 
+	const random16_command
+random16: MACRO
+	db random16_command
+	dw \1 ; input
+ENDM
+
 	const readmem_command
 readmem: MACRO
 	db readmem_command
 	dw \1 ; address
+ENDM
+
+	const readmem16_command
+readmem16: MACRO
+	db readmem16_command
+	if _NARG == 2
+		dw \1, \2
+	else
+		dw \1, \1+1
+	endc
 ENDM
 
 	const writemem_command
@@ -281,7 +308,7 @@ ENDM
 	const checkpoke_command
 checkpoke: MACRO
 	db checkpoke_command
-	db \1 ; pkmn
+	dp \1 ; pkmn
 ENDM
 
 	const givepoke_command
@@ -310,12 +337,10 @@ givepoke: MACRO
 		db NO_MOVE
 	endc
 	if _NARG >= 7
-		db \7 ; trainer
-		if \7
-			dw \8 ; trainer_name_pointer
-			dw \9 ; pkmn_nickname
-			dw \<10> ; trainer_ot_pointer
-		endc
+		db TRUE ; trainer
+		dw \7 ; nickname_pointer
+		dw \8 ; ot_name_pointer
+		dw \9 ; ot_id_pointer
 	else
 		db FALSE ; no trainer
 	endc
@@ -432,7 +457,7 @@ ENDM
 	const getmonname_command
 getmonname: MACRO
 	db getmonname_command
-	db \1 ; pokemon
+	dp \1 ; pokemon
 	db \2 ; memory
 ENDM
 
@@ -555,13 +580,12 @@ ENDM
 	const pokepic_command
 pokepic: MACRO
 	db pokepic_command
-	db \1 ; pokemon
 	if \1 == 0
-		db -1 ; party mon
+		db \1 ; party mon
 	elif _NARG == 2
-		db \2 ; form
+		dp \1, \2 ; form
 	else
-		db 0
+		dp \1, PLAIN_FORM
 	endc
 ENDM
 
@@ -831,7 +855,13 @@ ENDM
 	const cry_command
 cry: MACRO
 	db cry_command
-	db \1 ; cry_id
+	if \1 == 0
+		db \1 ; party mon
+	elif _NARG == 2
+		dp \1, \2 ; form
+	else
+		dp \1, PLAIN_FORM
+	endc
 ENDM
 
 	const playsound_command
@@ -1054,11 +1084,6 @@ checksave: MACRO
 	db checksave_command
 ENDM
 
-	const countseencaught_command
-countseencaught: MACRO
-	db countseencaught_command
-ENDM
-
 	const trainerpic_command
 trainerpic: MACRO
 	db trainerpic_command
@@ -1206,7 +1231,7 @@ ENDM
 showcrytext: MACRO
 	db showcrytext_command
 	dw \1 ; text_pointer
-	db \2 ; cry_id
+	dp \2 ; cry_id
 ENDM
 
 	const endtext_command

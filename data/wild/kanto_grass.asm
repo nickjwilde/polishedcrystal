@@ -423,7 +423,7 @@
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon RATICATE
 	wildmon ARBOK, ARBOK_KANTO_FORM
 	wildmon SANDSLASH
@@ -431,7 +431,7 @@
 	wildmon JIGGLYPUFF
 	wildmon WIGGLYTUFF
 	; day
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon RATICATE
 	wildmon ARBOK, ARBOK_KANTO_FORM
 	wildmon SANDSLASH
@@ -451,7 +451,7 @@
 	def_grass_wildmons ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon RATICATE
 	wildmon ARBOK, ARBOK_KANTO_FORM
 	wildmon SANDSLASH
@@ -459,7 +459,7 @@
 	wildmon PRIMEAPE
 	wildmon PRIMEAPE
 	; day
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon RATICATE
 	wildmon ARBOK, ARBOK_KANTO_FORM
 	wildmon SANDSLASH
@@ -536,7 +536,7 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon RATICATE
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon GRANBULL
 	wildmon VULPIX
 	wildmon JIGGLYPUFF
@@ -544,7 +544,7 @@
 	wildmon WIGGLYTUFF
 	; day
 	wildmon RATICATE
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon GRANBULL
 	wildmon VULPIX
 	wildmon JIGGLYPUFF
@@ -592,7 +592,7 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon RATICATE
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon PRIMEAPE
 	wildmon NIDORINA
 	wildmon NIDORINO
@@ -600,7 +600,7 @@
 	wildmon PRIMEAPE
 	; day
 	wildmon RATICATE
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon PRIMEAPE
 	wildmon NIDORINA
 	wildmon NIDORINO
@@ -619,7 +619,7 @@
 	def_grass_wildmons ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon ELECTRODE
 	wildmon RATICATE
 	wildmon MAGNETON
@@ -627,7 +627,7 @@
 	wildmon ELECTABUZZ
 	wildmon ELECTABUZZ
 	; day
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon ELECTRODE
 	wildmon RATICATE
 	wildmon MAGNETON
@@ -647,7 +647,7 @@
 	def_grass_wildmons ROUTE_11
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	wildmon SUNFLORA
+	wildmon SKIPLOOM
 	wildmon RATICATE
 	wildmon MAGNETON
 	wildmon PIDGEOTTO
@@ -655,7 +655,7 @@
 	wildmon SUNFLORA
 	wildmon SUNFLORA
 	; day
-	wildmon SUNFLORA
+	wildmon SKIPLOOM
 	wildmon RATICATE
 	wildmon MAGNETON
 	wildmon PIDGEOTTO
@@ -788,17 +788,17 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon GRIMER
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon SLUGMA
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon MAGCARGO
 	wildmon MUK
 	wildmon MUK
 	; day
 	wildmon GRIMER
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon SLUGMA
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon MAGCARGO
 	wildmon MUK
 	wildmon MUK
@@ -815,18 +815,18 @@
 	def_grass_wildmons ROUTE_17
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon SLUGMA
 	wildmon GRIMER
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon MAGCARGO
 	wildmon MUK
 	wildmon MUK
 	; day
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon SLUGMA
 	wildmon GRIMER
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon MAGCARGO
 	wildmon MUK
 	wildmon MUK
@@ -843,17 +843,17 @@
 	def_grass_wildmons ROUTE_18_EAST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODUO
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODRIO
 	wildmon MAGCARGO
 	wildmon MUK
 	wildmon MUK
 	; day
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODUO
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODRIO
 	wildmon MAGCARGO
 	wildmon MUK
@@ -871,17 +871,17 @@
 	def_grass_wildmons ROUTE_18_WEST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODUO
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODRIO
 	wildmon MAGCARGO
 	wildmon MUK
 	wildmon MUK
 	; day
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODUO
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon DODRIO
 	wildmon MAGCARGO
 	wildmon MUK
@@ -928,7 +928,7 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon RATICATE
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon NIDORINO
 	wildmon NIDORINA
 	wildmon PONYTA
@@ -936,7 +936,7 @@
 	wildmon PONYTA
 	; day
 	wildmon RATICATE
-	wildmon PIDGEOTTO
+	wildmon FEAROW
 	wildmon NIDORINO
 	wildmon NIDORINA
 	wildmon PONYTA

@@ -15,14 +15,14 @@ _LoadStandardMaybeOpaqueFont:
 	ld d, h
 	ld e, l
 	ld hl, vTiles0 tile "A"
-	lb bc, BANK(FontTiles), 111
+	lb bc, BANK(FontTiles), 114
 	pop af
 	ldh [hRequestOpaque1bpp], a
 	push af
 	call GetMaybeOpaque1bpp
 	ld de, FontCommon
-	ld hl, vTiles0 tile "▷"
-	lb bc, BANK(FontCommon), 11
+	ld hl, vTiles0 tile "↑"
+	lb bc, BANK(FontCommon), 6
 	pop af
 	ldh [hRequestOpaque1bpp], a
 	jmp GetMaybeOpaque1bpp
@@ -80,7 +80,7 @@ LoadPlayerStatusIcon:
 	push de
 	ld a, [wPlayerSubStatus2]
 	ld de, wBattleMonStatus
-	farcall GetStatusConditionIndex
+	call GetStatusConditionIndex
 	ld hl, StatusIconGFX
 	ld bc, 2 tiles
 	rst AddNTimes
@@ -101,7 +101,7 @@ LoadEnemyStatusIcon:
 	push de
 	ld a, [wEnemySubStatus2]
 	ld de, wEnemyMonStatus
-	farcall GetStatusConditionIndex
+	call GetStatusConditionIndex
 	ld hl, EnemyStatusIconGFX
 	ld bc, 2 tiles
 	rst AddNTimes

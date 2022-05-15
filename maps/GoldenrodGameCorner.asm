@@ -208,7 +208,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	givepoke ABRA, 5
 	iffalse_jumpopenedtext GoldenrodGameCornerPrizeVendorNoMoreRoomText
-	setval ABRA
+	setmonval ABRA
 	special Special_GameCornerPrizeMonCheckDex
 	takecoins 200
 	sjump .loop
@@ -225,7 +225,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	givepoke CUBONE, 10
 	iffalse_jumpopenedtext GoldenrodGameCornerPrizeVendorNoMoreRoomText
-	setval CUBONE
+	setmonval CUBONE
 	special Special_GameCornerPrizeMonCheckDex
 	takecoins 800
 	sjump .loop
@@ -242,7 +242,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	givepoke CLEFAIRY, 15
 	iffalse_jumpopenedtext GoldenrodGameCornerPrizeVendorNoMoreRoomText
-	setval CLEFAIRY
+	setmonval CLEFAIRY
 	special Special_GameCornerPrizeMonCheckDex
 	takecoins 1500
 	sjump .loop
@@ -344,7 +344,7 @@ GoldenrodGameCornerPrizeVendorNeedMoreCoinsText:
 GoldenrodGameCornerPrizeVendorNoMoreRoomText:
 	text "Oh, no. You can't"
 	line "carry any more and"
-	cont "your box is full."
+	cont "your Box is full."
 
 	para "I'll return your"
 	line "coins to you."

@@ -141,35 +141,35 @@ ProfElmScript:
 	iftrue ElmGiveTicketScript
 ElmCheckMasterBall:
 	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
-	iftrue ElmCheckEverstone
+	iftrue ElmCheckOddSouvenir
 	checkflag ENGINE_RISINGBADGE
 	iftrue ElmGiveMasterBallScript
-ElmCheckEverstone:
-	checkevent EVENT_GOT_EVERSTONE_FROM_ELM
+ElmCheckOddSouvenir:
+	checkevent EVENT_GOT_ODD_SOUVENIR_FROM_ELM
 	iftrue_jumpopenedtext ElmText_CallYou
 	checkevent EVENT_SHOWED_TOGEPI_TO_ELM
-	iftrue ElmGiveEverstoneScript
+	iftrue ElmGiveOddSouvenirScript
 	checkevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
 	iffalse ElmCheckTogepiEgg
-	setval TOGEPI
+	setmonval TOGEPI
 	special Special_FindThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
-	setval TOGETIC
+	setmonval TOGETIC
 	special Special_FindThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
-	setval TOGEKISS
+	setmonval TOGEKISS
 	special Special_FindThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
 	jumpopenedtext ElmThoughtEggHatchedText
 
 ElmEggHatchedScript:
-	setval TOGEPI
+	setmonval TOGEPI
 	special Special_FindThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
-	setval TOGETIC
+	setmonval TOGETIC
 	special Special_FindThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
-	setval TOGEKISS
+	setmonval TOGEKISS
 	special Special_FindThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
 	sjump ElmCheckGotEggAgain
@@ -216,7 +216,7 @@ CyndaquilPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	givepoke CYNDAQUIL, NO_FORM, 5, ORAN_BERRY
+	givepoke CYNDAQUIL, PLAIN_FORM, 5, ORAN_BERRY
 	writetext LyraChoosesStarterText
 	waitbutton
 	closetext
@@ -256,7 +256,7 @@ TotodilePokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	givepoke TOTODILE, NO_FORM, 5, ORAN_BERRY
+	givepoke TOTODILE, PLAIN_FORM, 5, ORAN_BERRY
 	writetext LyraChoosesStarterText
 	waitbutton
 	closetext
@@ -294,7 +294,7 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	givepoke CHIKORITA, NO_FORM, 5, ORAN_BERRY
+	givepoke CHIKORITA, PLAIN_FORM, 5, ORAN_BERRY
 	writetext LyraChoosesStarterText
 	waitbutton
 	closetext
@@ -312,7 +312,7 @@ ChikoritaPokeBallScript:
 	closetext
 	applymovement ELMSLAB_LYRA, LyraAfterTotodileMovement
 	applymovement PLAYER, AfterChikoritaMovement
-	sjump ElmDirectionsScript
+	; fallthrough
 
 ElmDirectionsScript:
 	turnobject PLAYER, UP
@@ -396,13 +396,13 @@ ShowElmTogepiScript:
 	promptbutton
 	writetext ShowElmTogepiText3
 	promptbutton
-ElmGiveEverstoneScript:
-	writetext ElmGiveEverstoneText1
+ElmGiveOddSouvenirScript:
+	writetext ElmGiveOddSouvenirText1
 	promptbutton
-	verbosegiveitem EVERSTONE
+	verbosegiveitem ODD_SOUVENIR
 	iffalse_endtext
-	setevent EVENT_GOT_EVERSTONE_FROM_ELM
-	jumpopenedtext ElmGiveEverstoneText2
+	setevent EVENT_GOT_ODD_SOUVENIR_FROM_ELM
+	jumpopenedtext ElmGiveOddSouvenirText2
 
 ElmGiveMasterBallScript:
 	writetext ElmGiveMasterBallText1
@@ -419,11 +419,12 @@ ElmGiveTicketScript:
 	writetext ElmSeenText
 	waitbutton
 	closetext
-	winlosstext ElmWinText, 0
+	winlosstext ElmWinText, ElmLoseText
 	setlasttalked ELMSLAB_ELM
 	loadtrainer PROF_ELM, 1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	reloadmapafterbattle
+	reloadmap
 	opentext
 	writetext ElmGiveTicketText1
 	promptbutton
@@ -1225,7 +1226,7 @@ ShowElmTogepiText3:
 	cont "to be done."
 	done
 
-ElmGiveEverstoneText1:
+ElmGiveOddSouvenirText1:
 	text "Thanks, <PLAYER>!"
 	line "You're helping"
 
@@ -1237,23 +1238,22 @@ ElmGiveEverstoneText1:
 	cont "our appreciation."
 	done
 
-ElmGiveEverstoneText2:
-	text "That's an"
-	line "Everstone."
+ElmGiveOddSouvenirText2:
+	text "That's an oddity"
+	line "I was given by"
+	cont "Mr. #mon."
 
-	para "Some species of"
-	line "#mon evolve"
+	para "He told me it's a"
+	line "souvenir from his"
 
-	para "when they grow to"
-	line "certain levels."
+	para "trip to a tropical"
+	line "island."
 
-	para "A #mon holding"
-	line "the Everstone"
-	cont "won't evolve."
+	para "Supposedly there"
+	line "are a few species"
 
-	para "Give it to a #-"
-	line "mon you don't want"
-	cont "to evolve."
+	para "of #mon that"
+	line "like to hold it."
 	done
 
 ElmText_CallYou:
@@ -1372,6 +1372,11 @@ ElmSeenText:
 
 ElmWinText:
 	text "Astounding!"
+	done
+
+ElmLoseText:
+	text "…Were you going"
+	line "easy on me?"
 	done
 
 ElmRefusedBattleText:

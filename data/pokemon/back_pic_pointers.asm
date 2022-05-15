@@ -20,8 +20,8 @@ BackPicPointers::
 	dba PidgeotBackpic
 	dba RattataPlainBackpic
 	dba RaticatePlainBackpic
-	dba MarillBackpic
-	dba AzumarillBackpic
+	dba SpearowBackpic
+	dba FearowBackpic
 	dba EkansBackpic
 	dba ArbokJohtoBackpic
 	dba PikachuPlainBackpic
@@ -57,8 +57,8 @@ BackPicPointers::
 	dba GolduckBackpic
 	dba MankeyBackpic
 	dba PrimeapeBackpic
-	dba GrowlitheBackpic
-	dba ArcanineBackpic
+	dba GrowlithePlainBackpic
+	dba ArcaninePlainBackpic
 	dba PoliwagBackpic
 	dba PoliwhirlBackpic
 	dba PoliwrathBackpic
@@ -82,7 +82,7 @@ BackPicPointers::
 	dba SlowbroPlainBackpic
 	dba MagnemiteBackpic
 	dba MagnetonBackpic
-	dba FarfetchDBackpic
+	dba FarfetchDPlainBackpic
 	dba DoduoBackpic
 	dba DodrioBackpic
 	dba SeelBackpic
@@ -99,14 +99,15 @@ BackPicPointers::
 	dba HypnoBackpic
 	dba KrabbyBackpic
 	dba KinglerBackpic
-	dba VoltorbBackpic
-	dba ElectrodeBackpic
+	dba VoltorbPlainBackpic
+	dba ElectrodePlainBackpic
 	dba ExeggcuteBackpic
 	dba ExeggutorPlainBackpic
 	dba CuboneBackpic
 	dba MarowakPlainBackpic
 	dba HitmonleeBackpic
 	dba HitmonchanBackpic
+	dba LickitungBackpic
 	dba KoffingBackpic
 	dba WeezingPlainBackpic
 	dba RhyhornBackpic
@@ -116,12 +117,11 @@ BackPicPointers::
 	dba KangaskhanBackpic
 	dba HorseaBackpic
 	dba SeadraBackpic
-	dba TogepiBackpic
-	dba TogeticBackpic
-	dba TogekissBackpic
+	dba GoldeenBackpic
+	dba SeakingBackpic
 	dba StaryuBackpic
 	dba StarmieBackpic
-	dba MrMimeBackpic
+	dba MrMimePlainBackpic
 	dba ScytherBackpic
 	dba JynxBackpic
 	dba ElectabuzzBackpic
@@ -156,7 +156,7 @@ BackPicPointers::
 	dba MeganiumBackpic
 	dba CyndaquilBackpic
 	dba QuilavaBackpic
-	dba TyphlosionBackpic
+	dba TyphlosionPlainBackpic
 	dba TotodileBackpic
 	dba CroconawBackpic
 	dba FeraligatrBackpic
@@ -172,31 +172,34 @@ BackPicPointers::
 	dba ChinchouBackpic
 	dba LanturnBackpic
 	dba PichuPlainBackpic
-	dba MunchlaxBackpic
-	dba MagnezoneBackpic
-	dba RhyperiorBackpic
-	dba TangrowthBackpic
+	dba CleffaBackpic
+	dba IgglybuffBackpic
+	dba TogepiBackpic
+	dba TogeticBackpic
 	dba NatuBackpic
 	dba XatuBackpic
 	dba MareepBackpic
 	dba FlaaffyBackpic
 	dba AmpharosBackpic
 	dba BellossomBackpic
+	dba MarillBackpic
+	dba AzumarillBackpic
 	dba SudowoodoBackpic
 	dba PolitoedBackpic
+	dba HoppipBackpic
+	dba SkiploomBackpic
+	dba JumpluffBackpic
+	dba AipomBackpic
 	dba SunkernBackpic
 	dba SunfloraBackpic
 	dba YanmaBackpic
-	dba YanmegaBackpic
 	dba WooperBackpic
 	dba QuagsireBackpic
 	dba EspeonBackpic
 	dba UmbreonBackpic
 	dba MurkrowBackpic
-	dba HonchkrowBackpic
 	dba SlowkingPlainBackpic
 	dba MisdreavusBackpic
-	dba MismagiusBackpic
 	dba UnownABackpic
 	dba WobbuffetBackpic
 	dba GirafarigBackpic
@@ -204,26 +207,24 @@ BackPicPointers::
 	dba ForretressBackpic
 	dba DunsparceBackpic
 	dba GligarBackpic
-	dba GliscorBackpic
 	dba SteelixBackpic
 	dba SnubbullBackpic
 	dba GranbullBackpic
-	dba QwilfishBackpic
+	dba QwilfishPlainBackpic
 	dba ScizorBackpic
 	dba ShuckleBackpic
 	dba HeracrossBackpic
-	dba SneaselBackpic
-	dba WeavileBackpic
+	dba SneaselPlainBackpic
 	dba TeddiursaBackpic
 	dba UrsaringBackpic
 	dba SlugmaBackpic
 	dba MagcargoBackpic
 	dba SwinubBackpic
 	dba PiloswineBackpic
-	dba MamoswineBackpic
-	dba CorsolaBackpic
+	dba CorsolaPlainBackpic
 	dba RemoraidBackpic
 	dba OctilleryBackpic
+	dba DelibirdBackpic
 	dba MantineBackpic
 	dba SkarmoryBackpic
 	dba HoundourBackpic
@@ -232,14 +233,13 @@ BackPicPointers::
 	dba PhanpyBackpic
 	dba DonphanBackpic
 	dba Porygon2Backpic
-	dba PorygonZBackpic
+	dba StantlerBackpic
 	dba SmeargleBackpic
 	dba TyrogueBackpic
 	dba HitmontopBackpic
+	dba SmoochumBackpic
 	dba ElekidBackpic
-	dba ElectivireBackpic
 	dba MagbyBackpic
-	dba MagmortarBackpic
 	dba MiltankBackpic
 	dba BlisseyBackpic
 	dba RaikouBackpic
@@ -251,12 +251,43 @@ BackPicPointers::
 	dba LugiaBackpic
 	dba HoOhBackpic
 	dba CelebiBackpic
+	dba AzurillBackpic
+	dba WynautBackpic
+	dba AmbipomBackpic
+	dba EggPic
+	dba EggPic ; $100
+	dba MismagiusBackpic
+	dba HonchkrowBackpic
+	dba BonslyBackpic
+	dba MimeJrBackpic
+	dba HappinyBackpic
+	dba MunchlaxBackpic
+	dba MantykeBackpic
+	dba WeavileBackpic
+	dba MagnezoneBackpic
+	dba LickilickyBackpic
+	dba RhyperiorBackpic
+	dba TangrowthBackpic
+	dba ElectivireBackpic
+	dba MagmortarBackpic
+	dba TogekissBackpic
+	dba YanmegaBackpic
 	dba LeafeonBackpic
 	dba GlaceonBackpic
+	dba GliscorBackpic
+	dba MamoswineBackpic
+	dba PorygonZBackpic
 	dba SylveonBackpic
-	assert_table_length NUM_POKEMON
-
-	dba EggPic
+	dba PerrserkerBackpic
+	dba CursolaBackpic
+	dba SirfetchDBackpic
+	dba MrRimeBackpic
+	dba WyrdeerBackpic
+	dba KleavorBackpic
+	dba UrsalunaBackpic
+	dba SneaslerBackpic
+	dba OverqwilBackpic
+	assert_table_length NUM_SPECIES
 
 	dba UnownBBackpic
 	dba UnownCBackpic
@@ -310,15 +341,22 @@ BackPicPointers::
 	dba MagikarpZebraBackpic
 	dba MagikarpStripeBackpic
 	dba MagikarpBubblesBackpic
-	dba MagikarpForeheadBackpic
-	dba MagikarpMaskBackpic
+	dba MagikarpDiamondsBackpic
+	dba MagikarpPatchesBackpic
+	dba MagikarpForehead1Backpic
+	dba MagikarpMask1Backpic
+	dba MagikarpForehead2Backpic
+	dba MagikarpMask2Backpic
 	dba MagikarpSaucyBackpic
 	dba MagikarpRaindropBackpic
 
 	dba GyaradosRedBackpic
+
 	dba MewtwoArmoredBackpic
+
 	dba RattataAlolanBackpic
 	dba RaticateAlolanBackpic
+	dba RaichuAlolanBackpic
 	dba SandshrewAlolanBackpic
 	dba SandslashAlolanBackpic
 	dba VulpixAlolanBackpic
@@ -332,17 +370,29 @@ BackPicPointers::
 	dba GolemAlolanBackpic
 	dba GrimerAlolanBackpic
 	dba MukAlolanBackpic
-	dba RaichuAlolanBackpic
 	dba ExeggutorAlolanBackpic
 	dba MarowakAlolanBackpic
+
+	dba MeowthGalarianBackpic
 	dba PonytaGalarianBackpic
 	dba RapidashGalarianBackpic
 	dba SlowpokeGalarianBackpic
 	dba SlowbroGalarianBackpic
-	dba SlowkingGalarianBackpic
+	dba FarfetchDGalarianBackpic
 	dba WeezingGalarianBackpic
+	dba MrMimeGalarianBackpic
 	dba ArticunoGalarianBackpic
 	dba ZapdosGalarianBackpic
 	dba MoltresGalarianBackpic
+	dba SlowkingGalarianBackpic
+	dba CorsolaGalarianBackpic
+
+	dba GrowlitheHisuianBackpic
+	dba ArcanineHisuianBackpic
+	dba VoltorbHisuianBackpic
+	dba ElectrodeHisuianBackpic
+	dba TyphlosionHisuianBackpic
+	dba QwilfishHisuianBackpic
+	dba SneaselHisuianBackpic
 
 	assert_table_length NUM_UNIQUE_POKEMON

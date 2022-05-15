@@ -539,10 +539,14 @@ ObjectEventTypeArray:
 	ret
 
 .pokemon:
-	ld hl, MAPOBJECT_RANGE
+	ld hl, MAPOBJECT_RADIUS
 	add hl, bc
-	ld a, [hli]
-	ldh [hScriptVar], a
+	ld a, [hl]
+	ld bc, MAPOBJECT_RANGE - MAPOBJECT_RADIUS
+	add hl, bc
+	ld b, [hl]
+	ld c, a
+	inc hl
 	ld de, wTempScriptBuffer
 	ld a, showcrytext_command
 	ld [de], a
@@ -552,7 +556,10 @@ rept 2
 	ld [de], a
 	inc de
 endr
-	xor a
+	ld a, c
+	ld [de], a
+	inc de
+	ld a, b
 	ld [de], a
 	inc de
 	ld a, end_command
@@ -1098,7 +1105,7 @@ RandomEncounter::
 ; Random encounter
 	call CheckWildEncounterCooldown
 	jr c, .nope
-	call CanUseSweetScent
+	call CanUseSweetHoney
 	jr nc, .nope
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
@@ -1140,7 +1147,7 @@ WildBattleScript:
 	reloadmapafterbattle
 	end
 
-CanUseSweetScent::
+CanUseSweetHoney::
 	ld hl, wStatusFlags
 	bit STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
 	jr nz, .no
@@ -1163,6 +1170,37 @@ CanUseSweetScent::
 	and a
 	ret
 
+GetContestLocations:
+; Writes to wDexAreaMons. Assumes we're in the correct WRAM bank for this.
+; Parameters: e = type, d = region, c = species, b = form.
+	; Only Johto has Contests.
+	inc d
+	dec d
+	scf
+	ret nz
+
+	ld hl, ContestMons + 1
+	ld e, (ContestMonsEnd - ContestMons) / 5
+.loop
+	ld a, [hli]
+	cp c
+	ld a, [hli]
+	inc hl ; skip level min
+	inc hl ; skip level max
+	inc hl ; skip (next mon's) encounter rate
+	jr nz, .next
+	call DexCompareWildForm
+	jr z, .found_mon
+.next
+	dec e
+	jr nz, .loop
+	scf
+	ret
+.found_mon
+	lb de, GROUP_NATIONAL_PARK, MAP_NATIONAL_PARK
+	xor a ; ld a, JOHTO_REGION
+	farjp Pokedex_SetWildLandmark
+
 _TryWildEncounter_BugContest:
 	call TryWildEncounter_BugContest
 	ret nc
@@ -1173,7 +1211,7 @@ _TryWildEncounter_BugContest:
 	jr nc, .loop
 	srl a
 	ld hl, ContestMons
-	ld de, 4
+	ld de, 5
 .CheckMon:
 	sub [hl]
 	jr c, .GotMon
@@ -1184,6 +1222,9 @@ _TryWildEncounter_BugContest:
 ; Species
 	ld a, [hli]
 	ld [wTempWildMonSpecies], a
+; Form
+	ld a, [hli]
+	ld [wCurForm], a
 ; Min level
 	ld a, [hli]
 	ld d, a
@@ -1292,5 +1333,6 @@ DoBikeStep::
 	xor a
 	ret
 
+INCLUDE "engine/overworld/landmarks.asm"
 INCLUDE "engine/overworld/stone_table.asm"
 INCLUDE "engine/overworld/scripting.asm"

@@ -2,9 +2,9 @@
 
 	def_water_wildmons TOHJO_FALLS
 	db 4 percent ; encounter rate
-	wildmon POLIWAG
+	wildmon GOLDEEN
 	wildmon SLOWPOKE
-	wildmon POLIWHIRL
+	wildmon SEAKING
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_PORT
@@ -16,30 +16,30 @@
 
 	def_water_wildmons ROUTE_4
 	db 4 percent ; encounter rate
-	wildmon MAGIKARP
-	wildmon POLIWAG
-	wildmon POLIWHIRL
+	wildmon GOLDEEN
+	wildmon SEAKING
+	wildmon GOLDEEN
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_6
 	db 2 percent ; encounter rate
 	wildmon PSYDUCK
-	wildmon PSYDUCK
 	wildmon GOLDUCK
+	wildmon PSYDUCK
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_9
 	db 4 percent ; encounter rate
-	wildmon MAGIKARP
-	wildmon POLIWAG
-	wildmon POLIWHIRL
+	wildmon GOLDEEN
+	wildmon GOLDEEN
+	wildmon SEAKING
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_10_NORTH
 	db 4 percent ; encounter rate
-	wildmon MAGIKARP
-	wildmon PSYDUCK
-	wildmon GOLDUCK
+	wildmon GOLDEEN
+	wildmon GOLDEEN
+	wildmon SEAKING
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_12_NORTH
@@ -116,21 +116,21 @@
 	db 6 percent ; encounter rate
 	wildmon TENTACOOL
 	wildmon KINGLER
-	wildmon TENTACRUEL
+	wildmon GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_24
 	db 4 percent ; encounter rate
 	wildmon MAGIKARP
-	wildmon POLIWAG
-	wildmon POLIWHIRL
+	wildmon GOLDEEN
+	wildmon SEAKING
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_25
 	db 4 percent ; encounter rate
 	wildmon MAGIKARP
-	wildmon POLIWAG
-	wildmon POLIWHIRL
+	wildmon GOLDEEN
+	wildmon SEAKING
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_26
@@ -171,8 +171,8 @@
 	def_water_wildmons CERULEAN_CITY
 	db 4 percent ; encounter rate
 	wildmon MAGIKARP
-	wildmon POLIWAG
-	wildmon POLIWHIRL
+	wildmon GOLDEEN
+	wildmon SEAKING
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_CITY

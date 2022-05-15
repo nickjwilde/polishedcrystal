@@ -24,9 +24,9 @@ ProfOaksAide3Script:
 	iftrue .Explain
 	writetext ProfOaksAide3HiText
 	waitbutton
-	countseencaught
-	readvar VAR_DEXCAUGHT
-	ifgreater 44, .HereYouGo
+	setval16 45
+	special CountCaught
+	iftrue .HereYouGo
 .UhOh
 	jumpopenedtext ProfOaksAide3UhOhText
 
@@ -83,7 +83,7 @@ ProfOaksAide3UhOhText:
 	line "Uh-oh! You've only"
 
 	para "caught "
-	text_decimal wTempPokedexCaughtCount, 1, 3
+	text_decimal wTempDexOwn, 2, 3
 	text " kinds"
 	line "of #mon."
 
@@ -97,7 +97,7 @@ ProfOaksAide3HereYouGoText:
 	line "Great job! You've"
 
 	para "caught "
-	text_decimal wTempPokedexCaughtCount, 1, 3
+	text_decimal wTempDexOwn, 2, 3
 	text " kinds"
 	line "of #mon."
 

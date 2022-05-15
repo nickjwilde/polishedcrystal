@@ -56,6 +56,9 @@ SpriteAnimFrameData:
 	dw .Frameset_PcMode
 	dw .Frameset_PcMode2
 	dw .Frameset_PcPack
+	dw .Frameset_DexCursor
+	dw .Frameset_DexUnownCursor
+	dw .Frameset_DexSlowpoke
 	assert_table_length NUM_SPRITE_ANIM_FRAMESETS
 
 .Frameset_00:
@@ -357,4 +360,20 @@ SpriteAnimFrameData:
 
 .Frameset_PcPack:
 	frame SPRITE_ANIM_OAMSET_PC_PACK, 32
+	dorestart
+
+.Frameset_DexCursor:
+	frame SPRITE_ANIM_OAMSET_DEX_CURSOR, 32
+	dorestart
+
+.Frameset_DexUnownCursor:
+	frame SPRITE_ANIM_OAMSET_DEX_UNOWN_CURSOR, 32
+	dorestart
+
+.Frameset_DexSlowpoke:
+	frame SPRITE_ANIM_OAMSET_DEX_SLOWPOKE_1, 3
+	frame SPRITE_ANIM_OAMSET_DEX_SLOWPOKE_2, 3
+	frame SPRITE_ANIM_OAMSET_DEX_SLOWPOKE_3, 3
+	frame SPRITE_ANIM_OAMSET_DEX_SLOWPOKE_4, 3
+	frame SPRITE_ANIM_OAMSET_DEX_SLOWPOKE_5, 3
 	dorestart

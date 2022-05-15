@@ -872,7 +872,7 @@ Bird_keeperPeterBeatenText:
 	line "weaknesses are."
 	done
 
-Text_RoarIntro:
+Text_RoarIntro: ; text > text
 	text "WROOOOAR!"
 	line "PEOPLE RUN WHEN I"
 
@@ -883,7 +883,7 @@ Text_RoarIntro:
 	line "NOW TAKE THIS!"
 	done
 
-Text_RoarOutro:
+Text_RoarOutro: ; text > text
 	text "WROOOAR!"
 	line "IT'S ROAR!"
 

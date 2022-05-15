@@ -67,7 +67,7 @@ if DEF(DEBUG)
 	; judge machine
 	setflag ENGINE_JUDGE_MACHINE
 	; all key items
-for x, NUM_KEY_ITEMS
+for x, NUM_KEY_ITEMS + 1
 if x != MACHINE_PART
 	givekeyitem x
 endc
@@ -104,21 +104,21 @@ endr
 	giveitem FIRE_STONE, 99
 	giveitem WATER_STONE, 99
 	giveitem THUNDERSTONE, 99
+	giveitem ICE_STONE, 99
 	giveitem MOON_STONE, 99
 	giveitem SUN_STONE, 99
 	giveitem DUSK_STONE, 99
-	giveitem DAWN_STONE, 99
 	giveitem SHINY_STONE, 99
+	giveitem ODD_SOUVENIR, 99
 	giveitem EXP_SHARE, 99
 	giveitem LEFTOVERS, 99
-	giveitem BIG_NUGGET, 99
+	giveitem MULCH, 99
+	giveitem SWEET_HONEY, 99
 	giveitem SILVER_LEAF, 99
 	giveitem GOLD_LEAF, 99
-	giveitem BOTTLE_CAP, 99
-	giveitem MULCH, 99
 	giveitem MINT_LEAF, 99
-	giveitem ODD_SOUVENIR, 10
-	giveitem ARMOR_SUIT, 1
+	giveitem BOTTLE_CAP, 99
+	giveitem BIG_NUGGET, 99
 	; all decorations except Diploma
 for x, EVENT_DECO_BED_1, EVENT_DECO_BIG_LAPRAS_DOLL + 1
 	setevent x
@@ -207,9 +207,8 @@ endr
 	setevent EVENT_RESTORED_POWER_TO_KANTO
 	; post-e4
 	setflag ENGINE_CREDITS_SKIP
-	setflag ENGINE_HAVE_SHINY_CHARM
 	; good party
-	givepoke MEWTWO, NO_FORM, 100, BRIGHTPOWDER
+	givepoke MEWTWO, PLAIN_FORM, 100, BRIGHTPOWDER
 	loadmem wPartyMon1EVs+0, 252
 	loadmem wPartyMon1EVs+1, 252
 	loadmem wPartyMon1EVs+2, 252
@@ -231,8 +230,8 @@ endr
 	loadmem wPartyMon1Stats+8, HIGH(999)
 	loadmem wPartyMon1Stats+9, LOW(999)
 	; hm slaves
-	givepoke MEW, NO_FORM, 100, LEFTOVERS
-	givepoke MEW, NO_FORM, 100, LEFTOVERS
+	givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
+	givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
 	loadmem wPartyMon2Moves+0, FLY
 	loadmem wPartyMon2Moves+1, SURF
 	loadmem wPartyMon2Moves+2, STRENGTH
@@ -250,10 +249,9 @@ endr
 	loadmem wPartyMon3PP+2, 15
 	loadmem wPartyMon3PP+3, 15
 	; variant form test
-	givepoke SLOWKING, GALARIAN_FORM, 50
-	givepoke ARTICUNO, GALARIAN_FORM, 50
-	givepoke ZAPDOS, GALARIAN_FORM, 50
-	givepoke MOLTRES, GALARIAN_FORM, 50
+	givepoke GRAVELER, ALOLAN_FORM, 50
+	givepoke WEEZING, GALARIAN_FORM, 50
+	givepoke DITTO, 50
 	; fill pokedex
 	callasm FillPokedex
 	; intro events
@@ -276,24 +274,14 @@ endr
 	end
 
 FillPokedex:
-	ld a, 1
-;	ld [wUnlockedUnownMode], a
-	ld [wFirstUnownSeen], a
-	ld [wFirstMagikarpSeen], a
-;	ld hl, wUnownDex
-;	ld a, 1
-;rept NUM_UNOWN
-;	ld [hli], a
-;	inc a
-;endr
 	ld hl, wPokedexSeen
 	call .Fill
 	ld hl, wPokedexCaught
 .Fill:
 	ld a, %11111111
-	ld bc, 31 ; 001-248
+	ld bc, 35 ; 001-278
 	rst ByteFill
-	ld [hl], %00111111 ; 249-254
+	ld [hl], %01111111 ; 279-286
 	ret
 
 else

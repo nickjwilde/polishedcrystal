@@ -28,6 +28,7 @@ breed_struct: MACRO
 \1ExtSpecies::
 \1Form::           db
 \1PP::             ds NUM_MOVES
+\1EggCycles::
 \1Happiness::      db
 \1PokerusStatus::  db
 \1CaughtData::
@@ -134,8 +135,9 @@ ENDM
 
 pokedb: MACRO
 \1Mons::
-\1Mon1::        savemon_struct \1Mon1
-\1Mon2::        ds SAVEMON_STRUCT_LENGTH * (MONDB_ENTRIES - 1)
+for n, 1, \2 + 1
+\1Mon{d:n}:: savemon_struct \1Mon{d:n}
+endr
 \1End::
 ENDM
 
@@ -237,17 +239,15 @@ ENDM
 bugcontestwinner: MACRO
 \1PersonID:: db
 \1Mon::      db
+\1Form::     db
 \1Score::    dw
 ENDM
 
 hall_of_fame: MACRO
 \1WinCount:: db
-\1Mon1:: hof_mon \1Mon1
-\1Mon2:: hof_mon \1Mon2
-\1Mon3:: hof_mon \1Mon3
-\1Mon4:: hof_mon \1Mon4
-\1Mon5:: hof_mon \1Mon5
-\1Mon6:: hof_mon \1Mon6
+for n, 1, PARTY_LENGTH + 1
+\1Mon{d:n}:: hof_mon \1Mon{d:n}
+endr
 \1End:: db
 ENDM
 

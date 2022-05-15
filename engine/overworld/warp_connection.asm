@@ -213,7 +213,7 @@ LoadMapTimeOfDay:
 	call .ClearBGMap
 	decoord 0, 0
 	call .copy
-	decoord 0, 0, wAttrMap
+	decoord 0, 0, wAttrmap
 	ld a, $1
 	ldh [rVBK], a
 .copy
@@ -272,12 +272,16 @@ DeferredLoadMapGraphics:
 	ldh [hTileAnimFrame], a
 	ret
 
-LoadMapGraphics:
+LoadMapTilesetGFX:
 	call LoadMapTileset
 	call LoadTilesetGFX
 	xor a
 	ldh [hMapAnims], a
 	ldh [hTileAnimFrame], a
+	ret
+
+LoadMapGraphics:
+	call LoadMapTilesetGFX
 	farjp RefreshSprites
 
 LoadMapPalettes:

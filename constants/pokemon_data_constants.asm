@@ -75,6 +75,49 @@ NUM_GROWTH_RATES EQU const_value
 	const EGG_DITTO         ; d
 	const EGG_DRAGON        ; e
 	const EGG_NONE          ; f (Undiscovered)
+NUM_EGG_GROUPS EQU const_value - 1
+
+; body data struct members (see data/pokemon/body_data.asm)
+rsreset
+BODY_HEIGHT rb
+BODY_WEIGHT rw
+BODY_COLOR  rb
+BODY_SHAPE EQU BODY_COLOR
+BODY_DATA_SIZE EQU _RS
+
+; shapes (see data/pokemon/body_data.asm)
+	const_def
+	const SHAPE_HEAD         ; 0
+	const SHAPE_SERPENTINE   ; 1
+	const SHAPE_FINS         ; 2
+	const SHAPE_HEAD_ARMS    ; 3
+	const SHAPE_HEAD_BASE    ; 4
+	const SHAPE_BIPEDAL_TAIL ; 5
+	const SHAPE_HEAD_LEGS    ; 6
+	const SHAPE_QUADRUPED    ; 7
+	const SHAPE_WINGS        ; 8
+	const SHAPE_TENTACLES    ; 9
+	const SHAPE_MULTIBODY    ; a
+	const SHAPE_BIPEDAL      ; b
+	const SHAPE_MULTIWINGS   ; c
+	const SHAPE_INSECTOID    ; d
+assert const_value <= $10
+NUM_SHAPES EQU const_value
+
+; body colors (see data/pokemon/body_data.asm)
+	const_def
+	const BODY_COLOR_RED    ; 0
+	const BODY_COLOR_BLUE   ; 1
+	const BODY_COLOR_YELLOW ; 2
+	const BODY_COLOR_GREEN  ; 3
+	const BODY_COLOR_BLACK  ; 4
+	const BODY_COLOR_BROWN  ; 5
+	const BODY_COLOR_PURPLE ; 6
+	const BODY_COLOR_GRAY   ; 7
+	const BODY_COLOR_WHITE  ; 8
+	const BODY_COLOR_PINK   ; 9
+assert const_value <= $10
+NUM_BODY_COLORS EQU const_value
 
 ; breed_struct and party_struct members (see macros/wram.asm)
 rsreset
@@ -184,6 +227,7 @@ NATURE_MASK      EQU %00011111
 
 MON_SHINY_F      EQU 7
 
+CAUGHT_MASK      EQU %10000000 ; Reuses the gender flag in dex.
 GENDER_MASK      EQU %10000000
 IS_EGG_MASK      EQU %01000000
 EXTSPECIES_MASK  EQU %00100000
@@ -191,6 +235,8 @@ FORM_MASK        EQU %00011111
 
 SPECIESFORM_MASK EQU EXTSPECIES_MASK | FORM_MASK
 
+MON_COSMETIC_F   EQU 7 ; used for area location checking
+MON_CAUGHT_F     EQU 7
 MON_GENDER_F     EQU 7
 MON_IS_EGG_F     EQU 6
 MON_EXTSPECIES_F EQU 5
@@ -221,16 +267,27 @@ MON_CRY_LENGTH EQU 6
 ; maximum number of party pokemon
 PARTY_LENGTH EQU 6
 
+; pokerus
+; NOTE: because # of days remaining in a pokerus infection is a nybble and tracked via bit-shifting and not arithmetic,
+; there are five 4-bit that are left unused. for a minor memory optimization, numbers > 7 are preferred.
+; therefore, the unused candidate numbers are %1001, %1010 %1011, %1101
+; why did I pick %1101? I like the number 13 :)
+POKERUS_CURED EQU %1101
+POKERUS_MASK EQU %00001111
+
 ; boxes
 MONS_PER_BOX    EQU 20
-MONDB_ENTRIES   EQU 167
+MONDB_ENTRIES_A EQU 167
+MONDB_ENTRIES_B EQU 28
+MONDB_ENTRIES_C EQU 12
+MONDB_ENTRIES   EQU MONDB_ENTRIES_A + MONDB_ENTRIES_B + MONDB_ENTRIES_C
 MIN_MONDB_SLACK EQU 10
-NUM_BOXES       EQU (MONDB_ENTRIES * 2 - MIN_MONDB_SLACK) / MONS_PER_BOX ; 16
+NUM_BOXES       EQU (MONDB_ENTRIES * 2 - MIN_MONDB_SLACK) / MONS_PER_BOX ; 20
 
 ; hall of fame
 HOF_MON_LENGTH EQU 1 + 2 + 2 + 1 + (MON_NAME_LENGTH - 1) ; species, id, dvs, level, nick
 HOF_LENGTH EQU 1 + HOF_MON_LENGTH * PARTY_LENGTH + 1 ; win count, party, terminator
-NUM_HOF_TEAMS EQU 30
+NUM_HOF_TEAMS EQU 10
 
 ; evolution types (used in data/pokemon/evos_attacks.asm)
 	const_def 1
@@ -242,6 +299,8 @@ NUM_HOF_TEAMS EQU 30
 	const EVOLVE_LOCATION
 	const EVOLVE_MOVE
 	const EVOLVE_EVS
+	const EVOLVE_CRIT
+	const EVOLVE_PARTY
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1
@@ -318,6 +377,7 @@ NUM_HAPPINESS_CHANGES EQU const_value
 ; significant happiness values
 BASE_HAPPINESS        EQU 70
 FRIEND_BALL_HAPPINESS EQU 200
+HATCHED_HAPPINESS     EQU 120
 HAPPINESS_TO_EVOLVE   EQU 220
 HAPPINESS_THRESHOLD_1 EQU 100
 HAPPINESS_THRESHOLD_2 EQU 200

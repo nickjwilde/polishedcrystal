@@ -25,6 +25,8 @@ Pokémon Polished Crystal would never have been finished without the help of man
 * Armada651 for the playable Celadon Game Corner lucky slot machine.
 * tonyism for the in-battle shiny icon code.
 * Tachytaenius for the ability to change the Ball a Pokémon is in.
+* SadisticMystic and Kate Dering for vanilla battle engine testing and documentation.
+* ax6 and NieDzejkob for developing and optimizing lzcomp.
 
 
 ## Music
@@ -52,14 +54,19 @@ Pokémon Polished Crystal would never have been finished without the help of man
 * Freeline for animations of Honchkrow and Munchlax, and the Rocket Executives' and stat trainers' overworld sprites.
 * Megaman-Omega for some of Prism's overworld sprites.
 * SoupPotato (aka SourApple) for some move animations, sprites of Red Gyarados and Ace Duo, and Berry tree tiles.
-* flempa for some Pokémon sprites and move animations.
+* flempa for some Pokémon sprites and move animations and for Galarian Articuno and Galarian Zapdos animations.
+* Scarlax for many new Pokémon animations.
+* ShadowOne333 for many new Pokémon animations.
+* octorox for Galarian Rapidash and Galarian Slowking's backpics.
 * spritershawn for sprites of Red, Blue, and Green.
 * isamuakai01 for sprites of Steven and Cynthia.
 * Maddalena for sprites of Imakuni and the Ghost.
+* EeveeEe1999 for 8th gen menu icons and Lickilicky and Galarian Slowking animations.
 * Luna for some sprites and tiles.
 * Twilir for Lyra's back sprite.
 * Danny-E for Lorelei's sprite.
 * Nic7C5 for Yellow's sprite.
+* PomPomKing and Jace for Melony's sprite.
 * Kage for Walker's sprite.
 * Pyro for Tamer's sprite.
 * Constantine for Nurse's sprite.

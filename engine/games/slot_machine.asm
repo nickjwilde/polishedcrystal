@@ -23,7 +23,7 @@ _SlotMachine:
 	ld hl, wOptions1
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, rLCDC
-	res 2, [hl] ; 8x8 sprites
+	res rLCDC_SPRITE_SIZE, [hl]
 	ret
 
 .InitGFX:
@@ -68,7 +68,7 @@ _SlotMachine:
 	rst CopyBytes
 
 	ld hl, rLCDC
-	set 2, [hl] ; 8x16 sprites
+	set rLCDC_SPRITE_SIZE, [hl]
 	call EnableLCD
 	ld hl, wSlots
 	ld bc, wSlotsEnd - wSlots
@@ -907,7 +907,7 @@ ReelAction_InitGolem:
 	push af
 	depixel 12, 13
 	ld a, SPRITE_ANIM_INDEX_SLOTS_GOLEM
-	call _InitSpriteAnimStruct
+	call InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_VAR3
 	add hl, bc
 	pop af
@@ -962,7 +962,7 @@ Slots_InitChansey:
 	push bc
 	depixel 12, 0
 	ld a, SPRITE_ANIM_INDEX_SLOTS_CHANSEY
-	call _InitSpriteAnimStruct
+	call InitSpriteAnimStruct
 	pop bc
 	xor a
 	ld [wSlotsDelay], a
@@ -1826,7 +1826,7 @@ Slots_AnimateChansey:
 	push bc
 	depixel 12, 13, 0, 4
 	ld a, SPRITE_ANIM_INDEX_SLOTS_EGG
-	call _InitSpriteAnimStruct
+	call InitSpriteAnimStruct
 	pop bc
 	ret
 

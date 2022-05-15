@@ -21,8 +21,8 @@ IconPointers:
 	dba PidgeotIcon
 	dba RattataIcon
 	dba RaticateIcon
-	dba MarillIcon
-	dba AzumarillIcon
+	dba SpearowIcon
+	dba FearowIcon
 	dba EkansIcon
 	dba ArbokIcon
 	dba PikachuIcon
@@ -52,7 +52,7 @@ IconPointers:
 	dba VenomothIcon
 	dba DiglettIcon
 	dba DugtrioIcon
-	dba MeowthIcon
+	dba MeowthPlainIcon
 	dba PersianIcon
 	dba PsyduckIcon
 	dba GolduckIcon
@@ -83,7 +83,7 @@ IconPointers:
 	dba SlowbroIcon
 	dba MagnemiteIcon
 	dba MagnetonIcon
-	dba FarfetchdIcon
+	dba FarfetchDPlainIcon
 	dba DoduoIcon
 	dba DodrioIcon
 	dba SeelIcon
@@ -108,6 +108,7 @@ IconPointers:
 	dba MarowakIcon
 	dba HitmonleeIcon
 	dba HitmonchanIcon
+	dba LickitungIcon
 	dba KoffingIcon
 	dba WeezingIcon
 	dba RhyhornIcon
@@ -117,12 +118,11 @@ IconPointers:
 	dba KangaskhanIcon
 	dba HorseaIcon
 	dba SeadraIcon
-	dba TogepiIcon
-	dba TogeticIcon
-	dba TogekissIcon
+	dba GoldeenIcon
+	dba SeakingIcon
 	dba StaryuIcon
 	dba StarmieIcon
-	dba MrMimeIcon
+	dba MrMimePlainIcon
 	dba ScytherIcon
 	dba JynxIcon
 	dba ElectabuzzIcon
@@ -173,31 +173,34 @@ IconPointers:
 	dba ChinchouIcon
 	dba LanturnIcon
 	dba PichuIcon
-	dba MunchlaxIcon
-	dba MagnezoneIcon
-	dba RhyperiorIcon
-	dba TangrowthIcon
+	dba CleffaIcon
+	dba IgglybuffIcon
+	dba TogepiIcon
+	dba TogeticIcon
 	dba NatuIcon
 	dba XatuIcon
 	dba MareepIcon
 	dba FlaaffyIcon
 	dba AmpharosIcon
 	dba BellossomIcon
+	dba MarillIcon
+	dba AzumarillIcon
 	dba SudowoodoIcon
 	dba PolitoedIcon
+	dba HoppipIcon
+	dba SkiploomIcon
+	dba JumpluffIcon
+	dba AipomIcon
 	dba SunkernIcon
 	dba SunfloraIcon
 	dba YanmaIcon
-	dba YanmegaIcon
 	dba WooperIcon
 	dba QuagsireIcon
 	dba EspeonIcon
 	dba UmbreonIcon
 	dba MurkrowIcon
-	dba HonchkrowIcon
 	dba SlowkingIcon
 	dba MisdreavusIcon
-	dba MismagiusIcon
 	dba UnownAIcon
 	dba WobbuffetIcon
 	dba GirafarigIcon
@@ -205,7 +208,6 @@ IconPointers:
 	dba ForretressIcon
 	dba DunsparceIcon
 	dba GligarIcon
-	dba GliscorIcon
 	dba SteelixIcon
 	dba SnubbullIcon
 	dba GranbullIcon
@@ -214,17 +216,16 @@ IconPointers:
 	dba ShuckleIcon
 	dba HeracrossIcon
 	dba SneaselIcon
-	dba WeavileIcon
 	dba TeddiursaIcon
 	dba UrsaringIcon
 	dba SlugmaIcon
 	dba MagcargoIcon
 	dba SwinubIcon
 	dba PiloswineIcon
-	dba MamoswineIcon
-	dba CorsolaIcon
+	dba CorsolaPlainIcon
 	dba RemoraidIcon
 	dba OctilleryIcon
+	dba DelibirdIcon
 	dba MantineIcon
 	dba SkarmoryIcon
 	dba HoundourIcon
@@ -233,14 +234,13 @@ IconPointers:
 	dba PhanpyIcon
 	dba DonphanIcon
 	dba Porygon2Icon
-	dba PorygonZIcon
+	dba StantlerIcon
 	dba SmeargleIcon
 	dba TyrogueIcon
 	dba HitmontopIcon
+	dba SmoochumIcon
 	dba ElekidIcon
-	dba ElectivireIcon
 	dba MagbyIcon
-	dba MagmortarIcon
 	dba MiltankIcon
 	dba BlisseyIcon
 	dba RaikouIcon
@@ -252,12 +252,43 @@ IconPointers:
 	dba LugiaIcon
 	dba HoOhIcon
 	dba CelebiIcon
+	dba AzurillIcon
+	dba WynautIcon
+	dba AmbipomIcon
+	dba EggIcon
+	dba NullIcon ; $100
+	dba MismagiusIcon
+	dba HonchkrowIcon
+	dba BonslyIcon
+	dba MimeJrIcon
+	dba HappinyIcon
+	dba MunchlaxIcon
+	dba MantykeIcon
+	dba WeavileIcon
+	dba MagnezoneIcon
+	dba LickilickyIcon
+	dba RhyperiorIcon
+	dba TangrowthIcon
+	dba ElectivireIcon
+	dba MagmortarIcon
+	dba TogekissIcon
+	dba YanmegaIcon
 	dba LeafeonIcon
 	dba GlaceonIcon
+	dba GliscorIcon
+	dba MamoswineIcon
+	dba PorygonZIcon
 	dba SylveonIcon
-	assert_table_length NUM_POKEMON + 1
-
-	dba EggIcon
+	dba PerrserkerIcon
+	dba CursolaIcon
+	dba SirfetchDIcon
+	dba MrRimeIcon
+	dba WyrdeerIcon ; TODO
+	dba KleavorIcon ; TODO
+	dba UrsalunaIcon ; TODO
+	dba SneaslerIcon ; TODO
+	dba OverqwilIcon ; TODO
+	assert_table_length NUM_SPECIES + 1
 
 	dba UnownBIcon
 	dba UnownCIcon
@@ -305,33 +336,48 @@ rept NUM_MAGIKARP - 1
 endr
 
 	dba GyaradosIcon ; Red
+
 	dba MewtwoArmoredIcon
-	dba RattataIcon ; TODO
-	dba RaticateIcon ; TODO
-	dba SandshrewIcon ; TODO
-	dba SandslashIcon ; TODO
-	dba VulpixIcon ; TODO
-	dba NinetalesIcon ; TODO
-	dba DiglettIcon ; TODO
-	dba DugtrioIcon ; TODO
-	dba MeowthIcon ; TODO
-	dba PersianIcon ; TODO
-	dba GeodudeIcon ; TODO
-	dba GravelerIcon ; TODO
-	dba GolemIcon ; TODO
-	dba GrimerIcon ; TODO
-	dba MukIcon ; TODO
-	dba RaichuIcon ; TODO
+
+	dba RattataAlolanIcon ; TODO
+	dba RaticateAlolanIcon ; TODO
+	dba RaichuAlolanIcon ; TODO
+	dba SandshrewAlolanIcon ; TODO
+	dba SandslashAlolanIcon ; TODO
+	dba VulpixAlolanIcon ; TODO
+	dba NinetalesAlolanIcon ; TODO
+	dba DiglettAlolanIcon ; TODO
+	dba DugtrioAlolanIcon ; TODO
+	dba MeowthAlolanIcon ; TODO
+	dba PersianAlolanIcon ; TODO
+	dba GeodudeAlolanIcon ; TODO
+	dba GravelerAlolanIcon ; TODO
+	dba GolemAlolanIcon ; TODO
+	dba GrimerAlolanIcon ; TODO
+	dba MukAlolanIcon ; TODO
 	dba ExeggutorAlolanIcon
-	dba MarowakIcon ; TODO
-	dba PonytaIcon ; TODO
-	dba RapidashIcon ; TODO
-	dba SlowpokeIcon ; TODO
-	dba SlowbroIcon ; TODO
-	dba SlowkingIcon ; TODO
-	dba WeezingIcon ; TODO
-	dba ArticunoIcon ; TODO
-	dba ZapdosIcon ; TODO
-	dba MoltresIcon ; TODO
+	dba MarowakAlolanIcon ; TODO
+
+	dba MeowthGalarianIcon
+	dba PonytaGalarianIcon ; TODO
+	dba RapidashGalarianIcon ; TODO
+	dba SlowpokeGalarianIcon ; TODO
+	dba SlowbroGalarianIcon ; TODO
+	dba FarfetchDGalarianIcon
+	dba WeezingGalarianIcon ; TODO
+	dba MrMimeGalarianIcon
+	dba ArticunoGalarianIcon ; TODO
+	dba ZapdosGalarianIcon ; TODO
+	dba MoltresGalarianIcon ; TODO
+	dba SlowkingGalarianIcon ; TODO
+	dba CorsolaGalarianIcon
+
+	dba GrowlitheHisuianIcon ; TODO
+	dba ArcanineHisuianIcon ; TODO
+	dba VoltorbHisuianIcon ; TODO
+	dba ElectrodeHisuianIcon ; TODO
+	dba TyphlosionHisuianIcon ; TODO
+	dba QwilfishHisuianIcon ; TODO
+	dba SneaselHisuianIcon ; TODO
 
 	assert_table_length NUM_UNIQUE_POKEMON + 1

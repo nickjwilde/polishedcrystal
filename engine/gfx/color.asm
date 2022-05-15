@@ -16,9 +16,8 @@ CheckShininess:
 InitPartyMenuPalettes:
 	ld de, wBGPals1
 	ld hl, PartyMenuBGPals
-rept 4
-	call LoadHLPaletteIntoDE
-endr
+	ld c, 4 palettes
+	call LoadPalettes
 	call InitPartyMenuOBPals
 	jmp WipeAttrMap
 
@@ -57,7 +56,7 @@ ApplyHPBarPals:
 .PartyMenu:
 	ld e, c
 	inc e
-	hlcoord 11, 1, wAttrMap
+	hlcoord 11, 1, wAttrmap
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wCurPartyMon]
 .loop
@@ -218,9 +217,12 @@ LoadStatsScreenPals:
 	ld a, $1
 	ret
 
-LoadHLPaletteIntoDE:
+LoadOnePalette:
+; Loads a single palette from hl to de in GBC Video WRAMX
 	ld c, 1 palettes
-LoadCPaletteBytesFromHLIntoDE:
+	; fallthrough
+LoadPalettes:
+; Load c palette bytes from hl to de in GBC Video WRAMX
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK("GBC Video")
@@ -329,7 +331,7 @@ endc
 	jmp PopAFBCDEHL
 
 WipeAttrMap:
-	hlcoord 0, 0, wAttrMap
+	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	xor a
 	rst ByteFill
@@ -358,9 +360,9 @@ LoadMailPalettes:
 
 ApplyAttrMap:
 	ldh a, [rLCDC]
-	bit 7, a
+	bit rLCDC_ENABLE, a
 	jr nz, ApplyAttrMapVBank0
-	hlcoord 0, 0, wAttrMap
+	hlcoord 0, 0, wAttrmap
 	debgcoord 0, 0
 	ld b, SCREEN_HEIGHT
 	ld a, 1
@@ -406,7 +408,7 @@ ApplyPartyMenuHPPals:
 	ld a, [de]
 	inc a
 	ld e, a
-	hlcoord 11, 2, wAttrMap
+	hlcoord 11, 2, wAttrmap
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wHPPalIndex]
 .loop
@@ -522,6 +524,7 @@ GetMonPalettePointer:
 	call GetSpeciesAndFormIndex
 	ld h, b
 	ld l, c
+	inc hl
 	add hl, hl
 	add hl, hl
 	add hl, hl
@@ -546,6 +549,11 @@ endr
 LoadPokemonPalette:
 	; a = species
 	ld a, [wCurPartySpecies]
+
+	; This allows us to use the same function as with
+	; GetMonNormalOrShinyPalettePointer.
+	ld bc, wCurForm - 1
+
 	; hl = palette
 	call GetMonPalettePointer
 	; load palette in BG 7
@@ -572,8 +580,10 @@ LoadPartyMonPalette:
 	ld hl, wPartyMon1DVs
 	ld a, [wCurPartyMon]
 	call GetPartyLocation
-	; b = species
+	; c = species
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wCurForm]
 	ld b, a
 	; vary colors by DVs
 	call CopyDVsToColorVaryDVs
@@ -752,7 +762,7 @@ LoadMapPals:
 	ret z
 
 	; overcast maps have their own roof color table
-	call GetOvercastIndex
+	farcall GetOvercastIndex
 	and a
 	jr z, .not_overcast
 	dec a

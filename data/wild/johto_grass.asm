@@ -378,8 +378,8 @@
 	; day
 	wildmon NIDORAN_F
 	wildmon NIDORAN_M
-	wildmon SENTRET
 	wildmon PIDGEY
+	wildmon SUNKERN
 	wildmon CATERPIE
 	wildmon WEEDLE
 	wildmon WEEDLE
@@ -831,10 +831,10 @@
 	wildmon GOLBAT
 	wildmon NINETALES, ALOLAN_FORM
 	; nite
-	wildmon ZUBAT
+	wildmon DELIBIRD
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon GOLBAT
+	wildmon DELIBIRD
 	wildmon GOLBAT
 	wildmon GOLBAT
 	wildmon GOLBAT
@@ -859,10 +859,10 @@
 	wildmon NINETALES, ALOLAN_FORM
 	wildmon JYNX
 	; nite
-	wildmon ZUBAT
+	wildmon DELIBIRD
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon GOLBAT
+	wildmon DELIBIRD
 	wildmon GOLBAT
 	wildmon GOLBAT
 	wildmon SNEASEL
@@ -887,10 +887,10 @@
 	wildmon JYNX
 	wildmon JYNX
 	; nite
-	wildmon ZUBAT
+	wildmon DELIBIRD
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon GOLBAT
+	wildmon DELIBIRD
 	wildmon GOLBAT
 	wildmon SNEASEL
 	wildmon SNEASEL
@@ -915,10 +915,10 @@
 	wildmon GLACEON
 	wildmon GLACEON
 	; nite
-	wildmon ZUBAT
+	wildmon DELIBIRD
 	wildmon ZUBAT
 	wildmon GOLBAT
-	wildmon GOLBAT
+	wildmon DELIBIRD
 	wildmon GOLBAT
 	wildmon SNEASEL
 	wildmon SNEASEL
@@ -943,7 +943,7 @@
 	wildmon JYNX
 	wildmon JYNX
 	; nite
-	wildmon ZUBAT
+	wildmon DELIBIRD
 	wildmon ZUBAT
 	wildmon GOLBAT
 	wildmon GOLBAT
@@ -1352,16 +1352,16 @@
 	wildmon PIDGEY
 	wildmon SENTRET
 	wildmon RATTATA
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; day
 	wildmon PIDGEY
 	wildmon SENTRET
 	wildmon PIDGEY
 	wildmon SENTRET
 	wildmon RATTATA
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; nite
 	wildmon HOOTHOOT
 	wildmon RATTATA
@@ -1380,16 +1380,16 @@
 	wildmon CATERPIE
 	wildmon PIDGEY
 	wildmon WEEDLE
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; day
 	wildmon PIDGEY
 	wildmon CATERPIE
 	wildmon CATERPIE
 	wildmon PIDGEY
 	wildmon WEEDLE
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; nite
 	wildmon SPINARAK
 	wildmon HOOTHOOT
@@ -1406,18 +1406,18 @@
 	wildmon LEDYBA
 	wildmon CATERPIE
 	wildmon BELLSPROUT
-	wildmon ABRA
+	wildmon PIDGEY
 	wildmon WEEDLE
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; day
 	wildmon PIDGEY
 	wildmon CATERPIE
 	wildmon BELLSPROUT
 	wildmon PIDGEY
 	wildmon WEEDLE
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; nite
 	wildmon SPINARAK
 	wildmon POLIWAG
@@ -1436,16 +1436,16 @@
 	wildmon BELLSPROUT
 	wildmon MAREEP
 	wildmon MAREEP
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; day
 	wildmon EKANS, ARBOK_JOHTO_FORM
 	wildmon RATTATA
 	wildmon BELLSPROUT
 	wildmon MAREEP
 	wildmon MAREEP
-	wildmon SUNKERN
-	wildmon SUNKERN
+	wildmon HOPPIP
+	wildmon HOPPIP
 	; nite
 	wildmon WOOPER
 	wildmon RATTATA
@@ -1460,17 +1460,17 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon RATTATA
-	wildmon PIDGEY
+	wildmon SPEAROW
 	wildmon GEODUDE
-	wildmon SANDSHREW
+	wildmon HOPPIP
 	wildmon EKANS, ARBOK_JOHTO_FORM
 	wildmon SUNKERN
 	wildmon SUNKERN
 	; day
 	wildmon RATTATA
-	wildmon PIDGEY
+	wildmon SPEAROW
 	wildmon GEODUDE
-	wildmon SANDSHREW
+	wildmon HOPPIP
 	wildmon EKANS, ARBOK_JOHTO_FORM
 	wildmon SUNKERN
 	wildmon SUNKERN
@@ -1588,12 +1588,12 @@
 	wildmon PIDGEOTTO
 	; nite
 	wildmon SPINARAK
-	wildmon ARIADOS
+	wildmon STANTLER
 	wildmon HOOTHOOT
-	wildmon NOCTOWL
-	wildmon HOUNDOUR
-	wildmon HOUNDOUR
+	wildmon STANTLER
 	wildmon ARIADOS
+	wildmon HOUNDOUR
+	wildmon HOUNDOUR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_38
@@ -1659,7 +1659,7 @@
 	wildmon MANKEY
 	wildmon RATTATA
 	wildmon RATICATE
-	wildmon PIDGEY
+	wildmon SPEAROW
 	wildmon ARBOK, ARBOK_JOHTO_FORM
 	wildmon PRIMEAPE
 	; day
@@ -1667,7 +1667,7 @@
 	wildmon MANKEY
 	wildmon RATTATA
 	wildmon RATICATE
-	wildmon PIDGEY
+	wildmon SPEAROW
 	wildmon ARBOK, ARBOK_JOHTO_FORM
 	wildmon PRIMEAPE
 	; nite
@@ -1712,20 +1712,20 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon TANGELA
-	wildmon TANGELA
+	wildmon LICKITUNG
 	wildmon BELLSPROUT
 	wildmon WEEPINBELL
-	wildmon FURRET
-	wildmon FURRET
-	wildmon FURRET
+	wildmon LICKITUNG
+	wildmon LICKITUNG
+	wildmon LICKITUNG
 	; day
 	wildmon TANGELA
-	wildmon TANGELA
+	wildmon LICKITUNG
 	wildmon BELLSPROUT
 	wildmon WEEPINBELL
-	wildmon FURRET
-	wildmon FURRET
-	wildmon FURRET
+	wildmon LICKITUNG
+	wildmon LICKITUNG
+	wildmon LICKITUNG
 	; nite
 	wildmon TANGELA
 	wildmon POLIWAG
@@ -1768,7 +1768,7 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	wildmon GEODUDE
-	wildmon PIDGEY
+	wildmon SPEAROW
 	wildmon GEODUDE
 	wildmon PHANPY
 	wildmon RATTATA
@@ -1776,7 +1776,7 @@
 	wildmon RATTATA
 	; day
 	wildmon GEODUDE
-	wildmon PIDGEY
+	wildmon SPEAROW
 	wildmon GEODUDE
 	wildmon JIGGLYPUFF
 	wildmon RATTATA

@@ -24,7 +24,6 @@ ItemEffects:
 	dw PokeBallEffect     ; FAST_BALL
 	dw PokeBallEffect     ; HEAVY_BALL
 	dw PokeBallEffect     ; LOVE_BALL
-	dw AbilityPatch       ; ABILITYPATCH
 	dw PokeBallEffect     ; REPEAT_BALL
 	dw PokeBallEffect     ; TIMER_BALL
 	dw PokeBallEffect     ; NEST_BALL
@@ -69,37 +68,11 @@ ItemEffects:
 	dw RestoreHPEffect    ; MOOMOO_MILK
 	dw HealStatusEffect   ; RAGECANDYBAR
 	dw HealStatusEffect   ; PEWTERCRUNCH
-	dw SacredAsh          ; SACRED_ASH
 	dw EnergyPowder       ; ENERGYPOWDER
 	dw EnergyRoot         ; ENERGY_ROOT
 	dw HealPowder         ; HEAL_POWDER
 	dw RevivalHerb        ; REVIVAL_HERB
-	dw XItemEffect        ; X_ATTACK
-	dw XItemEffect        ; X_DEFEND
-	dw XItemEffect        ; X_SPEED
-	dw XItemEffect        ; X_SPCL_ATK
-	dw XItemEffect        ; X_SPCL_DEF
-	dw XItemEffect        ; X_ACCURACY
-	dw DireHit            ; DIRE_HIT
-	dw GuardSpec          ; GUARD_SPEC
-	dw RepelEffect        ; REPEL
-	dw RepelEffect        ; SUPER_REPEL
-	dw RepelEffect        ; MAX_REPEL
-	dw EscapeRope         ; ESCAPE_ROPE
-	dw PokeDoll           ; POKE_DOLL
-	dw AbilityCap         ; ABILITY_CAP
-	dw EvoStoneEffect     ; LEAF_STONE
-	dw EvoStoneEffect     ; FIRE_STONE
-	dw EvoStoneEffect     ; WATER_STONE
-	dw EvoStoneEffect     ; THUNDERSTONE
-	dw EvoStoneEffect     ; MOON_STONE
-	dw EvoStoneEffect     ; SUN_STONE
-	dw EvoStoneEffect     ; DUSK_STONE
-	dw EvoStoneEffect     ; DAWN_STONE
-	dw EvoStoneEffect     ; SHINY_STONE
-	dw EvoStoneEffect     ; ICE_STONE
-	dw IsntTheTimeMessage ; EVERSTONE
-	dw IsntTheTimeMessage ; EXP_SHARE
+	dw SacredAsh          ; SACRED_ASH
 	dw HealStatusEffect   ; CHERI_BERRY
 	dw HealStatusEffect   ; CHESTO_BERRY
 	dw HealStatusEffect   ; PECHA_BERRY
@@ -131,6 +104,34 @@ ItemEffects:
 	dw IsntTheTimeMessage ; KEE_BERRY
 	dw IsntTheTimeMessage ; MARANGABERRY
 	dw RestoreHPEffect    ; BERRY_JUICE
+	dw RepelEffect        ; REPEL
+	dw RepelEffect        ; SUPER_REPEL
+	dw RepelEffect        ; MAX_REPEL
+	dw EscapeRope         ; ESCAPE_ROPE
+	dw PokeDoll           ; POKE_DOLL
+	dw IsntTheTimeMessage ; MULCH
+	dw SweetHoney         ; SWEET_HONEY
+	dw XItemEffect        ; X_ATTACK
+	dw XItemEffect        ; X_DEFEND
+	dw XItemEffect        ; X_SPEED
+	dw XItemEffect        ; X_SPCL_ATK
+	dw XItemEffect        ; X_SPCL_DEF
+	dw XItemEffect        ; X_ACCURACY
+	dw DireHit            ; DIRE_HIT
+	dw GuardSpec          ; GUARD_SPEC
+	dw AbilityCap         ; ABILITY_CAP
+	dw AbilityPatch       ; ABILITYPATCH
+	dw EvoStoneEffect     ; LEAF_STONE
+	dw EvoStoneEffect     ; FIRE_STONE
+	dw EvoStoneEffect     ; WATER_STONE
+	dw EvoStoneEffect     ; THUNDERSTONE
+	dw EvoStoneEffect     ; ICE_STONE
+	dw EvoStoneEffect     ; MOON_STONE
+	dw EvoStoneEffect     ; SUN_STONE
+	dw EvoStoneEffect     ; DUSK_STONE
+	dw EvoStoneEffect     ; SHINY_STONE
+	dw IsntTheTimeMessage ; EVERSTONE
+	dw IsntTheTimeMessage ; EXP_SHARE
 	dw IsntTheTimeMessage ; SILK_SCARF
 	dw IsntTheTimeMessage ; BLACK_BELT
 	dw IsntTheTimeMessage ; SHARP_BEAK
@@ -149,62 +150,62 @@ ItemEffects:
 	dw IsntTheTimeMessage ; DRAGON_FANG
 	dw IsntTheTimeMessage ; BLACKGLASSES
 	dw IsntTheTimeMessage ; PINK_BOW
+	dw IsntTheTimeMessage ; BERSERK_GENE
 	dw IsntTheTimeMessage ; BRIGHTPOWDER
-	dw IsntTheTimeMessage ; SCOPE_LENS
 	dw IsntTheTimeMessage ; QUICK_CLAW
 	dw IsntTheTimeMessage ; KINGS_ROCK
-	dw IsntTheTimeMessage ; FOCUS_BAND
-	dw IsntTheTimeMessage ; LEFTOVERS
-	dw IsntTheTimeMessage ; LUCKY_EGG
 	dw IsntTheTimeMessage ; AMULET_COIN
 	dw IsntTheTimeMessage ; CLEANSE_TAG
 	dw IsntTheTimeMessage ; SMOKE_BALL
-	dw IsntTheTimeMessage ; BERSERK_GENE
+	dw IsntTheTimeMessage ; FOCUS_BAND
+	dw IsntTheTimeMessage ; LUCKY_EGG
+	dw IsntTheTimeMessage ; LEFTOVERS
+	dw IsntTheTimeMessage ; SOOTHE_BELL
+	dw IsntTheTimeMessage ; SHELL_BELL
+	dw IsntTheTimeMessage ; MUSCLE_BAND
+	dw IsntTheTimeMessage ; WISE_GLASSES
+	dw IsntTheTimeMessage ; EXPERT_BELT
+	dw IsntTheTimeMessage ; LIGHT_CLAY
+	dw IsntTheTimeMessage ; LIFE_ORB
+	dw IsntTheTimeMessage ; FOCUS_SASH
+	dw IsntTheTimeMessage ; METRONOME_I
+	dw IsntTheTimeMessage ; IRON_BALL
+	dw IsntTheTimeMessage ; LAGGING_TAIL
+	dw IsntTheTimeMessage ; DESTINY_KNOT
+	dw IsntTheTimeMessage ; GRIP_CLAW
+	dw IsntTheTimeMessage ; SHED_SHELL
+	dw IsntTheTimeMessage ; BIG_ROOT
+	dw IsntTheTimeMessage ; EVIOLITE
+	dw IsntTheTimeMessage ; ROCKY_HELMET
+	dw IsntTheTimeMessage ; AIR_BALLOON
+	dw IsntTheTimeMessage ; RED_CARD
+	dw IsntTheTimeMessage ; RING_TARGET
+	dw IsntTheTimeMessage ; BINDING_BAND
+	dw IsntTheTimeMessage ; ABSORB_BULB
+	dw IsntTheTimeMessage ; CELL_BATTERY
+	dw IsntTheTimeMessage ; EJECT_BUTTON
+	dw IsntTheTimeMessage ; WEAK_POLICY
+	dw IsntTheTimeMessage ; ASSAULT_VEST
+	dw IsntTheTimeMessage ; LUMINOUSMOSS
+	dw IsntTheTimeMessage ; SNOWBALL
+	dw IsntTheTimeMessage ; SAFE_GOGGLES
+	dw IsntTheTimeMessage ; PROTECT_PADS
+	dw IsntTheTimeMessage ; THROAT_SPRAY
+	dw IsntTheTimeMessage ; EJECT_PACK
+	dw IsntTheTimeMessage ; HEAVY_BOOTS
+	dw IsntTheTimeMessage ; BLUNDRPOLICY
+	dw IsntTheTimeMessage ; ROOM_SERVICE
+	dw IsntTheTimeMessage ; UTILUMBRELLA
 	dw IsntTheTimeMessage ; LIGHT_BALL
-	dw IsntTheTimeMessage ; STICK
+	dw IsntTheTimeMessage ; LEEK
 	dw IsntTheTimeMessage ; THICK_CLUB
 	dw IsntTheTimeMessage ; LUCKY_PUNCH
 	dw IsntTheTimeMessage ; METAL_POWDER
 	dw IsntTheTimeMessage ; QUICK_POWDER
 	dw IsntTheTimeMessage ; ARMOR_SUIT
-	dw IsntTheTimeMessage ; AIR_BALLOON
-	dw IsntTheTimeMessage ; ASSAULT_VEST
-	dw IsntTheTimeMessage ; BIG_ROOT
-	dw IsntTheTimeMessage ; BINDING_BAND
-	dw IsntTheTimeMessage ; DESTINY_KNOT
-	dw IsntTheTimeMessage ; EVIOLITE
-	dw IsntTheTimeMessage ; EXPERT_BELT
-	dw IsntTheTimeMessage ; FOCUS_SASH
-	dw IsntTheTimeMessage ; GRIP_CLAW
-	dw IsntTheTimeMessage ; LIFE_ORB
-	dw IsntTheTimeMessage ; LIGHT_CLAY
-	dw IsntTheTimeMessage ; METRONOME_I
-	dw IsntTheTimeMessage ; MUSCLE_BAND
-	dw IsntTheTimeMessage ; PROTECT_PADS
-	dw IsntTheTimeMessage ; ROCKY_HELMET
-	dw IsntTheTimeMessage ; SAFE_GOGGLES
-	dw IsntTheTimeMessage ; SHED_SHELL
-	dw IsntTheTimeMessage ; SHELL_BELL
-	dw IsntTheTimeMessage ; SOOTHE_BELL
-	dw IsntTheTimeMessage ; WEAK_POLICY
+	dw IsntTheTimeMessage ; SCOPE_LENS
 	dw IsntTheTimeMessage ; WIDE_LENS
-	dw IsntTheTimeMessage ; WISE_GLASSES
 	dw IsntTheTimeMessage ; ZOOM_LENS
-	dw IsntTheTimeMessage ; EJECT_BUTTON
-	dw IsntTheTimeMessage ; LAGGING_TAIL
-	dw IsntTheTimeMessage ; IRON_BALL
-	dw IsntTheTimeMessage ; RING_TARGET
-	dw IsntTheTimeMessage ; RED_CARD
-	dw IsntTheTimeMessage ; ABSORB_BULB
-	dw IsntTheTimeMessage ; CELL_BATTERY
-	dw IsntTheTimeMessage ; LUMINOUSMOSS
-	dw IsntTheTimeMessage ; SNOWBALL
-	dw IsntTheTimeMessage ; EJECT_PACK
-	dw IsntTheTimeMessage ; ROOM_SERVICE
-	dw IsntTheTimeMessage ; BLUNDRPOLICY
-	dw IsntTheTimeMessage ; THROAT_SPRAY
-	dw IsntTheTimeMessage ; HEAVY_BOOTS
-	dw IsntTheTimeMessage ; UTILUMBRELLA
 	dw IsntTheTimeMessage ; MENTAL_HERB
 	dw IsntTheTimeMessage ; POWER_HERB
 	dw IsntTheTimeMessage ; WHITE_HERB
@@ -233,7 +234,12 @@ ItemEffects:
 	dw IsntTheTimeMessage ; MAGMARIZER
 	dw IsntTheTimeMessage ; RAZOR_FANG
 	dw IsntTheTimeMessage ; RAZOR_CLAW
+	dw IsntTheTimeMessage ; OVAL_STONE
 	dw EvoStoneEffect     ; ODD_SOUVENIR
+	dw IsntTheTimeMessage ; SILVER_LEAF
+	dw IsntTheTimeMessage ; GOLD_LEAF
+	dw IsntTheTimeMessage ; MINT_LEAF
+	dw IsntTheTimeMessage ; BOTTLE_CAP
 	dw IsntTheTimeMessage ; NUGGET
 	dw IsntTheTimeMessage ; BIG_NUGGET
 	dw IsntTheTimeMessage ; TINYMUSHROOM
@@ -246,16 +252,10 @@ ItemEffects:
 	dw IsntTheTimeMessage ; STAR_PIECE
 	dw IsntTheTimeMessage ; BRICK_PIECE
 	dw IsntTheTimeMessage ; RARE_BONE
-	dw IsntTheTimeMessage ; SILVER_LEAF
-	dw IsntTheTimeMessage ; GOLD_LEAF
 	dw IsntTheTimeMessage ; SLOWPOKETAIL
-	dw IsntTheTimeMessage ; BOTTLE_CAP
 	dw IsntTheTimeMessage ; HELIX_FOSSIL
 	dw IsntTheTimeMessage ; DOME_FOSSIL
 	dw IsntTheTimeMessage ; OLD_AMBER
-	dw IsntTheTimeMessage ; MULCH
-	dw IsntTheTimeMessage ; SWEET_HONEY
-	dw IsntTheTimeMessage ; MINT_LEAF
 	dw IsntTheTimeMessage ; FLOWER_MAIL
 	dw IsntTheTimeMessage ; SURF_MAIL
 	dw IsntTheTimeMessage ; LITEBLUEMAIL
@@ -286,32 +286,33 @@ KeyItemEffects:
 	dw OldRod             ; OLD_ROD
 	dw GoodRod            ; GOOD_ROD
 	dw SuperRod           ; SUPER_ROD
-	dw CoinCase           ; COIN_CASE
 	dw Itemfinder         ; ITEMFINDER
-	dw IsntTheTimeMessage ; MYSTERY_EGG
+	dw CoinCase           ; COIN_CASE
+	dw ApricornBox        ; APRICORN_BOX
+	dw TypeChart          ; TYPE_CHART
+	dw BlueCard           ; BLUE_CARD
 	dw SquirtBottle       ; SQUIRTBOTTLE
+	dw IsntTheTimeMessage ; SILPHSCOPE2
+	dw IsntTheTimeMessage ; MYSTERY_EGG
 	dw IsntTheTimeMessage ; SECRETPOTION
+	dw IsntTheTimeMessage ; GO_GOGGLES
 	dw IsntTheTimeMessage ; RED_SCALE
 	dw CardKey            ; CARD_KEY
 	dw BasementKey        ; BASEMENT_KEY
-	dw IsntTheTimeMessage ; S_S_TICKET
-	dw IsntTheTimeMessage ; PASS
-	dw IsntTheTimeMessage ; MACHINE_PART
 	dw IsntTheTimeMessage ; LOST_ITEM
+	dw IsntTheTimeMessage ; MACHINE_PART
 	dw IsntTheTimeMessage ; RAINBOW_WING
 	dw IsntTheTimeMessage ; SILVER_WING
 	dw IsntTheTimeMessage ; CLEAR_BELL
 	dw IsntTheTimeMessage ; GS_BALL
-	dw BlueCard           ; BLUE_CARD
+	dw IsntTheTimeMessage ; S_S_TICKET
+	dw IsntTheTimeMessage ; PASS
 	dw IsntTheTimeMessage ; ORANGETICKET
 	dw IsntTheTimeMessage ; MYSTICTICKET
 	dw IsntTheTimeMessage ; OLD_SEA_MAP
 	dw IsntTheTimeMessage ; SHINY_CHARM
 	dw IsntTheTimeMessage ; OVAL_CHARM
 	dw IsntTheTimeMessage ; CATCH_CHARM
-	dw IsntTheTimeMessage ; SILPHSCOPE2
-	dw ApricornBox        ; APRICORN_BOX
-	dw TypeChart          ; TYPE_CHART
     dw PokeWalker         ; POKEWALKER
     dw Katana             ; KATANA
     dw Jetski             ; JETSKI 
@@ -435,6 +436,10 @@ PokeBallEffect:
 	ld [wWildMon], a
 	ld [wCurPartySpecies], a
 	ld [wTempSpecies], a
+	ld a, [wOTPartyMon1Form]
+	and SPECIESFORM_MASK
+	ld [wCurForm], a
+	ld [wTempForm], a
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jmp z, .FinishTutorial
@@ -464,6 +469,7 @@ PokeBallEffect:
 	ld a, [wOTPartyMon1Form]
 	and SPECIESFORM_MASK
 	ld [wCurForm], a
+	ld [wTempForm], a
 	call GetBaseData
 
 	pop af
@@ -471,22 +477,15 @@ PokeBallEffect:
 	ld [wCurPartySpecies], a
 	ld [wTempSpecies], a
 
-	push af
-	cp UNOWN
-	jr nz, .unown_done
-	ld hl, wOTPartyMon1Form
-	predef GetVariant
-	farcall UpdateUnownDex
-.unown_done
-	pop af
-
-	dec a
-	call CheckCaughtMon
-
+	ld hl, wTempSpecies
+	ld a, [hli]
+	ld c, a
+	ld b, [hl]
+	push bc
+	call CheckCosmeticCaughtMon
 	ld a, c
+	pop bc
 	push af
-	ld a, [wTempSpecies]
-	dec a
 	call SetSeenAndCaughtMon
 	pop af
 	and a
@@ -502,6 +501,8 @@ PokeBallEffect:
 
 	ld a, [wOTPartyMon1Species]
 	ld [wTempSpecies], a
+	ld a, [wOTPartyMon1Form]
+	ld [wTempForm], a ; is any of this necessary?
 	farcall NewPokedexEntry
 
 .skip_pokedex
@@ -544,7 +545,6 @@ PokeBallEffect:
 	ld bc, NAME_LENGTH
 	rst CopyBytes
 	pop af
-	push af
 	ld hl, wPartyMonNicknames
 	call SkipNames
 	ld d, h
@@ -552,14 +552,6 @@ PokeBallEffect:
 	ld hl, wOTPartyMonNicknames
 	ld bc, MON_NAME_LENGTH
 	rst CopyBytes
-	pop af
-	ld b, 0
-	ld c, a
-	ld hl, wPartySpecies
-	add hl, bc
-	ld a, [wOTPartyMon1Species]
-	ld [hli], a
-	ld [hl], $ff
 
 	farcall SetCaughtData
 
@@ -590,9 +582,7 @@ PokeBallEffect:
 	bit NUZLOCKE_MODE, a
 	jr nz, .AlwaysNickname
 
-	ld a, [wCurPartySpecies]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
+	call GetPartyPokemonName
 
 	ld hl, Text_AskNicknameNewlyCaughtMon
 	call PrintText
@@ -651,9 +641,7 @@ PokeBallEffect:
 	bit NUZLOCKE_MODE, a
 	jr nz, .AlwaysNicknameBox
 
-	ld a, [wCurPartySpecies]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
+	call GetPartyPokemonName
 
 	ld hl, Text_AskNicknameNewlyCaughtMon
 	call PrintText
@@ -694,10 +682,7 @@ PokeBallEffect:
 	pop bc
 
 .box_not_full
-	ld a, [wCurBox]
-	inc a
-	ld b, a
-	farcall GetBoxName
+	farcall GetCurBoxName
 	ld hl, Text_SentToBillsPC
 	call PrintText
 
@@ -747,6 +732,9 @@ PokeBallEffect:
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
+	ld c, a
+	ld a, [wCurForm]
+	ld b, a
 	call PlayStereoCry
 
 .skip_cry
@@ -776,11 +764,10 @@ PokeBallEffect:
 	call ClearBGPalettes
 	call ClearTileMap
 
-	push af
 	ld a, CGB_BATTLE_COLORS
 	call GetCGBLayout
 	call SetPalettes
-	pop af
+	xor a
 
 .toss
 	ld hl, wNumItems
@@ -866,8 +853,7 @@ EvoStoneEffect:
 	jmp c, ItemNotUsed_ExitMenu
 
 	ld a, MON_ITEM
-	call GetPartyParamLocation
-	ld a, [hl]
+	call GetPartyParamLocationAndValue
 	cp EVERSTONE
 	jr z, .no_effect
 
@@ -888,8 +874,7 @@ LowerEVBerry:
 	jmp c, ItemNotUsed_ExitMenu
 
 	ld a, MON_HAPPINESS
-	call GetPartyParamLocation
-	ld a, [hl]
+	call GetPartyParamLocationAndValue
 	inc a
 	push af
 	call SetUpEVModifier
@@ -957,7 +942,7 @@ SetUpEVModifier:
 	call UseItem_GetBaseDataAndNickParameters
 	call GetEVRelativePointer
 	ld a, MON_EVS
-	jmp GetPartyParamLocation
+	jmp GetPartyParamLocationAndValue
 
 GetStatStringAndPlayFullHealSFX:
 	call GetEVRelativePointer
@@ -1002,9 +987,7 @@ RareCandy:
 	call UseItem_GetBaseDataAndNickParameters
 
 	ld a, MON_LEVEL
-	call GetPartyParamLocation
-
-	ld a, [hl]
+	call GetPartyParamLocationAndValue
 	cp MAX_LEVEL
 	jmp nc, EvoStoneEffect.force_evolution
 
@@ -1017,7 +1000,7 @@ RareCandy:
 
 	pop de
 	ld a, MON_EXP
-	call GetPartyParamLocation
+	call GetPartyParamLocationAndValue
 
 	ldh a, [hMultiplicand]
 	ld [hli], a
@@ -1083,8 +1066,7 @@ UseStatusHealer:
 	jr z, .no_good
 	call GetItemHealingAction
 	ld a, MON_STATUS
-	call GetPartyParamLocation
-	ld a, [hl]
+	call GetPartyParamLocationAndValue
 	and c
 	jr nz, .good
 
@@ -1237,7 +1219,7 @@ FullRestore:
 	ld [wLowHealthAlarm], a
 	call ReviveFullHP
 	ld a, MON_STATUS
-	call GetPartyParamLocation
+	call GetPartyParamLocationAndValue
 	xor a
 	ld [hli], a
 	ld [hl], a
@@ -1359,8 +1341,8 @@ UseItem_SelectMon_Loop:
 	call ChoosePkmnToUseItemOn
 	jr c, .done
 	ld a, MON_IS_EGG
-	call GetPartyParamLocation
-	bit MON_IS_EGG_F, [hl]
+	call GetPartyParamLocationAndValue
+	bit MON_IS_EGG_F, a
 	jr z, .not_egg
 	call CantUseOnEggMessage
 	jr .handle_loop
@@ -1404,8 +1386,8 @@ UseItem_DoSelectMon:
 	ret c
 
 	ld a, MON_IS_EGG
-	call GetPartyParamLocation
-	bit MON_IS_EGG_F, [hl]
+	call GetPartyParamLocationAndValue
+	bit MON_IS_EGG_F, a
 	jr z, .not_egg
 
 	call CantUseOnEggMessage
@@ -1422,8 +1404,7 @@ UseItem_GetBaseDataAndNickParameters:
 	ld [wCurSpecies], a
 	ld [wTempSpecies], a
 	ld a, MON_FORM
-	call GetPartyParamLocation
-	ld a, [hl]
+	call GetPartyParamLocationAndValue
 	and SPECIESFORM_MASK
 	ld [wCurForm], a
 	call GetBaseData
@@ -1433,11 +1414,11 @@ UseItem_GetBaseDataAndNickParameters:
 
 UseItem_GetHPParameter:
 	ld a, MON_HP
-	jmp GetPartyParamLocation
+	jmp GetPartyParamLocationAndValue
 
 UseItem_GetMaxHPParameter:
 	ld a, MON_MAXHP
-	jmp GetPartyParamLocation
+	jmp GetPartyParamLocationAndValue
 
 ChoosePkmnToUseItemOn:
 	farcall InitPartyMenuLayout
@@ -1473,7 +1454,7 @@ ItemActionTextWaitButton:
 	xor a
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
-	ld bc, wTileMapEnd - wTileMap
+	ld bc, wTilemapEnd - wTilemap
 	ld a, " "
 	rst ByteFill
 	ld a, [wPartyMenuActionText]
@@ -1912,44 +1893,44 @@ TypeChart:
 Katana:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall CutFunction
+    call CutFunction
     ret
 Jetski:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall SurfFunction
+    call SurfFunction
     ret
 PowerBrace:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall StrengthFunction
+    call StrengthFunction
     ret
 SacredLamp:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall OWFlash
+    call OWFlash
     ret
 GiantPlug:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall WhirlpoolFunction
+    call WhirlpoolFunction
     ret
 Jetpack:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall WaterfallFunction
+    call WaterfallFunction
     ret
 RockHammer:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall RockSmashFunction
+    call RockSmashFunction
     ret
 Tablet:
-    farcall TabletPCFunction
+    call TabletPCFunction
     ret
 
 PokeWalker:
-	farcall PokewalkerFunction
+	call PokewalkerFunction
 	ret
 
 OldRod:
@@ -2083,8 +2064,6 @@ RestorePPEffect:
 	ld hl, PPsMaximizedText
 .ppup3
 	call PrintText
-
-FinishPPRestore:
 	jmp UseDisposableItem
 
 BattleRestorePP:
@@ -2102,8 +2081,7 @@ BattleRestorePP:
 .not_in_battle
 	call Play_SFX_FULL_HEAL
 	ld hl, PPRestoredText
-	call PrintText
-	jr FinishPPRestore
+	jr RestorePPEffect.ppup3
 
 .UpdateBattleMonPP:
 	ld a, [wCurPartyMon]
@@ -2253,12 +2231,19 @@ CardKey:
 BasementKey:
 	farjp _BasementKey
 
+SweetHoney:
+	farcall _SweetHoney
+	jr _UseDisposableItemIfEffectSucceeded
+
 SacredAsh:
 	ld a, [wInitialOptions]
 	bit NUZLOCKE_MODE, a
 	jr nz, Revive_NuzlockeFailureMessage
 
 	farcall _SacredAsh
+	; fallthrough
+
+_UseDisposableItemIfEffectSucceeded:
 	ld a, [wItemEffectSucceeded]
 	dec a
 	ret nz
@@ -2477,7 +2462,7 @@ UsedItemText:
 
 ApplyPPUp:
 	ld a, MON_MOVES
-	call GetPartyParamLocation
+	call GetPartyParamLocationAndValue
 	push hl
 	ld de, wBuffer1
 	predef FillPP
@@ -2572,10 +2557,10 @@ RestoreTempPP:
 
 RestoreAllPP:
 	ld a, MON_PP
-	call GetPartyParamLocation
+	call GetPartyParamLocationAndValue
 	push hl
 	ld a, MON_MOVES
-	call GetPartyParamLocation
+	call GetPartyParamLocationAndValue
 	pop de
 	xor a ; PARTYMON
 	ld [wMonType], a
@@ -2706,7 +2691,7 @@ AbilityCap:
 	push hl
 	call UseItem_GetBaseDataAndNickParameters
 	ld a, MON_ABILITY
-	call GetPartyParamLocation
+	call GetPartyParamLocationAndValue
 	ld d, h
 	ld e, l
 	pop hl

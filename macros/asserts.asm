@@ -65,11 +65,7 @@ end_water_wildmons: MACRO
 ENDM
 
 wildmon: MACRO
-	if _NARG == 2
-		dp \1, \2
-	else
-		dp \1
-	endc
+	dp \#
 ENDM
 
 jmp: MACRO
@@ -79,5 +75,7 @@ jmp: MACRO
 		jp \1, \2
 		shift
 	endc
-	assert warn, (\1) - @ > 127 || (\1) - @ < -129, "jp can be jr"
+	if DEF(DEBUG)
+		assert warn, (\1) - @ > 127 || (\1) - @ < -129, "jp can be jr"
+	endc
 ENDM

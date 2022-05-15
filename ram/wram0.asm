@@ -186,7 +186,9 @@ wTilePermissions::
 ; bit 0: right
 	db
 
-	ds 13
+wCompressedTextBuffer:: ds 2 ; one character and "@"
+
+	ds 11
 
 
 SECTION "Sprite Animations", WRAM0
@@ -207,7 +209,8 @@ wSpriteAnimationStructsEnd::
 wSpriteAnimCount:: db
 wCurSpriteOAMAddr:: db
 
-wCurIcon:: db
+wCurIcon::
+wCurIconSpecies:: db
 wCurIconPersonality::
 wCurIconShiny:: db
 wCurIconForm:: db
@@ -274,12 +277,13 @@ wVirtualOAMEnd::
 
 SECTION "Tilemap and Attrmap", WRAM0
 
-wTileMap::
+; Some code depend on these being next to each other in memory.
+wTilemap::
 ; 20x18 grid of 8x8 tiles
 	ds SCREEN_WIDTH * SCREEN_HEIGHT
-wTileMapEnd::
+wTilemapEnd::
 
-wAttrMap::
+wAttrmap::
 ; 20x18 grid of palettes for 8x8 tiles
 ; read horizontally from the top row
 ; bit 7: priority
@@ -289,7 +293,7 @@ wAttrMap::
 ; bit 3: vram bank (cgb only)
 ; bit 2-0: pal # (cgb only)
 	ds SCREEN_WIDTH * SCREEN_HEIGHT
-wAttrMapEnd::
+wAttrmapEnd::
 
 
 SECTION UNION "Misc 480", WRAM0
@@ -337,9 +341,16 @@ wLinkPlayerFixedPartyMon1ID:: ds 3
 
 
 SECTION UNION "Misc 480", WRAM0
-; battle
+; battle + pokédex (merged because pokédex can be called from battle)
 
+; wLCDPokedex is defined in a LOAD UNION block in engine/pokedex/lcd.asm
+; Reserve space for it at the beginning of this LOAD UNION
+	ds 15
+	assert wLCDPokedexEnd - wLCDPokedex == @ - STARTOF("Misc 480")
+
+; Battle data
 wBattle::
+
 wEnemyMoveStruct::  move_struct wEnemyMoveStruct
 wPlayerMoveStruct:: move_struct wPlayerMoveStruct
 
@@ -347,8 +358,6 @@ wEnemyMonNickname::  ds MON_NAME_LENGTH
 wBattleMonNickname:: ds MON_NAME_LENGTH
 
 wBattleMon:: battle_struct wBattleMon
-
-	ds 2
 
 wWildMon:: db
 	ds 1
@@ -383,7 +392,7 @@ wPlayerSubStatus1::
 ; 7 attract
 ; 6 flash fire
 ; 5 endure
-; 4 perish song
+; 4 unused
 ; 3 identified
 ; 2 protect
 ; 1 curse
@@ -446,7 +455,6 @@ wPlayerDisableCount:: db
 wPlayerEncoreCount:: db ; also for choice-locking
 wPlayerPerishCount:: db
 wPlayerProtectCount:: db
-	ds 1
 
 wEnemyAbility:: db
 wEnemyRolloutCount:: db
@@ -456,14 +464,13 @@ wEnemyDisableCount:: db
 wEnemyEncoreCount:: db
 wEnemyPerishCount:: db
 wEnemyProtectCount:: db
-	ds 1
+
+wCriticalCount:: ds PARTY_LENGTH ; for g-Farfetch'd evolution
 wBattleSubStatusWRAMEnd::
 
 wDamageTaken::
 ; Format: $xy yy, x = total multihit hits, y = total damage
 	dw
-
-	ds 2 ; unused
 
 wBattleReward:: ds 3
 wBattleAnimParam::
@@ -666,6 +673,77 @@ wAmuletCoin:: db
 wDVAndPersonalityBuffer:: ds 5
 wBattleEnd::
 
+; Pokédex data.
+
+; For setting up a new HBlank trigger
+wPokedex_PendingLYC:: db
+wPokedex_PendingHBlankFunction:: dw
+
+; Palettes and tile offset for listview minis
+UNION
+wPokedex_UnownCursor: db
+NEXTU
+wPokedex_Pals::
+wPokedex_Row1::
+wPokedex_Row1Tile: db ; Sprite offset for dex minis col 2-4
+wPokedex_Row1Pals:: ds PAL_COLOR_SIZE * 3 * 5 ; 3 15bit colors per pal, 5 columns
+wPokedex_Row2::
+wPokedex_Row2Tile: db
+wPokedex_Row2Pals:: ds PAL_COLOR_SIZE * 3 * 5
+wPokedex_Row3::
+wPokedex_Row3Tile: db
+wPokedex_Row3Pals:: ds PAL_COLOR_SIZE * 3 * 5
+wPokedex_PalsEnd::
+ENDU
+
+; Pokémon info (frontpic, types, etc) is stored in either vbk0 or vbk1. This is
+; cycled each time we move the cursor. The reason for this is so that we can
+; update the entire display smoothly in a single frame without noticeable delay.
+wPokedex_MonInfoBank:: db
+
+wPokedex_Personality::
+; bit 7 = shiny
+; bit 0 = has other form (eligible to switch to)
+wPokedex_Shiny::
+wPokedex_OtherForm:: db
+wPokedex_Form:: db
+
+wPokedexOAM_DexNoX:: db
+wPokedexOAM_DexNoY:: db
+wPokedexOAM_IsCaught:: db
+
+wPokedex_NumSeen:: dw
+wPokedex_NumOwned:: dw
+wPokedex_CursorPos:: db
+wPokedex_Offset:: db
+wPokedex_FirstIconTile:: db
+UNION
+wPokedex_Rows:: db
+wPokedex_LastCol:: db ; 1-5 in case the final row isn't completely filled
+NEXTU
+wPokedex_FinalEntry:: dw ; Final entry. Overwritten with rows/lastcol later.
+ENDU
+wPokedex_GFXFlags:: db ; flags for various gfx update types
+wPokedex_DisplayMode:: db ; current pokédex display
+
+wPokedex_InSearchMode:: db
+
+; 0 when not in a current search, otherwise vblank counter at search start.
+; If vblank counter happens to be zero, it's treated as 255.
+wPokedex_SearchInProgress:: db
+
+wPokedex_Search::
+wPokedex_SearchOrder:: db
+wPokedex_SearchData::
+wPokedex_SearchType1:: db
+wPokedex_SearchType2:: db
+wPokedex_SearchGroup1:: db
+wPokedex_SearchGroup2:: db
+wPokedex_SearchColor:: db
+wPokedex_SearchBody:: db
+wPokedex_SearchDataEnd::
+wPokedex_SearchEnd::
+wPokedex_MenuCursorY:: db
 
 SECTION UNION "Misc 480", WRAM0
 ; trade
@@ -788,42 +866,6 @@ SECTION UNION "Misc 480", WRAM0
 wUnownPuzzle::
 wPuzzlePieces:: ds 6 * 6
 wUnownPuzzleEnd::
-
-
-SECTION UNION "Misc 480", WRAM0
-; Pokedex
-	ds 172
-
-wPokedexDataStart::
-wPokedexOrder:: ds NUM_POKEMON - 1
-wPokedexOrderEnd:: ds 6
-wPokedexMetadata::
-wDexListingScrollOffset:: db ; offset of the first displayed entry from the start
-wDexListingCursor:: db ; Dex cursor
-wDexListingEnd:: db ; Last mon to display
-wDexListingHeight:: db ; number of entries displayed at once in the dex listing
-wCurDexMode:: db ; Pokedex Mode
-wDexSearchMonType1:: db ; first type to search
-wDexSearchMonType2:: db ; second type to search
-wDexSearchResultCount:: db
-wDexArrowCursorPosIndex:: db
-wDexArrowCursorDelayCounter:: db
-wDexArrowCursorBlinkCounter:: db
-wDexSearchSlowpokeFrame:: db
-wUnlockedUnownMode:: db
-wDexCurUnownIndex:: db
-wDexUnownCount:: db
-wDexConvertedMonType:: db ; mon type converted from dex search mon type
-wDexListingScrollOffsetBackup:: db
-wDexListingCursorBackup:: db
-wBackupDexListingCursor:: db
-wBackupDexListingPage:: db
-wDexCurLocation:: db
-wPokedexStatus:: db
-wDexMonPersonality::
-wDexMonShiny:: db
-wDexMonForm:: db
-wPokedexDataEnd::
 
 
 SECTION UNION "Misc 1300", WRAM0
@@ -975,20 +1017,21 @@ wBGMapBuffer:: ds 48
 wBGMapPalBuffer:: ds 48
 wBGMapBufferPtrs:: ds 48 ; 24 bg map addresses (16x8 tiles)
 
+
+SECTION "More WRAM 0", WRAM0
+
 wMemCGBLayout:: db
 
 UNION
 wCreditsPos:: dw
 wCreditsTimer:: db
 wTrainerCardBadgePaletteAddr:: dw
-
 NEXTU
 wPlayerHPPal:: db
 wEnemyHPPal:: db
 wHPPals:: ds PARTY_LENGTH
 wCurHPPal:: db
 wHPPalIndex:: db
-
 ENDU
 
 wTileAnimBuffer:: ds 1 tiles
@@ -1103,6 +1146,7 @@ wPalFadeMode::
 ; bit 4: skip the last palette
 	db
 
+wMenuMetadata::
 wWindowStackPointer:: dw
 wMenuJoypad:: db
 wMenuSelection:: db
@@ -1110,8 +1154,8 @@ wMenuSelectionQuantity:: db
 wWhichIndexSet:: db
 wScrollingMenuCursorPosition:: db
 wWindowStackSize:: db
-
 	ds 8
+wMenuMetadataEnd::
 
 ; menu header
 wMenuHeader::
@@ -1187,19 +1231,21 @@ w2DMenuFlags1::
 w2DMenuFlags2:: db
 w2DMenuCursorOffsets:: db
 wMenuJoypadFilter:: db
-w2DMenuDataEnd::
 
 wMenuCursorY:: db
 wMenuCursorX:: db
 wCursorOffCharacter:: db
 wCursorCurrentTile:: dw
+	ds 3
+w2DMenuDataEnd::
+
+wMonPicSize:: db
+wMonAnimationSize:: db
 
 wBTTempOTSprite:: db
 
 wPendingOverworldGraphics:: db
 wTextDelayFrames:: db
-
-	ds 1
 
 wGenericDelay:: db
 
@@ -1243,6 +1289,9 @@ wOBP0:: db
 wOBP1:: db
 
 wNumHits:: db
+
+
+SECTION "Options", WRAM0
 
 wOptions3::
 ; bit 0: keyword abc/qwerty

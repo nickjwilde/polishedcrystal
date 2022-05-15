@@ -26,7 +26,7 @@ ManiaScript:
 	writetext ManiaText_AskLookAfterShuckie
 	yesorno
 	iffalse .refusetotakeshuckie
-	givepoke SHUCKLE, MALE | NO_FORM, 25, BERRY_JUICE, NET_BALL, POISON_JAB, TRUE, ShuckieName, ShuckieOTName, ShuckieOTIDAndCaughtGender
+	givepoke SHUCKLE, MALE | PLAIN_FORM, 25, BERRY_JUICE, NET_BALL, POISON_JAB, ShuckieName, ShuckieOTName, ShuckieOTIDAndCaughtGender
 	iffalse_jumpopenedtext ManiaText_PartyAndBoxFull
 	writetext ManiaText_TakeCareOfShuckie
 	promptbutton
@@ -145,7 +145,7 @@ ManiaText_ShuckieSentToPC:
 
 ManiaText_PartyAndBoxFull:
 	text "Your #mon party"
-	line "and box are full."
+	line "and Box are full."
 	done
 
 ManiaText_IfHeComesBack:

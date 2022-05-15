@@ -48,7 +48,7 @@ FuchsiaGymJanineScript:
 	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_CUTE_GIRL
 	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_CUTE_GIRL
 	variablesprite SPRITE_FUCHSIA_GYM_4, SPRITE_SCHOOLBOY
-	special MapCallbackSprites_LoadUsedSpritesGFX
+	special RefreshSprites
 	opentext
 	writetext Text_ReceivedSoulBadge
 	playsound SFX_GET_BADGE
@@ -103,7 +103,7 @@ LassAliceScript:
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_1, Movement_NinjaSpin
 	faceplayer
 	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_LASS
-	special MapCallbackSprites_LoadUsedSpritesGFX
+	special RefreshSprites
 UnknownScript_0x195e2c:
 	checkevent EVENT_BEAT_LASS_AMANDA
 	iftrue_jumptextfaceplayer LassAliceAfterText
@@ -128,7 +128,7 @@ LassLindaScript:
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_2, Movement_NinjaSpin
 	faceplayer
 	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_LASS
-	special MapCallbackSprites_LoadUsedSpritesGFX
+	special RefreshSprites
 UnknownScript_0x195e66:
 	checkevent EVENT_BEAT_LASS_LINDA
 	iftrue_jumptextfaceplayer LassLindaAfterText
@@ -153,7 +153,7 @@ PicnickerCindyScript:
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_3, Movement_NinjaSpin
 	faceplayer
 	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_PICNICKER
-	special MapCallbackSprites_LoadUsedSpritesGFX
+	special RefreshSprites
 UnknownScript_0x195ea0:
 	checkevent EVENT_BEAT_PICNICKER_CINDY
 	iftrue_jumptextfaceplayer PicnickerCindyAfterText
@@ -178,7 +178,7 @@ CamperBarryScript:
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_4, Movement_NinjaSpin
 	faceplayer
 	variablesprite SPRITE_FUCHSIA_GYM_4, SPRITE_SCHOOLBOY
-	special MapCallbackSprites_LoadUsedSpritesGFX
+	special RefreshSprites
 UnknownScript_0x195eda:
 	checkevent EVENT_BEAT_CAMPER_BARRY
 	iftrue_jumptextfaceplayer CamperBarryAfterText
