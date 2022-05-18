@@ -57,25 +57,15 @@ UnknownScript_0x5afb3:
 UnknownScript_0x5afc7:
 	scall UnknownScript_0x5b06b
 	winlosstext SailorHuey1BeatenText, 0
-	readmem wHueyFightCount
-	ifequalfwd 3, .Fight3
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight3:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftruefwd .LoadFight3
-.Fight2:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftruefwd .LoadFight2
-.Fight1:
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftruefwd .LoadFight1
-.LoadFight0:
 	loadtrainer SAILOR, HUEY1
 	startbattle
 	reloadmapafterbattle
-	loadmem wHueyFightCount, 1
 	clearflag ENGINE_HUEY_READY_FOR_REMATCH
 	end
 
@@ -83,7 +73,6 @@ UnknownScript_0x5afc7:
 	loadtrainer SAILOR, HUEY2
 	startbattle
 	reloadmapafterbattle
-	loadmem wHueyFightCount, 2
 	clearflag ENGINE_HUEY_READY_FOR_REMATCH
 	end
 
@@ -91,7 +80,6 @@ UnknownScript_0x5afc7:
 	loadtrainer SAILOR, HUEY3
 	startbattle
 	reloadmapafterbattle
-	loadmem wHueyFightCount, 3
 	clearflag ENGINE_HUEY_READY_FOR_REMATCH
 	end
 

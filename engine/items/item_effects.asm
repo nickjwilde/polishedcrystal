@@ -2208,40 +2208,40 @@ TypeChart:
 Katana:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall CutFunction
+    call CutFunction
     ret
 Jetski:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall SurfFunction
+    call SurfFunction
     ret
 PowerBrace:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall StrengthFunction
+    call StrengthFunction
     ret
 Headlamp:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall OWFlash
+    call OWFlash
     ret
 GiantPlug:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall WhirlpoolFunction
+    call WhirlpoolFunction
     ret
 Jetpack:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall WaterfallFunction
+    call WaterfallFunction
     ret
 RockHammer:
     ld a, 1
     ld [wUsingHMItem], a
-    farcall RockSmashFunction
+    call RockSmashFunction
     ret
 Tablet:
-    farcall TabletPCFunction
+    call TabletPCFunction
     ret
 
 OldRod:

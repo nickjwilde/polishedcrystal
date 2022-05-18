@@ -82,7 +82,7 @@ LoadPlayerStatusIcon:
 	push de
 	ld a, [wPlayerSubStatus2]
 	ld de, wBattleMonStatus
-	farcall GetStatusConditionIndex
+	call GetStatusConditionIndex
 	ld hl, StatusIconGFX
 	ld bc, 2 tiles
 	rst AddNTimes
@@ -103,7 +103,7 @@ LoadEnemyStatusIcon:
 	push de
 	ld a, [wEnemySubStatus2]
 	ld de, wEnemyMonStatus
-	farcall GetStatusConditionIndex
+	call GetStatusConditionIndex
 	ld hl, EnemyStatusIconGFX
 	ld bc, 2 tiles
 	rst AddNTimes

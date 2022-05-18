@@ -74,21 +74,13 @@ TrainerCooltrainermGaven1:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainermGaven1BeatenText, 0
-	readmem wGavenFightCount
-	ifequalfwd 2, .Fight2
-	ifequalfwd 1, .Fight1
-	ifequalfwd 0, .LoadFight0
-.Fight2:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftruefwd .LoadFight2
-.Fight1:
+	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftruefwd .LoadFight1
-.LoadFight0:
+	iftrue .LoadFight1
 	loadtrainer COOLTRAINERM, GAVEN1
 	startbattle
 	reloadmapafterbattle
-	loadmem wGavenFightCount, 1
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
 	end
 
@@ -96,7 +88,6 @@ TrainerCooltrainermGaven1:
 	loadtrainer COOLTRAINERM, GAVEN2
 	startbattle
 	reloadmapafterbattle
-	loadmem wGavenFightCount, 2
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
 	end
 
@@ -172,10 +163,13 @@ TrainerCooltrainerfBeth1:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainerfBeth1BeatenText, 0
+<<<<<<< HEAD
 	readmem wBethFightCount
 	ifequalfwd 2, .Fight2
 	ifequalfwd 1, .Fight1
 	ifequalfwd 0, .LoadFight0
+=======
+>>>>>>> 36cfffc44 (fix minor bugs and warnings)
 .Fight2:
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftruefwd .LoadFight2
@@ -186,7 +180,6 @@ TrainerCooltrainerfBeth1:
 	loadtrainer COOLTRAINERF, BETH1
 	startbattle
 	reloadmapafterbattle
-	loadmem wBethFightCount, 1
 	clearflag ENGINE_BETH_READY_FOR_REMATCH
 	end
 
@@ -194,7 +187,6 @@ TrainerCooltrainerfBeth1:
 	loadtrainer COOLTRAINERF, BETH2
 	startbattle
 	reloadmapafterbattle
-	loadmem wBethFightCount, 2
 	clearflag ENGINE_BETH_READY_FOR_REMATCH
 	end
 
