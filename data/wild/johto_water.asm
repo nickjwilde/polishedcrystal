@@ -399,4 +399,11 @@
 	wildmon LEVEL_FROM_BADGES + 5, QWILFISH, HISUIAN_FORM
 	end_water_wildmons
 
+	def_water_wildmons MAGNET_TUNNEL_INSIDE
+	db 15 percent
+	wildmon 24, CHINCHOU
+	wildmon 23, CHINCHOU
+	wildmon 25, LANTURN
+	end_water_wildmons
+
 	db -1 ; end

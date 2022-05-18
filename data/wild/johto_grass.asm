@@ -341,19 +341,19 @@
 	; morn
 	wildmon 14, KOFFING
 	wildmon 14, RATTATA
-	wildmon 16, KOFFING
 	wildmon 15, ZUBAT
 	wildmon 12, SLUGMA
-	wildmon 15, SLUGMA
 	wildmon 15, MAGBY
+	wildmon 12, CHARMANDER
+	wildmon 12, CHARMANDER
 	; day
 	wildmon 14, KOFFING
 	wildmon 14, RATTATA
-	wildmon 16, KOFFING
 	wildmon 15, ZUBAT
 	wildmon 12, SLUGMA
-	wildmon 15, SLUGMA
 	wildmon 15, MAGBY
+	wildmon 12, FLAREON
+	wildmon 12, FLAREON
 	; nite
 	wildmon 14, KOFFING
 	wildmon 14, GASTLY
@@ -679,9 +679,9 @@
 	wildmon 7, WEEDLE
 	wildmon 9, METAPOD
 	wildmon 9, KAKUNA
-	wildmon 9, PIDGEY
 	wildmon 8, PARAS
-	wildmon 8, PARAS
+	wildmon 6, LEAFEON
+	wildmon 6, LEAFEON
 	; day
 	wildmon 7, CATERPIE
 	wildmon 7, WEEDLE
@@ -819,8 +819,8 @@
 	wildmon 32, ZUBAT
 	wildmon 32, VULPIX, ALOLAN_FORM
 	wildmon 32, SWINUB
-	wildmon 34, GOLBAT
-	wildmon 32, GOLBAT
+	wildmon 32, SANDSHREW, ALOLAN_FORM
+	wildmon 31, SANDSLASH, ALOLAN_FORM
 	wildmon 32, NINETALES, ALOLAN_FORM
 	; day
 	wildmon 30, SWINUB
@@ -910,10 +910,10 @@
 	wildmon 33, SWINUB
 	wildmon 34, ZUBAT
 	wildmon 34, VULPIX, ALOLAN_FORM
-	wildmon 35, SWINUB
 	wildmon 35, NINETALES, ALOLAN_FORM
 	wildmon 32, JYNX
-	wildmon 34, JYNX
+	wildmon 33, GLACEON
+	wildmon 34, GLACEON
 	; nite
 	wildmon 33, DELIBIRD
 	wildmon 34, ZUBAT
@@ -1827,9 +1827,9 @@
 	wildmon LEVEL_FROM_BADGES + 0, TAUROS
 	wildmon LEVEL_FROM_BADGES - 2, SUNFLORA
 	wildmon LEVEL_FROM_BADGES - 2, GROWLITHE
-	wildmon LEVEL_FROM_BADGES - 3, FARFETCH_D, GALARIAN_FORM
 	wildmon LEVEL_FROM_BADGES - 4, GIRAFARIG
-	wildmon LEVEL_FROM_BADGES - 4, GIRAFARIG
+	wildmon LEVEL_FROM_BADGES - 3, BULBASAUR
+	wildmon LEVEL_FROM_BADGES - 4, BULBASAUR
 	; day
 	wildmon LEVEL_FROM_BADGES + 1, FARFETCH_D, GALARIAN_FORM
 	wildmon LEVEL_FROM_BADGES + 0, TAUROS
@@ -1928,8 +1928,8 @@
 	wildmon LEVEL_FROM_BADGES - 0, GASTLY
 	wildmon LEVEL_FROM_BADGES - 3, VULPIX
 	wildmon LEVEL_FROM_BADGES - 1, NOCTOWL
-	wildmon LEVEL_FROM_BADGES - 3, RATICATE, ALOLAN_FORM
-	wildmon LEVEL_FROM_BADGES - 1, RATICATE, ALOLAN_FORM
+	wildmon LEVEL_FROM_BADGES - 3, UMBREON 
+	wildmon LEVEL_FROM_BADGES - 1,  UMBREON
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_32_COAST
@@ -1976,7 +1976,7 @@
 	wildmon LEVEL_FROM_BADGES - 4, PIKACHU
 	wildmon LEVEL_FROM_BADGES - 2, PARAS
 	wildmon LEVEL_FROM_BADGES - 2, MARILL
-	wildmon LEVEL_FROM_BADGES - 3, MARILL
+	wildmon LEVEL_FROM_BADGES - 3, JOLTEON
 	wildmon LEVEL_FROM_BADGES - 14, PICHU
 	; nite
 	wildmon LEVEL_FROM_BADGES - 1, HOOTHOOT
@@ -1996,8 +1996,8 @@
 	wildmon LEVEL_FROM_BADGES - 2, MACHOP
 	wildmon LEVEL_FROM_BADGES - 1, MUNCHLAX
 	wildmon LEVEL_FROM_BADGES + 0, GOLBAT
-	wildmon LEVEL_FROM_BADGES - 2, NATU
-	wildmon LEVEL_FROM_BADGES - 2, GOLBAT
+	wildmon LEVEL_FROM_BADGES - 2, ESPEON
+	wildmon LEVEL_FROM_BADGES - 2, ESPEON
 	; day
 	wildmon LEVEL_FROM_BADGES - 3, CUBONE
 	wildmon LEVEL_FROM_BADGES - 2, ZUBAT
@@ -2105,18 +2105,18 @@
 	; morn
 	wildmon LEVEL_FROM_BADGES - 1, WOOPER
 	wildmon LEVEL_FROM_BADGES - 2, EKANS, ARBOK_JOHTO_FORM
-	wildmon LEVEL_FROM_BADGES + 0, GLOOM
 	wildmon LEVEL_FROM_BADGES + 1, RATICATE
-	wildmon LEVEL_FROM_BADGES + 1, QUAGSIRE
+	wildmon LEVEL_FROM_BADGES + 0, SQUIRTLE
+	wildmon LEVEL_FROM_BADGES + 1, SQUIRTLE
 	wildmon LEVEL_FROM_BADGES - 1, GRIMER, ALOLAN_FORM
 	wildmon LEVEL_FROM_BADGES + 3, YANMA
 	; day
-	wildmon LEVEL_FROM_BADGES - 1, WOOPER
 	wildmon LEVEL_FROM_BADGES - 2, EKANS, ARBOK_JOHTO_FORM
 	wildmon LEVEL_FROM_BADGES + 0, GLOOM
 	wildmon LEVEL_FROM_BADGES + 1, RATICATE
-	wildmon LEVEL_FROM_BADGES + 1, QUAGSIRE
 	wildmon LEVEL_FROM_BADGES - 1, GRIMER, ALOLAN_FORM
+	wildmon LEVEL_FROM_BADGES + 1, VAPOREON 
+	wildmon LEVEL_FROM_BADGES - 1, VAPOREON
 	wildmon LEVEL_FROM_BADGES + 3, YANMA
 	; nite
 	wildmon LEVEL_FROM_BADGES - 1, WOOPER

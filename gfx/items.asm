@@ -803,7 +803,6 @@ EerieLureIcon::
 ToughLureIcon::
 MalignLureIcon:: INCBIN "gfx/items/lure.2bpp.lz"
 KatanaIcon::       INCBIN "gfx/items/katana.2bpp.lz"
-PortalGunIcon::    INCBIN "gfx/items/portal_gun.2bpp.lz"
 JetskiIcon::       INCBIN "gfx/items/jetski.2bpp.lz"
 PowerBraceIcon::   INCBIN "gfx/items/power_brace.2bpp.lz"
 SacredLampIcon::     INCBIN "gfx/items/sacredlamp.2bpp.lz"

@@ -399,9 +399,9 @@
 	wildmon 57, BEEDRILL
 	wildmon 55, KAKUNA
 	wildmon 55, METAPOD
-	wildmon 56, METAPOD
 	wildmon 59, PIKACHU
-	wildmon 60, PIKACHU
+	wildmon 55, CHIKORITA
+	wildmon 54, CHIKORITA
 	; day
 	wildmon 57, BUTTERFREE
 	wildmon 57, BEEDRILL
@@ -1183,9 +1183,9 @@
 	wildmon 48, BEEDRILL
 	wildmon 51, PIDGEOTTO
 	wildmon 50, WEEPINBELL
-	wildmon 49, PIDGEOTTO
 	wildmon 53, KINGLER
-	wildmon 52, KINGLER
+	wildmon 48, TOTODILE 
+	wildmon 47, TOTODILE 
 	; day
 	wildmon 48, BUTTERFREE
 	wildmon 48, BEEDRILL
@@ -1864,8 +1864,8 @@
 	wildmon 57, MUK
 	wildmon 59, ARCANINE
 	wildmon 59, RAPIDASH
-	wildmon 60, RAPIDASH
-	wildmon 60, RAPIDASH
+	wildmon 56, CYNDAQUIL
+	wildmon 57, CYNDAQUIL
 	; nite
 	wildmon 58, HAUNTER
 	wildmon 56, WEEZING
