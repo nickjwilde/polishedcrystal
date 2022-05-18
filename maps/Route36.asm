@@ -620,8 +620,6 @@ else
 endc
 	done
 
-<<<<<<< HEAD
-=======
 RockSmashGuyHint:
     text "I know a guy"
     line "who tried to smash"
@@ -651,8 +649,6 @@ RockSmashGuyMatchIntro:
     cont "best me."
     done
 
-
->>>>>>> 275f4f4dd (add hm overworld items and update events to get them)
 Route36LassText_OddTree:
 	text "An odd tree is"
 	line "blocking the way"

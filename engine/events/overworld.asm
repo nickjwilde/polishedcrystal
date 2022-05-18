@@ -1204,6 +1204,7 @@ TryStrengthOW:
 	call CheckEngineFlag
 	jr c, .nope
 
+.hasPwrBrace
 	ld hl, wOWState
 	bit OWSTATE_STRENGTH, [hl]
 	jr z, .already_using
@@ -1214,13 +1215,6 @@ TryStrengthOW:
 .nope
 	ld a, 1
 	jr .done
-
-.hasPwrBrace
-	ld hl, wOWState
-	bit OWSTATE_STRENGTH, [hl]
-	jr z, .already_using
-    ld a, 2
-    jr .done
 
 .already_using
 	xor a
